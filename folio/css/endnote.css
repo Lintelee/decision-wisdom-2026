@@ -17,15 +17,9 @@
 #outcome .endnote-page{display:inline-block;margin-top:2px;padding:1px 6px;white-space:nowrap;border-radius:2px;background:#34523f;color:#fff7e5;font-size:.74rem;font-weight:650}
 #outcome .endnote-page::after{content:' →'}
 #outcome .endnote-read:hover .endnote-article{text-decoration:underline;text-underline-offset:2px}
-#outcome details{margin-top:10px;border-top:1px solid #bbaa8c;padding-top:6px}#outcome summary{font-size:.78rem;color:#5e5342;cursor:pointer}
-#outcome blockquote{border-left:2px solid #ad8151;padding-left:9px;margin:9px 0 3px;font:600 .87rem/1.55 var(--serif)}
-#outcome cite{font-style:normal;font-size:.72rem}#outcome .endnote-sources{display:grid;gap:4px;margin-top:8px}
-#outcome .endnote-sources button{border:0;text-align:left;background:none;padding:2px 0;color:#415947;text-decoration:underline;text-underline-offset:2px;cursor:pointer;font:500 .77rem/1.45 var(--sans)}
-#outcome .endnote-sources button span{display:block}
-#outcome .endnote-sources button span + span{color:#665a49;font-size:.93em}
-#outcome :is(button,summary):focus-visible{outline:2px solid #996639;outline-offset:1px}
+#outcome button:focus-visible{outline:2px solid #996639;outline-offset:1px}
 @media(max-width:860px){#outcome{right:14px;bottom:clamp(150px,25vh,235px);max-height:41dvh;width:min(340px,calc(100vw - 28px))}}
-@media(max-width:600px){#outcome{padding:8px 13px 10px;font-size:.84rem}#outcome details{margin-top:7px}#outcome h2{font-size:1.13rem}}
+@media(max-width:600px){#outcome{padding:8px 13px 10px;font-size:.84rem}#outcome h2{font-size:1.13rem}}
 @media(max-width:600px) and (orientation:portrait){#outcome{top:var(--endnote-top,20dvh);bottom:auto;max-height:min(35dvh,calc(100dvh - var(--endnote-top,20dvh) - 160px))}}
 @media(max-height:510px) and (orientation:landscape){#outcome{top:54px;bottom:auto;max-height:calc(100dvh - 117px);width:min(36vw,330px);padding:6px 13px 10px;font-size:.81rem}#outcome h2{font-size:1.05rem}}
 @media(prefers-reduced-motion:reduce){#outcome{animation:none}}

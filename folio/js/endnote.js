@@ -41,7 +41,6 @@ export function makeEndnote({ panel, tab, article, read }) {
     panel.hidden = true;
     tab.hidden = !available;
     tab.setAttribute('aria-expanded', 'false');
-    find('details').open = false;
     if (focus && available) tab.focus({ preventScroll:true });
   }
   function enter(spread, previouslyFinished) {
@@ -56,14 +55,8 @@ export function makeEndnote({ panel, tab, article, read }) {
     find('h2').textContent = entry.title;
     find('.endnote-event').textContent = entry.event;
     find('.endnote-meaning').textContent = entry.meaning;
-    find('blockquote').textContent = quote?.t || '';
-    const sources = [...new Set((def.sources || []).map(s => s.n))].map(article).filter(Boolean);
     const cited = quote && article(quote.n);
-    const main = cited || sources[0];
-    const related = sources.filter(a => a.n !== main?.n);
-    find('blockquote').hidden = !cited;
-    find('cite').hidden = !cited;
-    find('cite').textContent = cited ? sourceAuthors(cited) + '，原刊 p.' + quote.page : '';
+    const main = cited || (def.sources || []).map(source => article(source.n)).find(Boolean);
     const primary = find('.endnote-read');
     primary.hidden = !main;
     if (main) {
@@ -71,21 +64,8 @@ export function makeEndnote({ panel, tab, article, read }) {
       find('.endnote-authors').textContent = sourceAuthors(main);
       find('.endnote-article').textContent = '〈' + sourceTitle(main) + '〉';
       find('.endnote-page').textContent = '讀原文 p.' + page;
-      primary.onclick = () => read(main.n, page);
+      primary.onclick = () => read(main.n, page, false, primary);
     } else primary.onclick = null;
-    const disclosure = find('details');
-    disclosure.hidden = !cited && !related.length;
-    find('summary').textContent = cited ? (related.length ? '原文摘句與延伸閱讀' : '原文摘句') : '延伸閱讀';
-    find('.endnote-sources').replaceChildren(...related.map(a => {
-      const button = document.createElement('button');
-      button.type = 'button'; button.dataset.article = String(a.n);
-      const title = document.createElement('span'), authors = document.createElement('span');
-      title.textContent = '〈' + sourceTitle(a) + '〉';
-      authors.textContent = sourceAuthors(a);
-      button.append(title,authors);
-      button.onclick = () => read(a.n, a.pages[0]);
-      return button;
-    }));
   }
   function finish(spread, focus = false) {
     if (spread !== scene || !entries.has(spread.index)) return;

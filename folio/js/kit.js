@@ -144,15 +144,44 @@ export function buildScene(def, index, stage, app) {
         end: (e) => { if (e.cancelled) apply(u0); end?.(u, e); } });
       p.set = apply; p.value = () => u; return p;
     },
-    /** pick a part up and drop it on a target: targets = [{node, r (pixels), drop(node, home)}] or a function returning them; elsewhere it springs home */
-    carry(node, { targets, miss, ...o }) {
-      let home = null, off = null; if (o.pad) S.pad(node, o.pad, o.padAt);
+    /** Drop a part on a projected target. A target can also accept the pointer itself. */
+    carry(node, { targets, miss, start, end, ...o }) {
+      let home, off, returnTarget, grabEpoch;
+      if (o.pad) S.pad(node, o.pad, o.padAt);
       return S.drag(node, { ...o,
-        start: (e) => { home = node.position.clone(); off = node.parent.worldToLocal(e.point.clone()).sub(node.position); },
-        move: (e) => { node.position.copy(node.parent.worldToLocal(e.point.clone()).sub(off)); },
-        end: (e) => { if (e.cancelled || !e.moved) { node.position.copy(home); return; } const s = stage.project(S.world(node)); let hit = null, best = 1e9;
-          for (const t of (typeof targets === 'function' ? targets() : targets)) { if (t.node && !t.node.visible) continue; const q = stage.project(t.at ? t.at() : S.top(t.node, -.2)), d = Math.hypot(q.x - s.x, q.y - s.y); if (d < (t.r || 95) && d < best) { best = d; hit = t; } }
-          if (hit) hit.drop(node, home); else { S.to(node.position, { x: home.x, y: home.y, z: home.z }, .4, 'back'); miss?.(); } } });
+        start(e) {
+          grabEpoch = epoch;
+          const returning = returnTarget && tweens.find(w => w.to === returnTarget);
+          if (returning) returning.to = {};
+          else home = node.position.clone();
+          returnTarget = null;
+          off = S.local(node.parent, e.point).sub(node.position);
+          start?.(e);
+        },
+        move(e) {
+          if (grabEpoch === epoch && e.moved) node.position.copy(S.local(node.parent, e.point).sub(off));
+        },
+        end(e) {
+          if (grabEpoch !== epoch) return;
+          end?.(e);
+          if (e.cancelled || !e.moved) { node.position.copy(home); return; }
+          node.position.copy(S.local(node.parent, e.point).sub(off));
+          const centre = stage.project(S.world(node));
+          let hit, best = Infinity;
+          for (const target of (typeof targets === 'function' ? targets() : targets)) {
+            if (target.node && !target.node.visible) continue;
+            const q = stage.project(target.at ? target.at() : S.top(target.node, -.2));
+            const distance = Math.hypot(q.x - centre.x, q.y - centre.y);
+            const d = target.acceptPointer ? Math.min(distance, Math.hypot(q.x - e.x, q.y - e.y)) : distance;
+            if (d < (target.r || 95) && d < best) { hit = target; best = d; }
+          }
+          if (hit) hit.drop(node, home);
+          else {
+            returnTarget = { x: home.x, y: home.y, z: home.z };
+            S.to(node.position, returnTarget, .4, 'back');
+            miss?.();
+          }
+        } });
     },
     /** press and hold a part: during(seconds, dt) every frame while held, release(seconds) when let go */
     hold(node, { during, release, ...o }) {

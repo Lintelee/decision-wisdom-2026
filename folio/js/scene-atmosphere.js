@@ -947,7 +947,8 @@ function workLantern(S,track) {
   if(lion)lion.add(aim);
   track(t=>{
     if(cupPage){
-      const drinking=cups.find(c=>c.visible&&c.scale.x>.12)||workCup;
+      const inspecting=workCup.visible && (workCup.userData.inHand || lamp.boost>0);
+      const drinking=inspecting ? workCup : cups.find(c=>c.visible&&c.scale.x>.12)||workCup;
       if(aim.parent!==drinking)drinking.add(aim);
       aim.position.set(0,.311,0);
       tea.forEach((stroke,i)=>{

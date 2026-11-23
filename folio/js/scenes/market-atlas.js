@@ -132,24 +132,6 @@ const verge = {
   8: [[-4.71,1.36],[-.62,-1.56],[4.97,1.59]],
 };
 
-// This folded tab sits in the outer margin of the physical leaf.
-function articleTab(S, stock, people) {
-  S.plant(2.92,2.83,g=>{
-    const tab=keep(g), flap=keep(tab,0,.040,.032);
-    tab.name='本幕的原刊頁籤';
-    flap.rotation.x=-1.33;
-    const outline=[[-.53,-.13],[.42,-.13],[.54,-.02],[.54,.085],[.43,.165],[-.53,.165]];
-    poly(flap,outline,.018,'#d9cba8');
-    poly(flap,[[-.51,-.096],[.408,-.096],[.505,-.012],[.505,.065],[.411,.130],[-.51,.130]],.012,people?'#60766a':'#86655d',0,0,.021);
-    const icon='#e6d9bb';
-    poly(flap,[[-.37,-.050],[-.37,.080],[-.31,.098],[-.235,.062],[-.235,-.053],[-.305,-.024]],.005,icon,0,0,.040);
-    poly(flap,[[-.222,-.053],[-.222,.062],[-.15,.098],[-.092,.080],[-.092,-.045],[-.153,-.025]],.005,icon,0,0,.040);
-    attached(flap,stock.label('原 刊',.38,.20,{ink:icon,paper:'transparent'}),.172,.012,.045);
-    for(const x of [-.255,.255]) S.pad(tab,.32,[x,.10,-.012]);
-    S.prop(tab,{id:'issue-copy',label:'翻開這篇原文',aim:[0,.072,.025],tap:()=>S.app.read(S.def.quote.n,S.def.quote.page)});
-  });
-}
-
 export function fieldPress(S, page) {
   const people=page<=6, K=stock();
   if(people) fieldRidge(S,page); else workshopSkyline(S,page);
@@ -163,7 +145,6 @@ export function fieldPress(S, page) {
       if(i%2===0) attached(g,K.rock(.49),.25,0,-.06);
     });
   }
-  articleTab(S,K,people);
 }
 
 // A short physical ledge gives market and laboratory signs a home on their stall.

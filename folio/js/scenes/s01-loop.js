@@ -25,8 +25,9 @@ function tastingCup(g, color) {
   cyl(g, 0, .15, 0, .13, .087, .28, '#f9eccc', 12);
   cyl(g, 0, .152, 0, .114, .104, .065, '#4b7c76', 12);
   cyl(g, 0, .291, 0, .136, .127, .026, '#dfb879', 12);
-  cyl(g, 0, .307, 0, .119, .119, .014, color, 12);
+  const tea = cyl(g, 0, .307, 0, .119, .119, .014, color, 12);
   beam(g, [.04, .313, 0], [.106, .473, 0], .014, C.red, 5);
+  return tea;
 }
 
 export default {
@@ -158,7 +159,7 @@ export default {
       // the cup that actually gets served: three tries
       for (let i = 0; i < 3; i++) {
         const k = keep(g, -.96, .923, .485); tastingCup(k, TEA[i]);
-        k.visible = false; cups.push(k);
+        k.visible = i === 0; cups.push(k);
       }
       // her three faces, kept in order on the front of the counter
       ['frown', 'flat', 'smile'].forEach((m, i) => { const k = keep(g, -.55 + i * .31, .545, .531); face(k, m); k.visible = false; faces.push(k); });
@@ -173,7 +174,7 @@ export default {
     S.hero(zhi, { label: '水獺茶師', ready: () => st.phase === 'ready', go });
 
     // The lantern maker lifts the shade just enough to catch the tea's colour.
-    let ce, workCup, workLantern, cupLook=0;
+    let ce, workCup, workTea, workLantern, cupLook=0;
     S.plant(2.24, 1.97, (g) => {
       ce = S.person(g, { s: 1.47, species: 'pangolin' });
       workLantern=handLantern(ce.rig,ce.inner,{size:.92});
@@ -183,12 +184,14 @@ export default {
       }
       cyl(bench,0,.423,0,.222,.217,.037,'#bd9062',14);
       workCup=keep(bench,-.013,.444,.008);
-      tastingCup(workCup,TEA[1]);workCup.scale.setScalar(.73);
+      workTea=tastingCup(workCup,TEA[0]);workCup.scale.setScalar(.73);
+      workTea.material=workTea.material.clone();workTea.userData.raw=true;
       workCup.name='燈骨師傅照著看的試茶杯';
     }, {y:.19});
+    const workSeat=workCup.position.clone();
+    const workScale=workCup.scale.clone();
     const focusCup=()=>{cupLook=1.32;S.sound('cup',workCup);};
     const cp=S.curio(ce.root,{id:'ce',label:'提竹燈看茶色的穿山甲師傅',aim:[-.13,.74,.08],quiet:true,tap:focusCup});ce.propId=cp.id;
-    S.curio(workCup,{id:'work-cup',label:'竹燈下的試茶杯',aim:[0,.22,0],quiet:true,tap:focusCup});
     const nearPaw=new S.T.Vector3(),freePaw=new S.T.Vector3(.24,.45,.10);
     S.tick((t,dt)=>{
       cupLook=Math.max(0,cupLook-dt);
@@ -202,11 +205,13 @@ export default {
     });
 
     // ---- the vegetable seller waiting for the next ferry
-    let gran, basket, radish, lastCup;
+    let gran, basket, radish, lastCup, receivingPaw;
     S.plant(-5.6, 1.35, (g) => {
       gran = S.person(g, { x: 4.78, z: .11, s: 1.49, kind: 'elder', species: 'civet', coat: '#b5654f' });
       const scarf = keep(gran.inner); poly(scarf,[[-.14,.775],[.14,.775],[.02,.57]],.013,'#e3b35d',0,0,.045);
-      lastCup=keep(gran.inner,-.255,.41,.12); tastingCup(lastCup,TEA[2]); lastCup.scale.setScalar(.79); lastCup.visible=false;
+      receivingPaw=keep(gran.rig.elbows[0],.008,-.154,.065);
+      receivingPaw.name='黃領巾客人接茶的空手';
+      lastCup=keep(receivingPaw,-.045,-.115,.026); tastingCup(lastCup,TEA[2]); lastCup.scale.setScalar(.79); lastCup.visible=false;
       basket = keep(g, 4.2, 0, .25);
       box(basket, 0, .12, 0, .42, .24, .3, C.kraft); box(basket, 0, .245, 0, .46, .03, .34, C.wood); beam(basket, [-.2, .25, 0], [0, .5, 0], .015, C.wood, 4); beam(basket, [0, .5, 0], [.2, .25, 0], .015, C.wood, 4);
       for (const x of [-.1, .12]) { ball(basket, x, .3, .02, .09, C.leaf, 0); }
@@ -220,24 +225,39 @@ export default {
       }});
 
     // ---- the story
+    const canServe=()=>!st.busy && (st.phase==='ready' || st.phase==='serve');
+    function hintCup() {
+      S.hint(cups[st.served],[0,.21,0],'拖茶杯給黃領巾客人');
+    }
+    function readyWorkCup(k) {
+      workTea.material.color.set(TEA[k]);
+      workCup.position.copy(workSeat);workCup.scale.copy(workScale);
+      workCup.rotation.z=0;workCup.visible=true;workCup.userData.inHand=false;
+    }
     async function go() {
-      if (st.phase !== 'ready') return; S.set({ phase: 'busy' });
+      if (st.phase !== 'ready') return; S.hint(null); S.set({ phase: 'busy' });
       zhi.cheer(); S.sound('whoosh');
       for (let i = 0; i < tower.length; i++) { S.show(tower[i], .2); if (i % 3 === 0) S.sound('tick'); await S.wait(.1); }
       await S.wait(.5); gran.doubt(); horn();            // the ferry is getting ready and she has not had a sip
       await S.wait(.9); zhi.still();
-      await S.show(cups[0], .3); S.sound('cup');
-      S.set({ phase: 'serve' }); S.hint(cups[0], [0, .22, 0], '遞給等船的客人');
+      S.pop(cups[0],1.08); S.sound('cup');
+      S.set({ phase: 'serve' }); hintCup();
     }
-    async function serve(byHand) {
-      if (st.phase !== 'serve' || st.busy || st.served > 2) return; st.busy = true; S.hint(null); S.refresh();
-      const k = st.served, cup = cups[k], f = faces[k];
-      // Both input methods end at her mouth, including a drag released near the edge of the drop target.
-      const palm = S.local(cup.parent, S.world(gran.inner, [-.22, .55, .20]));
-      const sip = S.local(cup.parent, S.world(gran.rig.mouth, [0, 0, .025]));
+    async function serve(byHand, cup = cups[st.served]) {
+      if (!canServe() || !cup?.visible || st.served >= cups.length) return;
+      const k = st.served, f = faces[k];
+      S.hint(null); S.set({ phase:'serve', busy:true });
+      if (cup === workCup) { cups[k].visible=false; workCup.userData.inHand=true; }
+      const align = (anchor, offset) => S.local(cup.parent, S.world(anchor))
+        .sub(S.local(cup.parent, S.world(cup, offset)).sub(cup.position));
+      const palm = align(receivingPaw,[-.08,.14,0]);
       await S.to(cup.position, { x: palm.x, y: palm.y, z: palm.z }, byHand ? .16 : .48, 'inOut');
-      await S.to(cup.position,{x:sip.x,y:sip.y,z:sip.z},.26,'inOut');
-      await S.to(cup.rotation,{z:-.28},.17,'out'); S.sound('soft');
+      // Aim the straw tip, including this particular cup's scale and drinking angle.
+      cup.rotation.z=-.28;
+      const sip = align(gran.rig.mouth,[.106,.473,0]);
+      cup.rotation.z=0;
+      S.to(cup.rotation,{z:-.28},.26,'inOut');
+      await S.to(cup.position,{x:sip.x,y:sip.y,z:sip.z},.26,'inOut'); S.sound('soft');
       await S.wait(.25);
       S.hide(cup, .16); if(k===2) lastCup.visible=true;
       gran.still(); gran.hop(.12);
@@ -252,10 +272,12 @@ export default {
       if (k < 2) {
         zhi.hop(); S.sound('whoosh'); for (let i = k; i < tower.length; i += 2) S.pop(tower[i], 1.3);   // it changes the recipe at once
         await S.wait(.5); gran.still();
-        S.sound('pour'); await S.show(cups[k + 1], .3); S.sound('cup'); st.busy = false; S.refresh(); S.hint(cups[k + 1], [0, .22, 0], '再遞一杯');
+        S.sound('pour'); readyWorkCup(k+1); await S.show(cups[k + 1], .3); S.sound('cup'); st.busy = false; S.refresh(); hintCup();
         return;
       }
       // the third one is right: she takes it aboard, and the ferry leaves on time
+      workCup.userData.inHand=false;
+      workCup.position.copy(workSeat); workCup.visible=false;
       zhi.cheer(); ce.cheer();
       await S.to(gangway.scale,{z:1.85},.6,'inOut'); S.sound('tap');
       await S.wait(.4); gran.still(); S.hide(basket, .2);
@@ -268,8 +290,32 @@ export default {
       await S.to(ferry.position, { x: -.95 }, 3.2, 'inOut');
       S.set({ phase: 'done' }); S.done();
     }
-    cups.forEach((c, i) => S.carry(c, { id: 'cup' + i, label: '遞給等船的客人', pad: .26, padAt: [0, .15, 0], tap: () => serve(false),
-      targets: () => [{ node: gran.root, r: 150, drop: () => serve(true) }] }));
+    function recipientTargets(cup) {
+      if (!canServe()) return [];
+      const head=S.stage.project(S.world(gran.inner,[0,1.18,0]));
+      const feet=S.stage.project(S.world(gran.inner));
+      const radius=Math.max(20,.31*Math.hypot(head.x-feet.x,head.y-feet.y));
+      const points=[S.world(receivingPaw),S.world(gran.rig.mouth),S.world(gran.inner,[0,.58,.08]),S.world(gran.rig.elbows[1],[0,-.15,.06])];
+      return points.map(point=>({at:()=>point,r:radius,acceptPointer:true,drop:()=>serve(true,cup)}));
+    }
+    function registerCup(cup, options) {
+      return S.carry(cup,{...options,pad:.29,padAt:[0,.22,0],aim:[0,.18,0],
+        start() {
+          if(!canServe()) return;
+          cupLook=0;
+          workCup.userData.inHand=cup===workCup;
+          S.focus(S.stage.view.focus);
+          S.hint(receivingPaw,[0,0,0],'放到客人手邊');
+        },
+        end() {
+          workCup.userData.inHand=false; S.focus(null);
+          if(canServe()) hintCup();
+        },
+        targets:()=>recipientTargets(cup)
+      });
+    }
+    cups.forEach((cup,i)=>registerCup(cup,{id:'cup'+i,label:'拖茶杯給黃領巾客人',tap:()=>serve(false,cup)}));
+    registerCup(workCup,{id:'work-cup',kind:'curio',label:'竹燈下也能遞給客人的試茶杯',quiet:true,tap:focusCup});
     S.onReadyLoop((phase) => {
       // Compare two tea tins while the customer reaches out with an empty hand.
       const strong = pulse(phase, .03, .45), mild = pulse(phase, .36, .79);
@@ -279,14 +325,14 @@ export default {
       gran.armR.rotation.z += .95 * pulse(phase, .57, .96);
     }, 5.4, [tins[0], tins[2], zhi.head, gran.armR]);
     S.act('go', go); S.act('serve', () => serve(false));
-    S.on('reset', () => { hornT = 0; puffRate = .16; tinker = 0; gullBusy = false; cupLook=0; });
+    S.on('reset', () => { hornT = 0; puffRate = .16; tinker = 0; gullBusy = false; cupLook=0; readyWorkCup(0); });
     S.on('enter', async () => {
       gran.wave(1.25); zhi.wave(.75);
-      await S.wait(.7); S.set({ phase: 'ready' });
+      await S.wait(.7); S.set({ phase: 'ready' }); hintCup();
     });
     S.ui(() => storyPanel(st, {
       opening: '「一杯茶，帶上船！」繫黃領巾的客人趕著搭船，水獺茶師還拿不定要泡多濃。',
-      start: '泡第一杯茶',
+      start: '看茶師備茶',
       checkpoint: [
         '茶師試了一整排濃淡，繫黃領巾的客人還沒喝到第一口。',
         '第一杯太濃，客人皺起眉頭。茶師把第二杯泡淡了。',
