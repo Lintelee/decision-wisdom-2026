@@ -1,0 +1,654 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 610" role="img" aria-labelledby="bf2-title bf2-desc">
+  <title id="bf2-title">港邊早餐車</title>
+  <desc id="bf2-desc">黃雨衣船員在早班渡輪旁招手。翠鳥叼來六杯的訂單，攤主先裝一杯，等你把早餐車騎過橋縫。船員舉起濕單給你看。再試一次，湯穩穩送進她手裡，其餘五杯才照著裝好。</desc>
+  <defs>
+    <linearGradient id="bf2-leaf" x2=".4" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#faebc9"/><stop offset=".54" stop-color="#e8d8b8"/><stop offset="1" stop-color="#dac5a1"/></linearGradient>
+    <linearGradient id="bf2-bind" x2="1" y2=".23"><stop stop-color="#b9a687"/><stop offset=".45" stop-color="#ead3b0"/><stop offset=".51" stop-color="#c1a589"/><stop offset="1" stop-color="#e0c3a0"/></linearGradient>
+    <linearGradient id="bf2-water" x2=".2" y2="1"><stop stop-color="#858399"/><stop offset=".44" stop-color="#677887"/><stop offset="1" stop-color="#495b70"/></linearGradient>
+    <linearGradient id="bf2-stone" x2=".91" y2=".65"><stop stop-color="#d1bca9"/><stop offset=".6" stop-color="#bdada6"/><stop offset="1" stop-color="#a99a9c"/></linearGradient>
+    <linearGradient id="bf2-red" x2=".22" y2="1"><stop stop-color="#d97752"/><stop offset=".6" stop-color="#b74e3e"/><stop offset="1" stop-color="#923d36"/></linearGradient>
+    <linearGradient id="bf2-white" x2=".8" y2=".65"><stop stop-color="#fff2d3"/><stop offset=".55" stop-color="#f5d9ad"/><stop offset="1" stop-color="#d6ad81"/></linearGradient>
+    <linearGradient id="bf2-coat" x2=".9" y2=".5"><stop stop-color="#f1bd58"/><stop offset=".6" stop-color="#dfa039"/><stop offset="1" stop-color="#c48733"/></linearGradient>
+    <linearGradient id="bf2-sun" x2=".24" y2="1"><stop stop-color="#fed9a0"/><stop offset="1" stop-color="#d8886e"/></linearGradient>
+    <linearGradient id="bf2-wood" x2=".83" y2=".65"><stop stop-color="#995e47"/><stop offset=".65" stop-color="#a96d50"/><stop offset="1" stop-color="#b77b58"/></linearGradient>
+    <pattern id="bf2-paper" width="31" height="23" patternUnits="userSpaceOnUse">
+      <path d="m2 5 2 .2m7 6 2-.5m12-8 2 .5m-9 15 3-.5M4 21h1" stroke="#7b5e68" stroke-opacity=".23" stroke-width=".7"/>
+      <path d="m8 2 2 1m18 14 1.8-.6m-17 5 2-.6m5-11 1.5 .3" stroke="#fff3cc" stroke-opacity=".43" stroke-width=".65"/>
+      <circle cx="4" cy="13" r=".55" fill="#624e61" opacity=".19"/>
+    </pattern>
+    <pattern id="bf2-hatch" patternUnits="userSpaceOnUse" width="5" height="5" patternTransform="rotate(23)"><path d="M0 0v5" stroke="#513d4c" stroke-width=".8" opacity=".49"/></pattern>
+    <pattern id="bf2-rush" patternUnits="userSpaceOnUse" width="13" height="10" patternTransform="skewX(8)"><rect width="13" height="10" fill="#735448"/><path d="M0 0H13V3H0z" fill="#c38d60"/><path d="M1.5 0h4.2v10H1.5z" fill="#b58059"/><path d="M1.5 0h1v10h-1z" fill="#eed1a1"/><path d="M0 4.6h13" stroke="#523e38" stroke-width="1.3"/></pattern>
+    <clipPath id="bf2-paving-clip"><path d="m122 334 154-20 176-18 100 3 63-12 271-16 98 63 43 133-421 56-54 19-46-12-409-30Z"/></clipPath>
+    <clipPath id="bf2-fish-waterline" clipPathUnits="userSpaceOnUse"><path d="M-42-85h123v83l-52 1-71 1Z"/></clipPath>
+    <pattern id="bf2-planks" patternUnits="userSpaceOnUse" width="29" height="19"><path d="M0 3h18m5 8h6M4 14h9" stroke="#815c4c" opacity=".36" stroke-width=".9"/></pattern>
+    <g id="bf2-wheel">
+      <circle r="52" stroke="#3d3d46" stroke-width="10" fill="none"/>
+      <circle r="46" stroke="#dfbc8c" stroke-width="3.4" fill="none"/>
+      <circle r="43.6" stroke="#6c6260" stroke-width="2" fill="none"/>
+      <g stroke="#7e716c" stroke-width="1.6" fill="none"><path d="m0-43 0 86m-43-43h86m-73.4-30.4 60.8 60.8m0-60.8-60.8 60.8m13.9-70.1 33 79.4m23.2-56.1-79.4 33m79.4 0-79.4-33m23.8 56.5 31.7-79.4"/></g>
+      <circle r="5.7" fill="#574c49"/><circle r="2.7" fill="#ceb394"/>
+      <path d="M-49-12A51 51 0 0 1-13-49" fill="none" stroke="#9c8a7c" stroke-width="1.7"/>
+    </g>
+    <!-- The five waiting servings and the rider’s cup share the same red band. The concertina grows from its bottom edge. -->
+    <g id="bf2-order-cup" stroke-linejoin="round">
+      <ellipse cx=".8" cy="1.1" rx="11.8" ry="2.4" fill="#746458" opacity=".37"/>
+      <path d="M-12-26q11-3.5 24-.4L8.1-.6Q0 2.2-8.2.2Z" fill="url(#bf2-white)" stroke="#9f7359" stroke-width="1.15"/>
+      <path d="m-11.4-23.5 1.1 5.1q10 3.1 20.8-.6l.9-4.7q-12.3 3.5-22.8.2Z" fill="#b75a43"/>
+      <path d="m-8.5-16.2 2.5 14.1 2.5.5-2.5-14Z" fill="#fff0cb" opacity=".9"/>
+      <ellipse cy="-26" rx="12.5" ry="4.3" fill="#f9e8c4" stroke="#a7775e" stroke-width="1"/>
+      <ellipse cy="-25.85" rx="10.1" ry="2.65" fill="#cf7e3f"/>
+      <path d="M-7-26.6q5-2 11-1.1M1-25.4l3-.7" fill="none" stroke="#f3c373" stroke-width="1.1"/>
+      <ellipse cx="2.7" cy="-26.5" rx="1.7" ry=".75" fill="#6c7650"/>
+    </g>
+    <g id="bf2-order-collar" stroke-linejoin="round">
+      <path d="m-12-15 4.1-2.7 3.1 1.8 3.2-3.1 3.9 2.2 4.2-3.1 4.8 2.7 2.8-1.3-2 14.4-4.4 3-12.4.6-4.8-2.3Z" fill="#cb9c65" stroke="#966b4d" stroke-width=".9"/>
+      <path d="m-11.3-14 3.5-2.3 3.4 17-4.1-2.2zm6.8-1.6 3-2.8L.3.2l-3.1.1zm8.4-1.3 3.5-2.2-.8 17-3.1 1.9Z" fill="#a37250"/>
+      <path d="m-7.4-16.3 3 16.1m3.2-18.2 1.5 18m7-18.6-.9 16.5" fill="none" stroke="#efc38d" stroke-width=".9"/>
+      <path d="m-.8-16.9 1.3-5.6 4-.5-.6 7.4Z" fill="#bb5940" stroke="#8f4838" stroke-width=".5"/>
+    </g>
+    <!-- A tear-off dock receipt. The counter and both copies use the same ink, paper and number column. -->
+    <g id="bf2-docket" stroke-linejoin="round">
+      <path d="M-.2.6 77.4-.8 78.2 49l-3.8 2-4-1.7-4.1 2.2-4.1-1.7-4.1 2-4.2-1.6-4.4 2.1-4-1.5-4.7 1.9-39.6 1.1Z" fill="#ac8c72"/>
+      <path d="M0-1 76.4-2l.8 48.5-3.6 2-4-1.8-4.1 2.3-4.2-1.7-3.9 2.2-4.3-1.7-4.6 2.2-3.9-1.8-4.6 2.2-38.7 1Z" fill="#fbebcb" stroke="#b69375" stroke-width="1.25"/>
+      <path d="m4.2 2.4 68.8-.9.3 41.1-68.3 1.1Z" fill="#f6e6c6" stroke="#a9a18a" stroke-width=".65"/>
+      <path d="m4 2.6 68.9-.8.2 12.4-69 .8Z" fill="#6b827c"/>
+      <g fill="#ffefd4" font-family="'PingFang TC','Noto Sans TC',sans-serif">
+        <text x="9" y="12.25" font-size="10.1" font-weight="750" letter-spacing="1">送餐單</text>
+      </g>
+      <path d="m9 18.2 58.4-.9m-58.3 15 57.9-.7m-58 7.7 32.7-.5" fill="none" stroke="#aeab93" stroke-width=".85"/>
+      <path d="m48 17.4.25 23" fill="none" stroke="#b3ac93" stroke-width=".65"/>
+      <g transform="translate(10.5 22.1)" fill="#717971">
+        <path d="m.4 5.6 15-.2-2.5 3-8.9.3z"/>
+        <path d="m2.8 4.7.3-3.4 8.8-.3 1 3.6z"/><path d="m5.15.8-.3-1.7 3.2-.1.1 1.7Z"/>
+        <path d="m4.6 2.1 1.5-.1v1.5h-1.5zm2.5 0 1.4-.1v1.4l-1.4.2Z" fill="#eadbbf"/>
+      </g>
+      <text x="28.3" y="29" fill="#765b4a" font-family="'PingFang TC','Noto Sans TC',sans-serif" font-size="7.4" font-weight="700">熱湯</text>
+      <path d="m54 4.1.2 7m-1.7 7.2.2 4m3-4 .2 4m1.9-4 .1 3.9m2.4-4 .1 4m3-4.2.2 4.1m2-4.1.2 4.2" stroke="#a9ab93" stroke-width=".82"/>
+      <path d="m3.3 46.2 65.1-1" fill="none" stroke="#c3a17f" stroke-width=".8" stroke-dasharray="2 2.2"/>
+      <path d="M0-1 76.4-2l.8 48.5-73.6 4.7Z" fill="url(#bf2-paper)" opacity=".5"/>
+    </g>
+    <g id="bf2-docket-01">
+      <use href="#bf2-docket"/>
+      <text x="68.7" y="11.25" text-anchor="end" fill="#fff0d3" font-family="Georgia,serif" font-size="9.8" font-weight="bold">01</text>
+    </g>
+    <g id="bf2-splash-print">
+      <path d="M1.5 6.4C-2 3.3 2.6.5 6.5 2.4 8.1-.8 12 .2 15 2.2c2.6-2.1 6.3-.8 6.9 2.4 5.2-.5 6.7 3.5 4.2 6.6 3.8 5.5-.4 8.4-4.3 8.6-1.2 4-4.7 4-8.2 2.1-3 2.2-6.3.2-7.1-2.8-4.6.5-7.2-2.4-5.4-6.5-2.3-2.1-1.6-4.8.4-6.2Z" fill="#cb873f" fill-opacity=".66" stroke="#9a5b30" stroke-opacity=".76" stroke-width="1.35"/>
+      <path d="M2.1 15.2q3.7 5 8.9 3.8m5.6 2.3q7.5 1.2 8.5-5M3.5 6.5q2.7-4.4 6-2.5" fill="none" stroke="#a36336" stroke-width="1.1" opacity=".62"/>
+      <g fill="#b77940"><ellipse cx="30.8" cy="4.2" rx="2.7" ry="1.5"/><ellipse cx="34.4" cy="-1.6" rx="1.35" ry="1.1"/><circle cx="-.5" cy="24" r="1.9"/><ellipse cx="-3.9" cy="16" rx="1.1" ry="1.5"/></g>
+    </g>
+  </defs>
+  <style>
+    /* The front tyre crosses the joint at x=417 when travel reaches .65. */
+    #bf2-moving-bike, #bf2-carried-flight {
+      --ride-x: calc(340px * (1 - var(--bf-travel, 0)));
+    }
+    #bf2-moving-bike {
+      transform: translate(calc(745px + var(--ride-x)), var(--bf-bump, 0px)) scaleX(-1);
+    }
+    #bf2-cup{transform-box:view-box;transform-origin:474px 374px;transform:rotate(clamp(-27deg,calc(-.78 * var(--bf-tilt,0deg)),42deg))}
+    /* The full-size trial cup itself leaves the carrier and settles into the crew member's palm. */
+    #bf2-cup-load {
+      --take: var(--bf-dry-response, 0);
+      transform-box: view-box;
+      transform-origin: 474px 374px;
+      transform: translate(
+        calc((16px + var(--ride-x)) * var(--take)),
+        calc(-15px * (1 - var(--bf-load, 1)) - 88px * var(--take))
+      ) scale(calc(1 - .46 * var(--take)));
+    }
+    #bf2-received-glint{opacity:var(--bf-dry-response,0)}
+    #bf2-received-hit{transform-box:view-box;transform-origin:474px 344px;transform:scale(var(--bf-dry-response,0))}
+    #bf2-crew-thumb{opacity:max(var(--bf-dry-response,0),var(--bf-wet-response,0))}
+    #bf2-sleeve{transform-box:view-box;transform-origin:473px 374px;transform:scaleY(calc(.2 + .8 * var(--bf-support,0)))}
+    #bf2-bird{transform:translate(calc(10px * var(--bf-flight,0)),calc(-24px * var(--bf-flight,0)))}
+    #bf2-courier-wing{transform-box:view-box;transform-origin:405px 286px;transform:rotate(calc(27deg * var(--bf-flight,0)))}
+    #bf2-letterswing{transform-box:view-box;transform-origin:439px 284px;transform:rotate(calc(-13deg * var(--bf-flight,0)))}
+    #bf2-first-letter {
+      --desk-x: 169px;
+      --desk-y: 451px;
+      --hold: calc(var(--bf-wet-response, 0) * (1 - max(var(--bf-carry, 1), var(--bf-trial, 0))));
+      --present: var(--bf-first, 0);
+    }
+    #bf2-trial-letter {
+      --desk-x: 262px;
+      --desk-y: 458px;
+      --hold: calc(var(--bf-wet-response, 0) * var(--bf-trial, 0));
+      --present: var(--bf-trial, 0);
+    }
+    /* A copy has the same coordinates in her hand at the end of the transfer and after it lands. */
+    .bf2-dock-copy, #bf2-carried-flight {
+      --hand-x: 246px;
+      --hand-y: 244px;
+    }
+    .bf2-dock-copy {
+      opacity: var(--present);
+      transform: translate(
+        calc(var(--desk-x) + (var(--hand-x) - var(--desk-x)) * var(--hold)),
+        calc(var(--desk-y) + (var(--hand-y) - var(--desk-y)) * var(--hold))
+      ) rotate(calc(-7deg + 13deg * var(--hold)))
+        scale(calc(var(--present) * (1.08 - .32 * var(--hold))));
+    }
+    .bf2-dock-shadow{opacity:calc(.32 * (1 - var(--hold)))}
+    .bf2-lift-docket{transform-box:fill-box;transform-origin:53% 70%;transform:translateY(calc(-12px * var(--bf-peek,0))) rotate(calc(-4deg * var(--bf-peek,0))) scale(calc(1 + .12 * var(--bf-peek,0)))}
+    #bf2-trial-mark{opacity:var(--bf-stain,0);transform-box:fill-box;transform-origin:46% 58%;transform:scale(calc(.5 + .5 * var(--bf-stain,0)))}
+    #bf2-carried-flight {
+      --f: var(--bf-transfer, 0);
+      --run: var(--bf-first, 0);
+      --take: var(--bf-wet-response, 0);
+      --from-x: calc(194px + var(--ride-x));
+      --from-y: calc(325px + var(--bf-bump, 0px));
+      --desk-x: calc(169px + 93px * var(--run));
+      --desk-y: calc(451px + 7px * var(--run));
+      --to-x: calc(var(--desk-x) + (var(--hand-x) - var(--desk-x)) * var(--take));
+      --to-y: calc(var(--desk-y) + (var(--hand-y) - var(--desk-y)) * var(--take));
+      transform: translate(
+        calc(var(--from-x) + (var(--to-x) - var(--from-x)) * var(--f)),
+        calc(var(--from-y) + (var(--to-y) - var(--from-y)) * var(--f))
+      ) rotate(calc(12deg + (-19deg + 13deg * var(--take)) * var(--f)))
+        scale(calc(.72 + (.36 - .32 * var(--take)) * var(--f)));
+    }
+    #bf2-carry-arc{transform:translateY(calc(-25px * sin(calc(180deg * var(--bf-transfer,0)))))}
+    #bf2-carried-slip{transform:scale(var(--bf-carry,1));opacity:var(--bf-carry,1)}
+    .bf2-run-number{text-anchor:end;fill:#fff0d3;font-family:Georgia,serif;font-size:9.8px;font-weight:bold}
+    #bf2-carried-mark{opacity:var(--bf-carried-stain,0)}
+    #bf2-flying-drops{opacity:clamp(0,calc(2.4 * var(--bf-spill,0)),1);transform:translate(calc(31px * var(--bf-spill,0)),calc(30px * var(--bf-spill,0)))}
+    #bf2-wheel-impact{opacity:var(--bf-impact,0)}
+    #bf2-bell{transform-box:view-box;transform-origin:379px 335px;transform:rotate(calc(12deg * sin(calc(900deg * var(--bf-bell,0))) * var(--bf-bell,0)))}
+    #bf2-bell-waves{opacity:var(--bf-bell,0)}
+    #bf2-order-tray{transform-box:fill-box;transform-origin:50% 90%;transform:translateY(calc(-4px * var(--bf-inspect-order,0))) rotate(calc(1.3deg * var(--bf-inspect-order,0)))}
+    #bf2-takeaway-bag{transform-box:fill-box;transform-origin:52% 9%;transform:rotate(calc(-8deg * var(--bf-inspect-order,0))) translateY(calc(-2px * var(--bf-inspect-order,0)))}
+    #bf2-owner-work{transform:translate(calc(-4px - 94px * var(--bf-copy,0)),0px)}
+    #bf2-owner-ladle{transform-box:view-box;transform-origin:789px 277px;transform:rotate(calc(-34deg * var(--bf-vendor-greet,0)))}
+    #bf2-owner-hand{transform-box:view-box;transform-origin:755px 291px;transform:rotate(calc(-12deg * sin(calc(900deg * var(--bf-copy,0)))))}
+    #bf2-crew-head{transform-box:view-box;transform-origin:226px 266px;transform:rotate(calc(-8deg * var(--bf-wet-response,0) + 8deg * var(--bf-dry-response,0) - 11deg * var(--bf-customer-greet,0)))}
+    #bf2-crew-arm{transform-box:view-box;transform-origin:228px 281px;transform:rotate(calc(-52deg * var(--bf-invited,1) - 16deg * var(--bf-wet-response,0) - 11deg * var(--bf-dry-response,0) - 28deg * var(--bf-customer-greet,0) * (1 - max(var(--bf-wet-response,0),var(--bf-dry-response,0)))))}
+    #bf2-crew-look-wet{opacity:var(--bf-wet-response,0)}#bf2-crew-look-dry{opacity:var(--bf-dry-response,0)}
+    #bf2-crew-mouth{opacity:calc(1 - max(var(--bf-wet-response,0),var(--bf-dry-response,0)))}
+    #bf2-wave-strokes{opacity:var(--bf-invited,1)}
+    @media(prefers-reduced-motion:no-preference){
+      #bf2-crew-wave{transform-box:view-box;transform-origin:251px 284px;animation:bf2-wave 2.9s ease-in-out infinite}
+      #bf2-courier-order{transform-box:view-box;transform-origin:446px 285px;animation:bf2-present-order 3.6s ease-in-out infinite}
+      @keyframes bf2-wave{0%,55%,100%{transform:rotate(0deg)}65%,85%{transform:rotate(calc(-16deg * var(--bf-invited,1) * var(--bf-motion,1)))}75%,95%{transform:rotate(calc(6deg * var(--bf-invited,1) * var(--bf-motion,1)))}}
+      @keyframes bf2-present-order{0%,58%,100%{transform:rotate(0deg)}72%{transform:rotate(calc(11deg * var(--bf-invited,1) * var(--bf-motion,1)))}84%{transform:rotate(calc(-4deg * var(--bf-invited,1) * var(--bf-motion,1)))}}
+    }
+    #bf2-ferry-body{transform-box:view-box;transform-origin:0 8px;transform:translateY(calc(-2.5px * var(--bf-whistle,0))) rotate(calc(-1.5deg * var(--bf-whistle,0)))}
+    .bf2-funnel-puff{--p:var(--bf-whistle,0);transform:translate(calc(32px * var(--p) * var(--drift)),calc(-27px * var(--p) * var(--drift))) scale(calc(.48 + (.25 + var(--drift)) * var(--p)));opacity:calc(.53 + .42 * var(--p))}
+    #bf2-ferry-wake{transform-box:fill-box;transform-origin:50% 45%;transform:scale(calc(1 + .17 * var(--bf-whistle,0)),calc(1 + 1.6 * var(--bf-whistle,0)));opacity:calc(.55 + .45 * var(--bf-whistle,0))}
+    #bf2-ferry-sound{opacity:var(--bf-whistle,0);transform:translateY(calc(-2px * var(--bf-whistle,0)))}
+    #bf2-skipping-fish{--jump:var(--bf-ripple,0);transform:translate(calc(-4px + 16px * var(--jump)),calc(8px - 46px * var(--jump))) rotate(calc(19deg - 42deg * var(--jump)))}
+    #bf2-fish-ring{--jump:var(--bf-ripple,0);transform:scale(calc(1 + .55 * var(--jump)),calc(1 + .75 * var(--jump)));opacity:calc(.68 + .32 * var(--jump))}
+    #bf2-fish-spray{opacity:var(--bf-ripple,0);transform:translateY(calc(-5px * var(--bf-ripple,0)))}
+    .bf2-cup-collar{--progress:clamp(0,calc(3 * var(--bf-copy,0) - var(--bf-delay,0)),1);transform-box:fill-box;transform-origin:center bottom;transform:scaleY(calc(.13 + .87 * var(--progress)))}
+    #bf2-tray-strap{--tie:clamp(0,calc(4 * var(--bf-copy,0) - 3),1);stroke-dasharray:1.01;stroke-dashoffset:calc(1.01 - var(--tie));opacity:var(--tie)}
+    #bf2-order-docket{transform-box:fill-box;transform-origin:top;transform:rotate(calc(-8deg * var(--bf-inspect-order,0))) translateY(calc(-5px * var(--bf-inspect-order,0)))}
+    #bf2-drips{opacity:var(--bf-rain,0);transform:translateY(calc(36px * var(--bf-rain,0)))}
+    [data-breakfast-hit]{pointer-events:all;fill:transparent;stroke:none;cursor:pointer}
+    [data-breakfast-hit="sleeve"]{cursor:ns-resize;touch-action:none}
+  </style>
+  <!-- The binding and two separately cut leaves. -->
+  <g id="bf2-book" stroke-linejoin="round">
+    <path d="m35 538 91-250 360-43 59 12 52-15 372-6 109 263-1 10-482 84-38 7-47-4-476-42Z" fill="#453f4f"/>
+    <path d="M35 538 131 280l351-37 64 9 58-13 361-8 112 267-483 82-37 10-46-4z" fill="#a84e43" stroke="#633d3d" stroke-width="2.5"/>
+    <path d="m47 527 91-242 345-37 67 11 53-13 351-8 106 254 3 11-464 78-43 10-44-4-465-45Z" fill="url(#bf2-bind)" stroke="#755e58" stroke-width="2"/>
+    <g fill="none" stroke="#957766" stroke-width="1.1" opacity=".8">
+      <path d="m48 535 457 43q26 1 52 8 22-7 39-10l464-78m-1010 32 462 43q24 1 45 9 23-7 40-10l458-78"/>
+      <path d="m53 526 456 40q26 1 47 10 20-7 41-10l452-76"/>
+    </g>
+    <path d="m46 522 96-241 344-39q34 1 63 12l8 317q-24-8-52-8Z" fill="url(#bf2-leaf)" stroke="#d6c3a4" stroke-width="2"/>
+    <path d="m549 254q28-13 58-16l349-9 98 257-455 72q-25 3-42 13Z" fill="#f4e0bd" stroke="#d5bf99" stroke-width="2"/>
+    <path d="M543 253q8 153 9 307l5 11q1-171-8-317" fill="#a99074" opacity=".7"/>
+    <path d="m66 514 89-224 327-39q27-1 58 10m21 292c12-6 25-9 37-10l438-66-92-237-335 9" fill="none" stroke="#bb9b7e" opacity=".55" stroke-width="1.15"/>
+    <path d="m46 522 96-241 344-39 63 12 58-16 349-9 98 257-455 72-42 13-52-8Z" fill="url(#bf2-paper)" opacity=".62"/>
+    <path d="m611 565 21-4 3 25-10-5-8 9z" fill="#bd5745"/><path d="m613 566 3 21" fill="none" stroke="#e98f6d"/>
+  </g>
+  <!-- Hills are standing paper cutouts. The sky around them stays transparent. -->
+  <g id="bf2-harbor">
+    <g id="bf2-dawn">
+      <path d="m313 247 1-92 3-.5 2 91" fill="#a68a83"/>
+      <circle cx="318" cy="153" r="36" fill="#765d64" opacity=".45"/>
+      <circle cx="315" cy="149" r="36" fill="url(#bf2-sun)"/>
+      <circle cx="315" cy="149" r="36" fill="url(#bf2-paper)" opacity=".8"/>
+      <g stroke="#dfaa82" stroke-width="2.2" stroke-linecap="round"><path d="m314 100-1-8m28 16 4-7m-57 7-4-6m74 33 8-2m-99 2-7-2M276 169l-7 3"/></g>
+      <path d="m212 177 19-2 7-6 14-1 13-12 19 3 9 9 17 1 8 5-13 4-89 4Z" fill="#e1c7ba"/>
+      <path d="m568 133 12-3 9-8 10-.5 10-7 15 3 8 9 16 1 7 5-76 4Z" fill="#d9c0b8"/>
+      <g fill="none" stroke="#b5a3a6" stroke-width="1.7" stroke-linecap="round"><path d="m453 169 5-1 4 4 4-5 5-1m36-27 4-.5 4 3 3-3.5 4-.5"/></g>
+    </g>
+    <path d="m128 304 4-34 29-26 21 4 34-30 17 3 46-36 26 10 19-4 20 6 27-19 26-24 22 8 17-3 24 22 27 13 23-5 12 8 27-23 23-5 32 15 16-5 43 31 53 9 19-14 34 3 23-10 40 21 42 1 32 13 47-3 35 10 11 55z" fill="#aa98a5" stroke="#d8bbbe" stroke-width="1.7"/>
+    <path d="m128 304 20-44 15-10 17 5 45-32 11 4 47-36-19 28-15 14 24-12 21-25 12 4-29 42-36 28Zm174-69 68-53 22-23 16 8-24 25-9 16 32-23-11 21-20 16zm281-27 32-24 22 2-13 5-19 19 22-9 28 3 22 15z" fill="#c5acb3"/>
+    <path d="m128 293 62-31 18-20 16 3 26-15 15 4 30-16 35 14 30-14 29 4 24-15 42 19 21 5 22-9 34 2 24 17 21-12 34 6 26-13 19 5 27-16 50 19 44-12 28 13 36-4 25 13 69 5v44z" fill="#807e93"/>
+    <path d="m153 279 72-23 22-16 13 4 29-16-18 18-32 11 45-11-25 15-70 20Zm143-14 49-27 29-9-17 15-42 21Zm95-15 24-17 21-4 30 14-31-5-14 4Z" fill="#9b91a2"/>
+    <path d="m130 286 55-8 44-3 65-11 38-2 53-12 65 2 37-8 63 6 51-7 48 5 58-8 96 8 57-3 80 7 31 18-15 15-791 68-67-4Z" fill="#6a6d80"/>
+    <g opacity=".88" fill="#b7a4a5">
+      <path d="m192 269 0-8 13-2v8l8-1v-12l9-2 5 1 0 13 16-3v-8l8-3 6 2v9l17-3v-13l11-3 8 1v13l10-1v-7l12-4 8 3v7l13-2v-10l18-3 5 3v7l13-2v-11l11-3 7 3v9l21-3v-6l7-4 10 3v7l20-2v-10l18-2 4 3v6l27-2-1 4-280 28Z"/>
+      <path d="m537 245 0-8 12-3 9 4v7l15-1v-15l15-2 7 3v14l13-.8v-9l16-3 8 3v7l31 2v-10l18-3 13 4v8l16 2v-7l17-5 9 4v10z"/>
+    </g>
+    <g stroke="#827683" stroke-width="2"><path d="M204 264v3m12-9v5m62-13v6m5-7v6m40-4v3m22-7v5m21-9v8m9-5v4m28-5v3m57-6v4m133-12v5m14-4v4m27 2v4"/></g>
+    <g fill="#737484" stroke-linejoin="round">
+      <path d="m184 273 0-36 3-1 3 36m26-3-11-27 1-2 14 29Z"/>
+      <path d="m177 238 14-4 50-29 4 .3-13 13-39 22-14 2Z"/><g stroke="#a79aa4" fill="none" stroke-width="1"><path d="m192 235 35-20-8 9-2-5-7 10-2-5-7 11-2-5"/><path d="M235 213v32l-3 4"/></g>
+    </g>
+    <path d="m150 279 160-19 243-17 160-6 174 11 74 23-43 72-358 82-403-54-38-31Z" fill="url(#bf2-water)"/>
+    <path d="m150 279 160-19 243-17 160-6 174 11 74 23-43 72-358 82-403-54-38-31Z" fill="url(#bf2-paper)" opacity=".7"/>
+    <g fill="none" stroke-linecap="round">
+      <path d="m177 286 43-5m12 3 30-4m28-8 37-3m82 3 30-3m15-9 20-2m27 5 29-3m-307 45 51-8m43-4 24-3m44-5 17-2m120-5 53-4m17-8 33-2m33 1 21-1m88-15 33-1m81 13 43 2m-99 15 40-1m-531 43 19-3m58-6 31-5m81-2 28-5m28 9 21-3" stroke="#d6babb" opacity=".75" stroke-width="1.6"/>
+      <path d="m257 274 37-4m-14 9 60-6m-48 13 34-5m-74 15 30-5m-7 9 53-8m-22-22 44-4" stroke="#eec49b" stroke-width="2.2" opacity=".83"/>
+      <path d="m390 291 28-3m3 0 11-1m37 11 61-7m21-6 13-1m-207 20 34-5m149 6 35-3m114-30 49-1m45 3 31 .3m-71 9 40-3m-671 26 40-7m364-28 27-3" stroke="#53617b" opacity=".77" stroke-width="1.8"/>
+    </g>
+    <!-- The crew member's double-deck ferry. The white lifebelt and blue roundel match her uniform. -->
+    <g id="bf2-ferry" transform="translate(410 269) rotate(-4)" stroke-linejoin="round" stroke-linecap="round">
+      <g id="bf2-ferry-wake" fill="none">
+        <path d="m-107 17q43 7 103 6 66 0 117-8m-185 12q36 3 64 2m35-.5q30-2 48-5m-194-6-11-2" stroke="#c8c0b4" stroke-width="2.6"/>
+        <path d="m-101 20q38 6 80 4m15 0 75-4m12-.7 23-3.9" stroke="#83889b" stroke-width="1.2"/>
+      </g>
+      <g id="bf2-ferry-body">
+        <g stroke="#4b5966" fill="none"><path d="m-79-6-1-35m.8 10 29 25m-29-26-15 21" stroke-width="1.4"/><path d="M65-4v-12l19 3v9m5-1v-11" stroke-width="1.5"/></g>
+        <path d="m-80-40 19 3-7 4 7 3-18-1z" fill="#d98a69"/><path d="m-79-39 11 1.5-5 2z" fill="#f4b78b"/>
+        <g transform="translate(14 -65)" fill="#eee1cb">
+          <g class="bf2-funnel-puff" style="--drift:.6"><path d="M1 1q-8 0-7-5 1-4 5-3 2-6 7-2 5 .2 4 6l-4 3Z"/></g>
+        </g>
+        <g transform="translate(22 -73)" fill="#f2e2c9">
+          <g class="bf2-funnel-puff" style="--drift:1"><path d="M-1 3q-9 1-9-5 1-4 6-4 4-8 10-2 6-1 6 5-1 5-7 5z"/></g>
+        </g>
+        <path d="m-5-27 2-30 14-2 5 30Z" fill="#ca715a" stroke="#805f60" stroke-width="1.3"/>
+        <path d="m-3.7-52 16-1.6 1.6 7-17 1.5Z" fill="#e4b07f"/>
+        <path d="m-4-58 15.5-1 3 2.5-.5 4-18 1.5-1-4z" fill="#485465"/>
+        <path d="m-2-57 12.5-.6" stroke="#a2938e" fill="none"/>
+        <path d="m-33-38 44-.5 19 6 3 15-70 2z" fill="#ebd9b5" stroke="#a18d7c" stroke-width="1.3"/>
+        <path d="m-34-40 47-.9 17 6.4-1 2.7-62-2.3-6-.4.1-2z" fill="#527974"/>
+        <path d="m-29.6-33.5 10.8-.2-.5 7.3-10.9.4zm14.8 0 10.7-.2 1 7.3-11.4.4zm14.4.1 10-.2 3.3 7.1-12.6.2Z" fill="#607c8a"/>
+        <path d="m-25-32-3 3m17-3-3 4m20-3-2.5 3" fill="none" stroke="#c0c7bb" stroke-width="1"/>
+        <path d="m-67-19 89-1 29 3 12 17-137 3z" fill="#f1e0bf" stroke="#9f8b7c" stroke-width="1.4"/>
+        <path d="m-68-21 92-1 28 3 6 4-124 .6-8-2z" fill="#526d71"/>
+        <g fill="#677e87">
+          <path d="m-63-13 11-.3-1.3 8.7-11 .5zm15 0 12-.4-.6 8.5-12.4.6zm16.2-.3 12.3-.2v8.7l-12.3.4zm16.2-.2 12.3-.2.7 8.5-12.7.5zm16.2-.1 12.2-.1 1.4 8.6-12.8.2zm16.2.2 12.2-.2 2.7 8.6-13 .3zm16 .5 12 .5 4.3 8-13 .2Z"/>
+        </g>
+        <path d="m-57.8-11.4-4 5.2m19.5-5.2-4.5 5.4m36.5-6-4.7 5.8m37-5.6-4.3 5.7m20.3-5-3.7 4.9" fill="none" stroke="#bfcdc2" stroke-width="1.05"/>
+        <path d="m-100-.4 148 .9L106-8l1 3.8-22 19.7-49.1 5-108.4.3-14-4.2z" fill="#496367" stroke="#53606b" stroke-width="1.9"/>
+        <path d="m-102-3.1 148 1.9 61-8.3 1.4 3.6L51 3.4l-146 1Z" fill="#f1dfbd"/>
+        <path d="m-91.8 10.5 128.4 1 58.6-7-5 5.6-54.5 7-111 .3-11.7-2.4Z" fill="#bb6a59"/>
+        <path d="m-79.2 16.6 113 1 52-5.8-1.8 2.3-46.4 5.8-109.2.2z" fill="#3b515d"/>
+        <path d="M-80-1.8v-8l13.4.4m123 5.2-.6-7.6L84-15m-14.8 2.7.5 6.3m15.8-9.4v7" fill="none" stroke="#b4b4a6" stroke-width="1.6"/>
+        <circle cx="-48" cy="3" r="5.8" fill="#b76653" stroke="#e4ca9f" stroke-width="1.2"/>
+        <circle cx="-48" cy="3" r="2.4" fill="#566e72"/>
+        <path d="m-51.2-.8.9 1.2m5.7-.8-1.1 1.6m-5.5 5.5 1-1.3m5.1.5-1.2-1.5" fill="none" stroke="#f5dfbb" stroke-width="1.8"/>
+        <g fill="#dae0cf"><circle cx="53" cy="6" r="1.45"/><circle cx="61" cy="5.1" r="1.45"/><circle cx="69" cy="4" r="1.45"/></g>
+        <path d="m-96-1.7 137 1.9 60-8.4-13 15.1-53 9.2-113-.7Z" fill="url(#bf2-paper)" opacity=".52"/>
+      </g>
+      <g id="bf2-ferry-sound" fill="none" stroke="#f7d995" stroke-width="2">
+        <path d="m3-67-5-5m17 3 1-6m9 5 4-5"/>
+      </g>
+      <path data-breakfast-hit="ferry" d="m-101-6 31-1 3-16 26-1 6-18 27-.2 1.7-18 19-1 5.5 33 33 7 9 14 47-7 4 7-22 21-59 8-112-1-15-7Z"/>
+    </g>
+    <g id="bf2-mullet-pool" transform="translate(550 269)" stroke-linejoin="round" stroke-linecap="round">
+      <g id="bf2-fish-ring" fill="none">
+        <path d="M-24 1C-19-3-6-4 2-4m9 .3c13 .5 17.2 3.8 11 6.1-9.6 3.9-32 4.1-40.5 1.1" stroke="#deccb3" stroke-width="1.65"/>
+        <path d="M-17 1c5.5-2.8 19-3.8 27.3-2.4m6.2.9c4.4 1.6-1.1 3.1-6.3 3.9-7.6 1.1-19.4 1-22.8-.5" stroke="#a9b9bb" stroke-width="1.55"/>
+        <path d="m-27.6 3.5-4.1-.1m51 1.5 7.4-.8" stroke="#8aa1a8" stroke-width="1.2"/>
+      </g>
+      <path data-breakfast-hit="water" d="M-28-.7c4.1-4.8 12.2-7.6 25.5-8.9 13.5-1.4 27.5 1.7 32 7.3 3.3 5.2-3.1 11-11.1 13-12.3 4.1-32.1 3.2-42-1.4-5.4-2.5-7.3-6-4.4-10Z"/>
+      <g clip-path="url(#bf2-fish-waterline)">
+        <g id="bf2-skipping-fish">
+          <path d="m-12-.1-9-9.5.1 8-2 5.8 10-2.3C-5.5 9.1 9 7 18.4 1.3L21-2l-4.2-2.1-4-1.5-4.6-1.2-5.4-4.2-3.9.1-2.3 4.1C-6.9-6.4-8.9-2.3-12-.1Z" fill="#8ca8a6" stroke="#4e6c76" stroke-width="1.2"/>
+          <path d="M-11.6 1.3C-2.5 2 8.5-1.8 16.7-3.1L20.2-2C12.9 5.8-3.8 8.4-11.6 1.3Z" fill="#efdfbd"/>
+          <path d="m-10.8-1.3 6.5-3.1 11.5-1.9 7.1 2.4-12.2 1-8.7 2.5z" fill="#678a8d"/>
+          <path d="m-.7 3.1 4.1 4.4 4.2-.6-2.9-4.7z" fill="#829c9a"/><path d="m7.5-4.9 1.2 2.9-.8 3.5" fill="none" stroke="#78938e" stroke-width=".78"/>
+          <circle cx="14.6" cy="-2.6" r="1.3" fill="#3d515b"/><circle cx="15" cy="-2.9" r=".48" fill="#faf1da"/>
+          <path d="m-19.3-6.9 4.9 6.6m-5.7 3.5 5.9-2.7m9.4-.3 2.1-.5m3.1-.9 1.9-.5" fill="none" stroke="#c4cec0" stroke-width=".85"/>
+        </g>
+      </g>
+      <g id="bf2-fish-spray" fill="#cddbcf"><path d="m-9 0-2.5-5 .7-2.5 2 2.2.9 5z"/><circle cx="-5" cy="-9" r="1.05"/><ellipse cx="4.7" cy="-5.5" rx="1.3" ry="2" transform="rotate(24 4.7 -5.5)"/></g>
+    </g>
+  </g>
+  <g id="bf2-quayside">
+    <path d="m122 340 154-19 177-19 99 4 63-12 271-16 98 63 43 133-421 56-54 19-46-12-409-30Z" fill="#978589"/>
+    <path d="m122 334 154-20 176-18 100 3 63-12 271-16 98 63 43 133-421 56-54 19-46-12-409-30Z" fill="url(#bf2-stone)" stroke="#e3ccb2" stroke-width="2"/>
+    <path d="m551 299 .5 243 12-11-3-231z" fill="#8e7f83" opacity=".56"/>
+    <g fill="none" stroke="#927e7e" stroke-width="1.25" opacity=".8" clip-path="url(#bf2-paving-clip)">
+      <path d="m119 357 331-41 93 6m18-2 55-14 283-20m-786 96 338-45 93 6m18-2 58-15 303-22m-816 49 340-43 96 5m19 0 57-13 280-20m-798 131 352-60 90 7m19-1 62-16 344-34m-863 75 349-54 89 7m20-.5 60-15 329-30m-852 116 354-66 91 8m19-1 63-19 357-39m-894 91 361-63 92 8m17-1 63-17 352-37m-913 149 381-80 97 9m14-1 65-18 382-47"/>
+      <path d="m171 329-3 21m24 4-5 24m-41 8-5 29m43-12-7 33m-39 13-10 40m104-142-5 27m24 0-4 22m-39 14-7 25m41-3-9 36m34-144-5 24m54-13-3 21m-45 5-4 22m93-62-2 18m-33 6-3 25m73-53v21m-30-20 1 18m98-13 .2 19m-16 4 1 20m-66 6-2 20m42-9v17m86-37 2 19m-43 0 1 17m-82 29-2 28m28-9-3 30m61-62 1 17m-8 8v22m72-15 1 23m63-166 7 18m-28 12 8 19m76-53 5 15m30-17 6 15m-65 33 6 17m72-33 4 15m24-33 5 14m38-4 7 14m80-18 7 15m-17 6 9 17m45-43 9 14m-117 45 3 14m-150 9 6 19m69-21 5 17m212-22 6 16m-184 24 5 16m55-25 8 15m-113 11 6 16m-88 11 3 18m-109 0-1 18m-146 14-2 27m82-1v14"/>
+    </g>
+    <path d="m122 334 331-38 99 3 62-12 272-16 98 63 43 133-421 56-54 19-46-12-409-30Z" fill="url(#bf2-paper)" opacity=".84"/>
+    <!-- Raised coping, with one displaced stone to give the wheel a real obstacle. -->
+    <!-- At 65% of the trip the wheel meets the raised joint at (417, 486). -->
+    <g id="bf2-expansion-seam" transform="translate(-78 0)">
+      <path d="m425 371 11-2 92 159-13 3Z" fill="#8b797b"/>
+      <path d="m425 369 6-1 91 157-7 2Z" fill="#e2cbb1"/>
+      <path d="m450 408 5-1 16 26-4 3Z" fill="#8a7476"/>
+      <path d="m448 406 9-1 17 26-10 2Z" fill="#d8c4b1"/>
+      <path d="m464 433 10-2 1 6-9 2Z" fill="#89767a"/>
+      <path d="m484 480 7.6-3.5 6.8 2.7 5.6 11.6-10.7 3.2Z" fill="#7c6d70"/>
+      <path d="m483.2 478.8 9.4-3.7 5.9 3 4.7 9.4-11 3Z" fill="#e4c7a5" stroke="#aa927e" stroke-width=".9"/>
+      <path d="m484.7 478.6 7.5-2.5 4.4 1.7m-6.9 5.6 4.8 2.7" fill="none" stroke="#f1d9b8" stroke-width="1.25"/>
+      <path d="m505.3 491 3.1-.4 1.1 1.7-3.4.7zm-25.7-15.6 3.1-1.5 1.1 1.1-2.1 1.5Z" fill="#9b8980"/>
+    </g>
+    <g id="bf2-posts">
+      <path d="m133 331 6-1 27 1-16 4-16 .5zM180 322l23-4 24 2-32 6zm428-25 23-4 15 2-26 6z" fill="#736b78" opacity=".38"/>
+      <g fill="#796f76" stroke="#5d5965" stroke-width="1.2">
+        <path d="m127 330 .5-26 9-2 8 3 .3 24-8 4Z"/><path d="m182 322-1-32 10-3 9 3 .7 29-9 5Z"/>
+        <path d="m609 297-.6-21 7-3 6 3 1.3 19-8 4Z"/>
+      </g>
+      <g fill="#ac9c99"><path d="m124 303 4-4 9-.7 9 3 .5 3-11 3-11-2z"/><path d="m178 290 4-5 11-.6 11 3v3l-13 3-13-1z"/><path d="m606 275 4-3 8-.5 7 2v3l-10 2z"/></g>
+      <g fill="none"><path d="M137 313q25 8 53-13" stroke="#514d57" stroke-width="4"/><path d="M137 312q25 8 53-13" stroke="#b7a28c" stroke-width="2"/><path d="M192 297c11 1 24-1 27-7" stroke="#b1a18f" stroke-width="2"/></g>
+    </g>
+  </g>
+  <!-- A harbor breakfast counter, printed and folded from four stocks. -->
+  <g id="bf2-food-stall" transform="translate(16 -40)" stroke-linejoin="round" stroke-linecap="round">
+    <path d="m619 399 55-23 230-15 65 18-111 44-163 14-62-19Z" fill="#746670" opacity=".34"/>
+    <path d="m689 211 172-12 32 144-199 11z" fill="#725456"/>
+    <path d="m706 219 140-9 2 86-146 14z" fill="#594f56"/><path d="m715 228 124-7 2 57-128 9z" fill="#504c54"/>
+    <path d="m848 210 23-4 28 123-42 9z" fill="#8f6556"/>
+    <path d="m703 228 3-5 131-10 .2 3z" fill="#c99474"/>
+    <g fill="none" stroke="#a17a69" stroke-width="1.5"><path d="m739 223 3 63m25-67 2 61m28-66 2 65m29-66 3 60"/></g>
+    <path d="m712 272 142-12-.2 4-142 13z" fill="#b3866c"/>
+    <g fill="#c4ad92"><path d="m717 269-1-13 8-.8 1 13zm13-1-1-16 7-1 2 17zm10-1-1-11 6-.8 1 12z"/><path d="m812 257 0-12 8-1 2 12zm14-1-1-17 9-1 1 17z"/></g>
+    <path d="m652 213 10-2 4 159-12 2z" fill="#624a4c"/><path d="m654 214 3-.5 2 153-3 .5z" fill="#b59074"/>
+    <path d="m901 181 9-1 5 161-10 4Z" fill="#654b4b"/><path d="m903 183 2.3-.4 7 153-4 .9z" fill="#ad7a60"/>
+    <!-- The proprietor's chin, folded apron, and working hands. -->
+    <g id="bf2-proprietor"><g id="bf2-owner-work">
+      <path d="m756 276 9-5 17-2 12 5 8 18-1 24-53 5 1-31z" fill="#e0c6a7"/>
+      <path d="m765 272 6 2 1 11 9 1 5-13 4 2-2 14 2 29-34 2 3-26z" fill="#59616a"/>
+      <path d="m765 243 5-5 14 1 8 6 2 10-5 10-10 5-11-4-5-9Z" fill="#cc9d7f"/>
+      <path d="m783 255 7-.6 3 3-4 3-2 5-6 1z" fill="#b77e68"/>
+      <path d="m760 249 3-11 9-5 11 1 8 5 2 7-7 3-7-4-8 6-5 5-5-2z" fill="#45454d"/>
+      <path d="m760 243 4-10 10-4 14 3 6 9-7 1-18-1z" fill="#eeceae"/>
+      <path d="m757 245 2-4 13-2 16 1 5-1 1 3-15 3-14 2z" fill="#d3b296"/>
+      <circle cx="786.6" cy="253.6" r="1" fill="#544951"/>
+      <path d="m767.7 290 13.1-1 .3 8.2-2.4 3.4-9.3 1-1.6-2.7z" fill="#777d7b" stroke="#4e5960" stroke-width=".8"/>
+      <path d="m769 292 10.1-.8m-4.3-1.2-.4-6.3" fill="none" stroke="#c6b9a1" stroke-width=".95"/>
+      <path d="m780.3 263 3.2.4 3-1.3" fill="none" stroke="#8e665a" stroke-width="1.1"/>
+      <g id="bf2-owner-ladle">
+        <path d="m788.6 272.6 6.4 1.1 7.8 10.4 5.5-4.4 4.1 4.4-7.5 8.6-5.4.8-10.9-11.1Z" fill="#e2cbb0" stroke="#aa8f80" stroke-width="1"/>
+        <path d="m808.5 280.5 2.9-3.4 4.6-.6 1.3 3-2.4 4-3.8 1.3Z" fill="#d7a584" stroke="#ae806d" stroke-width=".85"/>
+        <path d="m810.9 272.7 16.8 16" fill="none" stroke="#6a6f70" stroke-width="2.9"/>
+        <path d="m811.5 272.5 16.2 15.1" fill="none" stroke="#ddd2bb" stroke-width="1.12"/>
+        <path d="m824.8 286.1q7.3-1.1 11.3 3.3-2.2 6.7-8.1 4.4-3.9-1.8-3.2-7.7Z" fill="#aeb7aa" stroke="#737c7b" stroke-width=".9"/>
+      </g>
+      <g id="bf2-owner-hand">
+        <path d="m752 280 11 3.2-6.6 12.6-7 3.9-6.3-2.3.8-4.8Z" fill="#e6d2b4" stroke="#ac9181" stroke-width="1"/>
+        <path d="m748.4 291.9 6.5 3-3.1 5.6-6.3-1.9z" fill="#f5e3c9"/>
+        <path d="m746.6 296.9 7.1 2-1 5.6-4.3 1.3-4.4-2.7-3.1.8-2-.8 3.7-3.5Z" fill="#d9aa87" stroke="#98796b" stroke-width=".8"/>
+        <path d="m744.7 301.8 6.4 1.3" fill="none" stroke="#ba8a73" stroke-width="1"/>
+      </g>
+      <path data-breakfast-hit="vendor" d="m744 261 12-17 4-14 15-4 18 6 5 13-3 17-8 6 11 6 5 10-2 11-18 6-38 1-6-8Z"/>
+    </g></g>
+    <!-- Pulled canvas canopy with alternating pleats, scallops and a side face. -->
+    <path d="m626 184 54-38 179-13 53 13 21 27-1 14-47 19-254 20Z" fill="#835452"/>
+    <path d="m627 181 54-40 175-14 25 9 33 36-41 20-243 20z" fill="url(#bf2-red)" stroke="#aa6452" stroke-width="1.6"/>
+    <path d="m679 142 176-14 26 9-185 16-66 30z" fill="#e78e67"/>
+    <path d="m681 141 14 9 186-15-25-8z" fill="#eeb497"/>
+    <path d="m630 181 65-30 183-16 32 37-40 18-239 21Z" fill="#cb6d51"/>
+    <g fill="#ebc99e">
+      <path d="m660 168 17-8 32-11 16-1-46 29-23 17-15 2z"/>
+      <path d="m714 165 32-19 15-1-17 18-11 20-27 2z"/>
+      <path d="m768 157 18-13 15-1-7 14-3 21-27 2z"/>
+      <path d="m818 152 5-12 15-1 8 32-25 5z"/>
+      <path d="m859 138 15-1 25 29-17 8-16-23z"/>
+    </g>
+    <path d="m629 181 241-19 44-8 14 18-44 17-253 21z" fill="#bd5b47" opacity=".23"/>
+    <path d="m628 180 243-20 12 18-2 15-12 5-10-3-9 6-12-.2-8-5-9 7-11 1-9-5-10 6-11 1-8-4-8 6-10 1-9-5-8 7-11 1-9-5-9 6-11 1-8-5-9 7-9 .6-8-5-8 7-9 1-8-4-7 6-8 1-6-4-5-6Z" fill="url(#bf2-red)"/>
+    <g fill="#ebca9f">
+      <path d="m649 179 24-2 2 25-6 5-8 1-8-4z"/><path d="m706 173 26-2 3 25-7 7-11 .8-9-5z"/><path d="m762 169 27-2 3 24-8 6-10 1-9-4Z"/><path d="m820 164 25-2 5 30-10 4-9-1-8-5Z"/>
+    </g>
+    <path d="m870 161 42-9 17 18-.4 11-7 5-5-.3-4-4-4 7-6 2-5-3-2-3-5 8-6 2-6-4-3-11Z" fill="#a54c40"/>
+    <path d="m883 158 12-3 14 18-1 12-5 5-6-1-4-5v-9z" fill="#d8ac86"/>
+    <path d="m628 181 244-20 40-9m-230-11 174-14" fill="none" stroke="#f3cf9b" opacity=".7" stroke-width="1.8"/>
+    <path d="m629 181 55-41 172-13 27 9 30 16 16 18-.5 10-47 16-243 25Z" fill="url(#bf2-paper)" opacity=".87"/>
+    <g id="bf2-drips" fill="#d7dce0" stroke="#8495a1" stroke-width=".7"><path d="M887 201q1 5 4 9 2 5-2 6-5 0-4-5z"/><path d="m899 211 3.6 8q.6 4-3 4.4-3-.7-2.4-3.4z"/><circle cx="888" cy="226" r="1.8"/></g>
+    <!-- Fold-out, hand-lettered stall sign. -->
+    <path d="m691 194 1 16m70-21 1.4 14" fill="none" stroke="#664e49" stroke-width="1.7"/>
+    <path d="m682 210 87-8 .4 28-87 8Z" fill="#9f6b54"/>
+    <path d="m680 207 87-7 .4 27-87 7Z" fill="#f2deba" stroke="#a77f63" stroke-width="1.2"/>
+    <path d="m685 211 77-6 .3 18-77 6z" fill="none" stroke="#ccab86" stroke-width=".9"/>
+    <text transform="translate(723 224) rotate(-5)" text-anchor="middle" fill="#8b4238" font-family="'Noto Serif TC','Songti TC','PingFang TC',serif" font-size="17" font-weight="800" letter-spacing="4">熱湯</text>
+    <!-- Counter, pot and spare cups. -->
+    <path d="m645 327 217-17 55-23 9 3-4 24-58 25-215 17z" fill="#74544d"/>
+    <path d="m646 326 218-21 57-18 4 13-61 26-217 18z" fill="#d2a47e"/>
+    <path d="m644 326 217-20 55-22 8 5-60 25-218 19Z" fill="#efc69b"/>
+    <path d="m653 345 209-18 5 65-208 26z" fill="url(#bf2-wood)" stroke="#795a52" stroke-width="1.5"/>
+    <path d="m864 327 58-25-.7 65-54 25Z" fill="#7d5a50"/>
+    <path d="m657 349 204-17 1 12-203 18Z" fill="#c28b64"/>
+    <path d="m659 361 203-17 4 48-206 24Z" fill="url(#bf2-planks)"/>
+    <g stroke="#79564f" stroke-width="1.7" fill="none"><path d="m671 360 1.5 49m26-51 2.5 49m30-52 2 47m29-50 2 47m30-50 2 46m30-49 2 46m24-49 2.8 45m21-65 .5 55m14-61 .5 55m14-61v55m12-61 .5 54"/></g>
+    <path d="m658 408 208-25 56-24 1 7-56 27-207 26z" fill="#895c4a"/>
+    <g fill="#70504a"><path d="m662 418 12-1 .2 10-11 2zm183-22 13-2 .7 9-11 3zm63-25 10-4 1 7-9 5z"/></g>
+    <!-- Five full cups sit on a single slatted tray. Each small red tab is a copy of the trial cup's tab. -->
+    <g id="bf2-order-tray">
+      <path d="m634 323 17-9 115-12 18 4-2 8-22 10-121 14-7-4Z" fill="#6b5854" opacity=".7"/>
+      <path d="m634 322 18-10 114-12 18 5-21 12-125 14Z" fill="#dba974" stroke="#8d624a" stroke-width="1.45"/>
+      <path d="m635 324 128-14 18-8m-139 25 124-14 12-7m-109 18 2-8m23 5 1-8m20 5 2-8m20 6 2-8" fill="none" stroke="#a87955" stroke-width="1.55"/>
+      <g transform="translate(650 321)"><use href="#bf2-order-cup"/><g class="bf2-cup-collar" style="--bf-delay:1.8"><use href="#bf2-order-collar"/></g></g>
+      <g transform="translate(675 318)"><use href="#bf2-order-cup"/><g class="bf2-cup-collar" style="--bf-delay:1.35"><use href="#bf2-order-collar"/></g></g>
+      <g transform="translate(700 315)"><use href="#bf2-order-cup"/><g class="bf2-cup-collar" style="--bf-delay:0.9"><use href="#bf2-order-collar"/></g></g>
+      <g transform="translate(725 312)"><use href="#bf2-order-cup"/><g class="bf2-cup-collar" style="--bf-delay:0.45"><use href="#bf2-order-collar"/></g></g>
+      <g transform="translate(750 309)"><use href="#bf2-order-cup"/><g class="bf2-cup-collar" style="--bf-delay:0"><use href="#bf2-order-collar"/></g></g>
+      <path d="m633 322 130-14 21-8-.2 8-20 10-128 14Z" fill="#a87853" stroke="#805a47" stroke-width=".9"/>
+      <path d="m637 324 125-14m-121 17 118-13" stroke="#e2b789" fill="none" stroke-width=".8"/>
+      <path id="bf2-tray-strap" pathLength="1" d="m639 316 117-13q8-1 11-7c3-10-12-25-28-28-25-6-46 17-65 28l-22 13" fill="none" stroke="#597b6f" stroke-width="3.2"/>
+      <path data-breakfast-hit="order" d="m636 290 124-13 25 20-1 12-20 11-127 15-8-11Z"/>
+    </g>
+    <g transform="translate(715 343) rotate(-6)">
+      <g id="bf2-order-docket">
+        <path d="m-.4 1 70-1 .6 28-4.3 2.3-4.1-1.2-6.1 1.7-4.2-1.6-6.4 1.8-5.1-1.3-6.6 1.4-5.1-1.3-5.5 1.2-4.8-1.5-5.6 1.5L.6 30Z" fill="#ae8c69" opacity=".7"/>
+        <path d="m-1-.9 70-.6.5 26.5-4.5 2.2-4.1-1.4-6.1 1.6-4.6-1.1-5.9 1.7-5.1-1.5-5.7 1.4-6.1-1.5-4.7 1.7-6-1.4-5.2 1.5-12-.6Z" fill="#f5e4be" stroke="#987558" stroke-width="1"/>
+        <path d="m4.2 17.2 59.5-.3" stroke="#a59d7f" stroke-width=".65"/>
+        <text x="5.5" y="13" fill="#456762" font-family="'PingFang TC','Noto Sans TC',sans-serif" font-size="10.1" font-weight="700" letter-spacing="1">早班船</text>
+        <text x="5.5" y="24" fill="#806749" font-family="'PingFang TC','Noto Sans TC',sans-serif" font-size="7.3">熱湯</text>
+        <text x="65.1" y="15.8" text-anchor="end" fill="#a3573d" font-family="Georgia,serif" font-size="16" font-weight="700">×6</text>
+        <path d="m43 2.3 1-6.3 5.3-.4-.6 7.1Z" fill="#bc7454" stroke="#845942" stroke-width=".7"/>
+        <path data-breakfast-hit="order" d="M-2-5h74v36H-2Z"/>
+      </g>
+    </g>
+    <g id="bf2-stockpot">
+      <path d="m788 289 45-4 1 20q-15 9-45 4z" fill="#aaa49a" stroke="#706c6e" stroke-width="1.3"/>
+      <path d="m791 291 9 .2 1 16-8-.2z" fill="#d4c4ac"/><path d="m822 288 8-1 1 16-7 3z" fill="#858285"/>
+      <path d="m786 289c15-9 31-13 48-6l4 3c-8 4-34 7-52 5Z" fill="#c7bba7" stroke="#7f7977" stroke-width="1"/>
+      <path d="m804 278 3-4 8-.7 2.5 3.4-2 2-8 1Z" fill="#6c676d"/>
+      <path d="m787 293-5 .3q-4 .4-3 4l8 .4m47-7.6 5-.7q4 0 3.4 4l-7.7 1" fill="none" stroke="#787075" stroke-width="2.8"/>
+      <path d="M800 272c-8-10 9-12 3-21m11 17c-5-5 5-8 3-13" fill="none" stroke="#e9d5bd" opacity=".65" stroke-width="2.2"/>
+    </g>
+    <path d="m865 289 33-4 1 4q-2 9-13 11-16 2-22-8Z" fill="#d9d2bf" stroke="#838186" stroke-width="1.2"/>
+    <ellipse cx="881" cy="287.6" rx="17.5" ry="3.4" transform="rotate(-6 881 288)" fill="#879094" stroke="#d9cbb5" stroke-width="1.8"/>
+    <path d="m875 303 10-1" stroke="#958a81" stroke-width="1.2"/>
+    <path data-breakfast-hit="awning" d="m625 181 53-43 178-15 33 11 27 17 17 22-1 17-50 21-248 17Z"/>
+  </g>
+  <!-- The crew member keeps the order bag in one hand. Her other hand greets, shows the wet copy or receives the actual trial cup. -->
+  <g id="bf2-woman" transform="translate(-40 -30) scale(1.10)" stroke-linejoin="round" stroke-linecap="round">
+    <path d="m205 385 31-5 28-3 13 3-39 8-31 2z" fill="#746b76" opacity=".37"/>
+    <path d="m211 322 18-1-1 28-8 33-8 1-1-28z" fill="#53545d"/><path d="m230 324 16-3 1 29-1 29-8 3-6-28z" fill="#434956"/>
+    <path d="m212 378 8-.5 5 2 2 3-4 2-17 1.5-.8-2 1.8-3zM238 377l8-1 4 3 8 .7 2 2.5-5 2.1-19 .4-.2-3z" fill="#51494b"/>
+    <path d="m199 276 10-12 17-3 16 8 5 18 4 45-25 6-27-4 1-28-4-16Z" fill="url(#bf2-coat)" stroke="#bd914f" stroke-width="1.3"/>
+    <path d="m208 275-9 15-1 36 6 8 12-2-4-37z" fill="#c68b38"/>
+    <path d="m217 268 8 8 7-3 9-4-9-5-13-.5Z" fill="#f6c875"/>
+    <path d="m229 274 5 22-1 33m8-21-6 4m-29 4 8 3" fill="none" stroke="#ae7839" stroke-width="1.1"/>
+    <path d="m203.4 278.3 5.8 5.5-2.6 9.8-3.4 10.7-5.6 2.2-4.3-2.5 3.3-13.8Z" fill="#d69a40" stroke="#b7833d" stroke-width="1"/>
+    <path d="m198.3 301.9 5.2.9 1.6 5.1-2.9 3.3-3.6-1.1-1-2.3-2.7.2-.2-2.6Z" fill="#dbab8b" stroke="#af8168" stroke-width=".8"/>
+    <g id="bf2-crew-head">
+      <path d="m216 248 4-12 14-1 13 5 1 9 5 5-4.5 1-3 7-7 3-2 6-12-3-3-8z" fill="#dfb291" stroke="#ad8677" stroke-width=".9"/>
+      <path d="m210 256-2-10 5-13 7-6 12-2 10 3 6 6 3 8-8 2-4-4-3 10-4 9-5 6-5-4 1-7-5 8-7-4z" fill="#3e424d"/>
+      <path d="m212 246 6-11 6-5 9-1-8 5-7 10-4 9z" fill="#55505a"/>
+      <path d="m206 241 2.8-11.7 7.2-8 12.5-5.3 11.1.8 8.5 7.6.9 9.1-13 2.6-13.8 3.5Z" fill="#3f5c66" stroke="#3d4b57" stroke-width="1.4"/>
+      <path d="m208.6 232.8 7.2-8.9 11.4-4.6 9.5.2-10.5 2.7-7.4 6.3-3.2 7.5-8.1 2.3Z" fill="#607c82"/>
+      <path d="m206 239.2 33.8-6 10.3-1.5 9.2 2.6 2.8 2.5-13.2 2.5-11.9.7-31.2 5.8-1.7-3.3Z" fill="#364c57" stroke="#344851" stroke-width="1"/>
+      <path d="m206.7 240.2 31.4-6 10.9-1.5-1.1 2.4-40.5 7.6Z" fill="#e3c58d"/>
+      <path d="m237.7 225.7 4.6-.5 2.8 2.9-.9 3.6-3.3 1.4-2.9-2.2Z" fill="#e2c28a"/>
+      <path d="m240.9 226.8.5 3.2m-2-1.2 2 1.9 1.4-2.4" fill="none" stroke="#49636d" stroke-width=".8"/>
+      <path d="m239.2 247.9 3.8-.7" fill="none" stroke="#63515a" stroke-width="1.3"/>
+      <ellipse cx="242.5" cy="250.3" rx="1.15" ry="1.35" fill="#554451"/>
+      <path id="bf2-crew-mouth" d="m242.2 258.8 3.6-.5" stroke="#a17165" stroke-width="1" fill="none"/>
+      <g id="bf2-crew-look-wet" fill="none" stroke="#846259" stroke-width="1.45"><path d="m238.5 246.4 4.7 1.5m-2 12.4 2.4-1.9 2.7.2"/></g>
+      <g id="bf2-crew-look-dry"><path d="m239.6 250.8q1.5-3.1 3.9-1.5" stroke="#6d5854" stroke-width="1.35" fill="none"/><path d="m239.6 257.2q3.5 1.5 7.2-.9-2.6 6.1-7.2.9Z" fill="#985f52"/><path d="m239 254.8 2.3-.5" stroke="#c48372" stroke-width="1.5"/></g>
+    </g>
+    <path d="m205 273-3-6 8-6 10 1 7 11-10-3-9 4z" fill="#ebba66" stroke="#b68544" stroke-width=".8"/>
+    <path d="m202 278 7-8 6 2-7 9z" fill="#f2c778"/>
+    <path d="m199 276 10-12 17-3 16 8 5 18 4 45-25 6-27-4 1-28-4-16Z" fill="url(#bf2-paper)" opacity=".4"/>
+    <path d="m204 276.5 4.1-3 7.5 4.5-1.5 4.5-7.3-2.8z" fill="#526a6e"/><path d="m206.4 276.6 4.7 1.9" stroke="#f0c994" stroke-width=".85"/>
+    <path d="m218.2 277.4 3.6-.3 6.2 28.4-3.2 1.2Z" fill="#88755d"/>
+    <circle cx="226" cy="304.5" r="4.5" fill="#648183" stroke="#e1c98e" stroke-width="1.3"/><path d="m224.2 304 1.9 1.7 1.7-2.5" fill="none" stroke="#f4d79e" stroke-width=".8"/>
+    <g id="bf2-crew-arm">
+      <path d="m228 276 6.9-.5 12.4 8.8 8-4.8 5.2 5.9-10.6 10.2-5.9 1.1-14.7-8.6Z" fill="#e9ad4c" stroke="#bd8a42" stroke-width="1.25"/>
+      <path d="m247.3 286.4 7.5-5.3 4.3 5-7.9 6.6Z" fill="#f1d28c"/><path d="m251.1 289.9 5.2-4.4" fill="none" stroke="#9a824e" stroke-width=".95"/>
+      <g id="bf2-crew-wave">
+        <path d="m254.4 280.8 4.3-1.4 2.8-3.1.5-3.8 1.8-.6 1.2 1.2-.1 3.2 7-1.9 1.5 1.3-1.4 1.7-4.5 2.5 4.7-.7 1 1.2-1.2 1.5-6.2 2.3-3.1 2.3-4.8-.1Z" fill="#e6b494" stroke="#a97c66" stroke-width="1"/>
+        <path d="m261.6 282.2 3.4-.1m-.5-4.1 3.5-.7" fill="none" stroke="#c28b72" stroke-width=".9"/>
+      </g>
+    </g>
+    <g id="bf2-wave-strokes" fill="none" stroke="#ffe1a6" stroke-width="1.7">
+      <path d="m259.8 247.4 1.4-5.7m3.7 7.2 3.9-3.4"/>
+    </g>
+    <path data-breakfast-hit="customer" d="m195 281 8-12 2-32 5-16 20-8 17 3 10 14 6 8-12 8 2 15-9 9 7 18-6 17-22 17-22 .4Z"/>
+    <g transform="translate(-40 -1)"><g id="bf2-takeaway-bag">
+      <path d="m233 317 2.5-7.9q4.8-8.7 12.7-3l4.2 8.2m-16.1 1.7 2.3-6.2c3.3-6.3 9.3-7.3 12.7-2.9l3.9 7.4" fill="none" stroke="#906a49" stroke-width="1.55"/>
+      <path d="m227 315.4 25.5-3.4 8.1 1.9 2.3 23.9-28.5 4.5-7.8-4.2Z" fill="#d5ac72" stroke="#9b7655" stroke-width="1.05"/>
+      <path d="m226.8 316 5.9 2.4 1.7 22.8-7.4-3.9Z" fill="#ac825a"/>
+      <path d="m232.8 318.2 26.9-3.4 2.2 22.1-27.2 4.1Z" fill="#ebc68a"/>
+      <path d="m228.7 316.8 2 11.4-2.4 7.8 5.9 4m1.1-20.9 21.7-2.7" fill="none" stroke="#b89466" stroke-width=".8"/>
+      <path d="m237.7 322.8 16.2-1.6.4 10.3-16.2 2Z" fill="#f5dfb1" stroke="#bf9e70" stroke-width=".7"/>
+      <path d="m240.2 328.5 11-1-2.2 2.9-5.9.6zm2-1.5 1.1-2.1 4.6-.4 2 1.6-1.4.1-.9-.8-2.9.3-.6 1.1Z" fill="#6b8270"/>
+      <path d="m237 315.2.8-3.5m13.8 2-.7-3.8" stroke="#795e45" stroke-width="1.1" fill="none"/>
+      <path data-breakfast-hit="order" d="m224 308 13-7 17 1 9 11 3 28-33 5-9-6Z"/>
+    </g></g>
+
+  </g>
+  <g id="bf2-moving-bike" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m199 493q53-8 87-10l124-10 70 2 25 4-121 11-127 7-52 1Z" fill="#796b72" opacity=".37"/>
+    <g id="bf2-frame">
+      <use href="#bf2-wheel" transform="translate(256 442)"/><use href="#bf2-wheel" transform="translate(447 437)"/>
+      <!-- Bent steel fenders, mud stays, kickstand and rack. -->
+      <path d="M203 437c1-27 22-49 49-52 23-3 43 7 54 24m89 15c5-28 28-48 55-49 20 .3 38 11 48 26" fill="none" stroke="#6d514b" stroke-width="6.3"/>
+      <path d="M203 432c6-28 25-44 48-47 21-3 42 7 54 22m91 13c7-25 25-42 53-44 15-1 34 8 45 21" fill="none" stroke="#dec09b" stroke-width="3"/>
+      <g fill="none" stroke="#746768" stroke-width="2.9"><path d="m205 435 50 8 43-40m100 16 48 19 47-43m-290-4 18 4 71-5m-75 7 38 45 33-55"/></g>
+      <path d="m203 389 77-6 9 2-1 4-80 6-10-2z" fill="#746366"/><path d="m204 389 75-5" stroke="#c8a98d" stroke-width="1.7" fill="none"/>
+      <path d="m278 391-11 23-15 26 76-5" fill="none" stroke="#754c4b" stroke-width="5"/>
+      <path d="m257 442 40-67 27 60-67 7Z" fill="none" stroke="#924d3f" stroke-width="6.5"/>
+      <path d="m295 374 32 62 35-3c14-4 23-17 31-34l16-38" fill="none" stroke="#783f3d" stroke-width="10.5"/>
+      <path d="m295 373 32 59 33-2c15-3 22-16 29-33l16-38" fill="none" stroke="#b85b45" stroke-width="7.6"/>
+      <path d="m293 370 25 39c9 11 18 14 29 11 26-7 39-35 51-63" fill="none" stroke="#ad5643" stroke-width="7.4"/>
+      <path d="m296 373 24 36c7 10 16 13 25 11m-29-10 11 20m16-2 13-.2" fill="none" stroke="#e29a78" stroke-width="1.5"/>
+      <path d="m386 358 16-8 11 8-10 22-11-3z" fill="#a65443"/>
+      <path d="m402 369 25 51 20 17" fill="none" stroke="#8a433e" stroke-width="8.5"/><path d="m403 370 25 49 17 15" fill="none" stroke="#d57c5c" stroke-width="2"/>
+      <path d="m289 358 11 24" fill="none" stroke="#77706f" stroke-width="6.3"/><path d="m291 362 7 16" fill="none" stroke="#d3b59b" stroke-width="1.8"/>
+      <path d="M266 355c7-5 19-2 24-1 6 .7 15-.8 23 1l2 3c-7 4-13 4-20 4l-11 3-14-3Z" fill="#584344" stroke="#463d42" stroke-width="1.4"/>
+      <path d="M270 355c5-2 15 .3 20 1 8 1 14-.4 21 .7" stroke="#ad8067" stroke-width="2" fill="none"/>
+      <path d="m288 365 5-3 4 3m-13 .5 3-3" fill="none" stroke="#8b776a" stroke-width="1.7"/>
+      <path d="m255 434 68-11c17-2 22 15 9 20l-71 4c-10-.5-12-11-6-13z" fill="#ad654c" stroke="#845446" stroke-width="1.7"/>
+      <path d="m254 436 70-10c8-.5 13 3 12 8" fill="none" stroke="#d8936c" stroke-width="1.6"/>
+      <circle cx="326" cy="435" r="6.5" fill="#d1b294" stroke="#785e59" stroke-width="2"/><path d="m325 433-14 12 1.5 3.4 16-13" fill="#6c6160"/><path d="m305 449 13.5-1.2" stroke="#4e4a4d" stroke-width="3.1"/>
+      <path d="m339 440-10 31" fill="none" stroke="#6f6360" stroke-width="2.5"/>
+      <!-- Curved handlebar and its calling bell. -->
+      <path d="m402 356-9-22-10-6-13 3-9 6" fill="none" stroke="#675a59" stroke-width="7.6"/>
+      <path d="m402 355-9-22-10-6-14 4" fill="none" stroke="#dec4a5" stroke-width="4"/>
+      <path d="m361 337-11 5" fill="none" stroke="#57484b" stroke-width="6"/><path d="m351 341 5-2" fill="none" stroke="#92796c" stroke-width="1.4"/>
+      <path d="m386 334 19-4 17 5" fill="none" stroke="#7c706d" stroke-width="4"/><path d="m403 331 12 1" fill="none" stroke="#d3b397" stroke-width="1.6"/>
+      <g id="bf2-bell"><path d="m371 335 1-4 3-3 5-.3 4 2 2 4-1 2.5z" fill="#d8b788" stroke="#77675e" stroke-width="1.2"/><path d="m369 336 17-1m-2-1 4-2" stroke="#695759" fill="none" stroke-width="2"/><path d="m375 330 3-1" stroke="#f6d9a7" stroke-width="1.5"/></g>
+      <g id="bf2-bell-waves" stroke="#edc18a" stroke-width="1.85" fill="none">
+        <path d="M366 329q-4.7-3-4.1-6.3m1.2 9.5q-6.9-2.8-7-8m28.2 1.6q4-2.8 4.3-6.2m-2.2 8.9q6.1-2.8 6.1-7.4"/>
+      </g>
+      <path d="m405 345 17 50 23 39m88-64-88 64" fill="none" stroke="#7c6760" stroke-width="2.6"/>
+    </g>
+    <!-- Only the trial cup is loaded on the bicycle. The pull tab is part of its accordion collar. -->
+    <g id="bf2-basket">
+      <path d="m404 340 17-10 91-9 26 13-12 48-100 14z" fill="#7a584c" stroke="#5a4542" stroke-width="2"/>
+      <path d="m411 340 12-7 87-8 23 10-11 40-94 12z" fill="url(#bf2-rush)"/>
+      <path d="m404 340 18-10 90-9 26 13" fill="none" stroke="#d5a97b" stroke-width="4.2"/>
+      <g id="bf2-cup-load"><g id="bf2-cup">
+        <path d="m440 318 7 46c1.8 6 10 10 24 10 14 .4 22-3.6 24.5-10l12-47Z" fill="url(#bf2-white)" stroke="#b99472" stroke-width="1.5"/>
+        <path d="m444 329 6 33c1.3 5 5 7 10 8.5l-8-40z" fill="#fbe7c2"/>
+        <path d="m498 324-7 35c-1 3-2 5-4 7l7-2.7 11-41z" fill="#ceb18c"/>
+        <path d="m442.7 324.1 1.1 5.8c13.3 6.2 39.4 6.7 58.5-1.8l1.6-5.5c-17.3 8.1-46.3 9.9-61.2 1.5Z" fill="#ba634c"/>
+        <ellipse cx="474" cy="317" rx="34" ry="11" fill="#f7e9ce" stroke="#b38b6d" stroke-width="1.5"/>
+        <ellipse cx="474" cy="318" rx="28.9" ry="7.5" fill="#d88a47"/>
+        <path d="M449 319c6-7 30-11 47-4-10-2-23-2-33 1.4-5 1.6-9 2.7-14 2.6" fill="#ab673c"/>
+        <g transform="rotate(-8 475 318)"><ellipse cx="475" cy="318" rx="6.8" ry="3.2" fill="#7d8953"/><ellipse cx="475" cy="318" rx="3.6" ry="1.45" fill="#eccd8e"/></g>
+        <path d="M441 316c2-12 48-15 63-3m-61 8c13 9 42 8 58 2" fill="none" stroke="#fff1cf" stroke-width="1.6"/>
+        <path d="M457 305c-6-9 7-12 3-20m18 19c6-8-5-13 .2-20" fill="none" stroke="#e9d7cb" stroke-width="1.8" opacity=".78"/>
+        <g id="bf2-received-glint" fill="none" stroke="#ffe1a1" stroke-width="2"><path d="m441 308-6-5m7.6.2-1.6-5.7m58.5 10 4.8-6"/></g>
+        <g id="bf2-received-hit"><path data-breakfast-hit="customer" d="m439 317 5-8 29-4 28 3 8 6-11 53-11 7-24 2-15-7Z"/></g>
+      </g></g>
+      <g id="bf2-sleeve">
+        <path d="m438 348 7-6 7 4 6-6 7 5 7-6 7 5 8-7 7 3 6-5-5 35-12 5-32 1-9-4z" fill="#d6a86d" stroke="#9e7553" stroke-width="1.6"/>
+        <path d="m438 348 7-6 7 29-8 1zm14-2 6-6 5 32-8 1zm13-1 7-6 1 33-7 1zm14-1 8-7-2 33-7 3zm15-4 6-5-5 35-5 2z" fill="#a5754f"/>
+        <path d="m445 342 7 29m6-31 5 32m9-33 1 33m14-35-2 33m15-35-5 35" fill="none" stroke="#efc88e" stroke-width="1.7"/>
+        <path d="m437 349 8-7 7 4 6-6 7 5 7-6 7 5 8-7 7 3 6-5" fill="none" stroke="#f2c895" stroke-width="1.7"/>
+        <path d="m463 347 1.8-12.2 2.5-3.4 6.9-1.1 2.1 2.1-2.7 13.7-4.7 4.1Z" fill="#bd5941" stroke="#8a533c" stroke-width="1.3"/>
+        <path d="m467.8 339.7 2.7-3.1 2.1 2" fill="none" stroke="#eed5a6" stroke-width="1.2"/>
+      </g>
+      <path d="m410 347 16 46 97-12 12-34-7 4-12 23-84 12-10-29z" fill="#8c654f"/>
+      <path d="m415 357 13 32 92-12 11-22m-108 18 99-14m-94 22 92-12" fill="none" stroke="#cf9f70" stroke-width="3.5"/>
+      <path d="m430 368 10 23m5-25 8 23m10-26 5 24m11-26 3 25m12-27-.6 24m13-26-3 24m13-25-5 23" fill="none" stroke="#e0af7d" stroke-width="3.5"/>
+      <path d="m415 360 10 5 98-12 12-8m-107 46 94-12 5-3" fill="none" stroke="#ad7954" stroke-width="4.1"/>
+      <path d="m414 357 11 5 98-12 12-7m-107 46 94-12" fill="none" stroke="#e7b989" stroke-width="2.1"/>
+      <g id="bf2-flying-drops" fill="#df9949" stroke="#f9c779" stroke-width="1">
+        <path d="M474 311q9-15 19-16c5.1.1 6.2 3.1 2.1 5.7-6.8 3.6-12.9 5.7-18.2 12.1Z"/>
+        <path d="M488 315c6.8-6.6 13.5-11.4 18.4-9.9 3.4 1.2 3.8 4.6-.7 6.6l-14.7 4.5Z"/>
+        <ellipse cx="506" cy="320.5" rx="4" ry="2.1" transform="rotate(-28 506 320.5)"/><circle cx="499" cy="294" r="3"/>
+      </g>
+      <path data-breakfast-hit="sleeve" d="m400 339 28-13 6-19 15-16 33-3 24 12 11 19 25 13-14 56-106 16Z"/>
+    </g>
+    <g id="bf2-wheel-impact" fill="none" stroke-linejoin="round" stroke-linecap="round">
+      <path d="m432 477-8 1 2.2-7.1-9 .2m37.4 11.4 1.1-7.8 7.7 2.7 1.4-7.7" stroke="#fff0bd" stroke-width="4"/>
+      <path d="m432 477-8 1 2.2-7.1-9 .2m37.4 11.4 1.1-7.8 7.7 2.7 1.4-7.7" stroke="#bb6c46" stroke-width="1.6"/>
+    </g>
+    <g id="bf2-bird">
+      <!-- Two paper feet curl around the edge. -->
+      <g fill="none" stroke="#95634c" stroke-width="1.8"><path d="m394 309-1 10 4 5 5 1m-7-3-3 4m13-16-2 11 4 2 4-1m-6 0-3 3"/></g>
+      <path d="M353 324c17-16 21-26 29-33 7.5-6 16-10 23-18 3-3 9-5 15-4 8 1 14 6 16 13l17 3-17 4-7 6-6 13-10 7-16 3-9-3-13 5-13 3Z" fill="#e8cf9c" stroke="#836c67" stroke-width="2.4"/>
+      <path d="m353 324 18-16 12-14 13-7-5 15-11 11-15 8z" fill="#345c67"/>
+      <path d="m363 321 18-18 9-4-9 10-8 7z" fill="#517c80"/>
+      <path d="m385 302 8-12 12-6 14 .3 13-1-5 14-10 12-5 4-14 2-9-3Z" fill="#c4794a"/>
+      <path d="m394 302 15-12 12-3-7.5 10-4 12-9 3-9-.7z" fill="#df9358"/>
+      <path d="m408 288 12-7 11-1.3 2 6.4-8 3-7 6-6 8-1-7z" fill="#f2dfb1"/>
+      <path d="M383 294c9-7 16-9 21-16 4-6 8-10 15-10 8 0 14 4 17 10l-5 5-12 1-10 6-13 12z" fill="#36777d"/>
+      <path d="m405 280 6-7 9-3 8 1.6 4 3.4-13 .1-9 4-6 5z" fill="#68a0a1"/>
+      <path d="m387 296 15-9 9-2-5 9-8 7z" fill="#4f8a8d"/>
+      <path d="m424 278 6-2.3 5.5 2.7 4 2-7 3-7 .3-5-1.7Z" fill="#ab603e"/>
+      <g id="bf2-courier-wing"><path d="M379 301c5-9 15-15 25-16l5 2-3 8-11 12-16 7-9 1z" fill="#315f6d"/>
+      <path d="m377 310 15-16 13-6-5 7-13 13-11 5Z" fill="#4d858a"/>
+      <path d="m383 305 10-9m-5 13 10-10m-.5-6 5-3" fill="none" stroke="#8eb2aa" stroke-width=".9" opacity=".86"/></g>
+      <path d="m411 278 4-2m2-2 2-.5" fill="none" stroke="#8eb2aa" stroke-width=".9" opacity=".86"/>
+      <path d="m432 281 .4-2 5 1.7 18.4 3.6-16.3 2.2-8-.6Z" fill="#414451"/><path d="m435 282 17 2-16.5.1Z" fill="#7e7472"/>
+      <circle cx="429.4" cy="278.3" r="2" fill="#323f4b"/><circle cx="429" cy="277.8" r=".65" fill="#f5d6a7"/>
+      <path data-breakfast-hit="bird" d="m347 320 21-26 30-29 21-5 20 9 17 13-8 6-16 4-12 17-22 12-35 11Z"/>
+      <g id="bf2-letterswing"><g id="bf2-courier-order"><g transform="translate(444 284) rotate(18) scale(.29)">
+        <use href="#bf2-docket" transform="translate(77 0) scale(-1 1)"/>
+        <path data-breakfast-hit="beak" d="M-5-5h86v62H-5Z"/>
+      </g></g></g>
+    </g>
+    <ellipse data-breakfast-hit="bell" cx="375" cy="335" rx="17" ry="16"/>
+  </g>
+  <!-- The unmirrored docket travels from the basket to the crew member; its tear edge remains legible throughout. -->
+  <g id="bf2-carried-flight">
+    <g id="bf2-carry-arc"><g id="bf2-carried-slip">
+      <path d="m2 3 75-.5 3 49.8-75 4Z" fill="#6e5654" opacity=".28"/>
+      <use href="#bf2-docket"/>
+      <text class="bf2-run-number" x="68.7" y="11.25" data-bf-run-number="carried">01</text>
+      <g transform="translate(42.4 23) rotate(-7)"><g id="bf2-carried-mark"><use href="#bf2-splash-print"/></g></g>
+      <path data-breakfast-hit="carried" d="M-2-3h82v57H-2Z"/>
+    </g></g>
+  </g>
+  <!-- A wet docket sits in her raised hand. As the next delivery starts it rests on the quay for comparison. -->
+  <g id="bf2-first-letter" class="bf2-dock-copy">
+    <path class="bf2-dock-shadow" d="m1 10 81 .1 7.3 42.7-77 5.1-12-5z" fill="#716470"/>
+    <g class="bf2-lift-docket" style="--bf-peek:var(--bf-inspect-first,0)">
+      <use href="#bf2-docket-01"/>
+      <g transform="translate(42.4 23) rotate(-7)"><use href="#bf2-splash-print"/></g>
+      <path data-breakfast-hit="first" d="M-3-4h83v59H-3Z"/>
+    </g>
+  </g>
+  <g id="bf2-trial-letter" class="bf2-dock-copy">
+    <path class="bf2-dock-shadow" d="m1 10 81 .1 7.3 42.7-77 5.1-12-5z" fill="#716470"/>
+    <g class="bf2-lift-docket" style="--bf-peek:var(--bf-inspect-trial,0)">
+      <use href="#bf2-docket"/>
+      <text class="bf2-run-number" x="68.7" y="11.25" data-bf-run-number="trial">02</text>
+      <g transform="translate(42.4 23) rotate(-7)"><g id="bf2-trial-mark"><use href="#bf2-splash-print"/></g></g>
+      <path data-breakfast-hit="trial" d="M-3-4h83v59H-3Z"/>
+    </g>
+  </g>
+  <g id="bf2-crew-thumb" fill="#e4ad8a" pointer-events="none">
+    <path d="m244.7 268.4 4.4-1.6 6.7.3 1.5 1.3-1.9 1.5-6.2 1.1-2.9 1.9-2-.4z" stroke="#ab7b65" stroke-width=".85"/>
+  </g>
+  <!-- Small signatures of the sea remain on the unprinted margin. -->
+  <g id="bf2-edition-marks" fill="#9d8177" opacity=".65">
+    <path d="m101 514 42 3-.2 1.3-42-3zm45 3.6 14 1-.1 1.3-14-1zm779-33.2 30-4 .3 1.2-30 4z"/>
+    <path d="m967 475-1 .2-.4 6.3 1.4-.2.2-4.8 1-.1.1-1z"/>
+  </g>
+</svg>

@@ -1,0 +1,146 @@
+/* On a tablet, let the source lines use the space above the book. */
+@media (min-width:681px) and (max-width:1150px) and (min-height:531px) and (orientation:landscape) {
+  #app #chapter { max-width:calc(100% - 7.2vw); }
+  #app #chapter #heading { font-size:clamp(22px,2.75vw,31px); }
+  #app #chapter #byline { width:max-content; max-width:min(86vw,780px); }
+}
+
+/* On a short phone, share the left margin between the question and the
+   current action. Longer credits or narration can scroll inside their part. */
+@media (min-width:460px) and (max-height:390px) and (orientation:landscape) {
+  #app:not([data-cover=yes]):not([data-reading]):not([data-backmatter]) {
+    display:grid;
+    grid-template-columns:var(--story-column) minmax(0, 1fr);
+    grid-template-rows:46px minmax(0, 1fr) auto;
+  }
+  #app:not([data-cover=yes]):not([data-reading]):not([data-backmatter]) :is(#chapter, #dock) {
+    position:relative;
+    inset:auto;
+    grid-column:1;
+    justify-self:start;
+    margin-inline-start:max(14px, env(safe-area-inset-left));
+    width:calc(var(--story-column) - max(25px, env(safe-area-inset-left) + 10px));
+    min-height:0;
+  }
+  #app #chapter {
+    grid-row:2;
+    align-self:start;
+    max-height:100%;
+    overflow:auto;
+    scrollbar-width:thin;
+    pointer-events:auto;
+  }
+  #app #chapter .eyebrow { gap:4px; letter-spacing:.025em; }
+  #app #chapter .eyebrow .bar { width:16px; flex:none; }
+  #app #chapter #byline .credit-link {font-size:.715rem;line-height:1.3;}
+  #app #dock {
+    grid-row:3;
+    max-height:46dvh;
+    margin-block:5px max(9px, env(safe-area-inset-bottom));
+  }
+  #app #dock .caption {
+    min-height:0;
+    overflow-y:auto;
+    pointer-events:auto;
+    scrollbar-width:thin;
+  }
+}
+
+/* A narrow landscape viewport still needs the full width of both pages on
+   the right, including phones whose browser chrome reduces their viewport. */
+@media (min-width:460px) and (max-width:559px) and (max-height:530px) and (orientation:landscape) {
+  #app { --story-column:clamp(162px,35vw,196px); }
+  #app:not([data-reading]) .top { padding:4px 10px; }
+  #app .chapter, #app .dock, #app .map-heading, #app .map-caption {
+    left:10px;
+    right:auto;
+    width:calc(var(--story-column) - 19px);
+    max-width:none;
+  }
+  #app .chapter, #app .map-heading { top:46px; }
+  #app #heading { font-size:1rem; line-height:1.18; }
+  #app #heading > span { display:inline; }
+  #app .eyebrow { font-size:.63rem; }
+  #app #byline { margin-top:3px; }
+  #app #byline button { font-size:.73rem; line-height:1.3; }
+  #app .dock, #app .map-caption { bottom:max(9px,env(safe-area-inset-bottom)); }
+  #app .dock { gap:4px; }
+  #app .dock #capText { font-size:.86rem; line-height:1.4; }
+  #app .dock .actions { gap:4px; }
+  #app .dock .actions button { padding:5px 8px; font-size:.81rem; }
+  #app .transport, #app[data-cover=yes] .transport {
+    left:auto;
+    right:max(10px,env(safe-area-inset-right));
+    width:clamp(130px,28vw,158px);
+  }
+  #app .transport .rail { gap:3px; }
+  #street-home #cover-title { font-size:1.3rem; }
+  #app .map-options { flex-wrap:wrap; gap:1px 8px; }
+}
+
+@media (max-width:430px) and (max-height:600px) and (orientation:portrait) {
+  /* Reserve the middle of the page for the paper objects. */
+  #app:not([data-cover=yes]):not([data-reading]):not([data-backmatter]) #chapter {
+    top:max(53px, env(safe-area-inset-top) + 44px);
+    max-height:min(44dvh,calc(100dvh - 225px));
+    overflow:auto;
+    pointer-events:auto;
+    scrollbar-width:thin;
+  }
+  #app #heading { font-size:clamp(18px,5.1vw,21px); }
+  #app #heading > span { display:inline; }
+  #app #byline { margin-top:3px; }
+  #app #chapter #byline { width:100%; }
+  #app:not([data-cover=yes]):not([data-reading]):not([data-backmatter]) #dock {
+    max-height:calc(50dvh - 17vw - 68px);
+    overflow:auto;
+    scrollbar-width:thin;
+  }
+  #app #dock .caption {
+    overflow-y:auto;
+    min-height:0;
+    pointer-events:auto;
+    scrollbar-width:thin;
+  }
+  #app #dock .actions { flex:none; }
+}
+
+@media (max-width:680px) and (orientation:portrait) {
+  #app:not([data-reading]) .top { padding-top:max(11px, env(safe-area-inset-top) + 3px); }
+  #app:not([data-reading]) :is(#chapter, .map-heading) { top:max(60px, env(safe-area-inset-top) + 48px); }
+  #app:not([data-reading]) #dock { bottom:calc(62px + max(8px, env(safe-area-inset-bottom))); }
+  #app .map-caption { bottom:calc(64px + max(8px, env(safe-area-inset-bottom))); }
+}
+@media (min-width:460px) and (max-height:530px) and (orientation:landscape) {
+  #app:not([data-reading]) .top {
+    padding-inline:max(12px, env(safe-area-inset-left)) max(12px, env(safe-area-inset-right));
+  }
+  #app:not([data-reading]) :is(.map-heading, .map-caption) {
+    left:max(14px, env(safe-area-inset-left));
+    width:calc(var(--story-column) - max(25px, env(safe-area-inset-left) + 10px));
+  }
+  #app .transport, #app[data-cover=yes] .transport { right:max(12px, env(safe-area-inset-right)); }
+}
+
+@media (min-width:460px) and (max-width:700px) and (max-height:370px) and (orientation:landscape) {
+  /* Use the margin under the book for the current action, leaving each
+     article title visible above it even on a 320px-high phone. */
+  #app:not([data-cover=yes]):not([data-reading]):not([data-backmatter]) #dock {
+    grid-column:1 / -1;
+    width:calc(100% - clamp(166px,34vw,206px) - max(20px,env(safe-area-inset-left)));
+  }
+  #app:not([data-cover=yes]):not([data-reading]):not([data-backmatter]) #chapter {
+    grid-column:1 / -1;
+    width:calc(100% - max(28px,env(safe-area-inset-left) + env(safe-area-inset-right)));
+    display:grid;
+    grid-template-columns:calc(var(--story-column) - 18px) minmax(0,1fr);
+    grid-template-rows:auto 1fr;
+    column-gap:10px;
+    max-height:none;overflow:visible;pointer-events:none;
+  }
+  #app #chapter .eyebrow{grid-column:1;grid-row:1}
+  #app #chapter #heading{grid-column:1;grid-row:2;align-self:start}
+  #app #chapter #byline{grid-column:2;grid-row:1/3;width:100%;margin-top:0}
+  #app #chapter #byline .credit-link{font-size:.715rem;line-height:1.28}
+}
+

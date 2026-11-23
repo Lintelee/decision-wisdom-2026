@@ -1,0 +1,16 @@
+main{max-width:1680px}
+.keepers{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(12px,1.7vw,29px);margin:26px 0}
+.keepers article{align-self:start}
+.keepers .pair{border-radius:3px;background:#2f463b}
+.keepers .pair{display:grid;aspect-ratio:660/740;align-items:center}
+.keepers .pair img{height:auto;width:100%}
+.keepers .detail,body:has(input[value=detail]:checked) .front{display:none}
+body:has(input[value=detail]:checked) .detail{display:block}
+.keepers .label{margin:13px 0 0;gap:.52rem}
+.keepers .letter{font-size:1.55rem}
+.keepers h2{font-size:clamp(1.13rem,1.65vw,1.65rem);letter-spacing:.035em}
+.keepers h3{font:650 .93rem/1.6 BookSans,'PingFang TC',sans-serif;margin:.2rem 0 .42rem;color:#755930}
+.keepers p{margin:0;font-size:.94rem;line-height:1.75}
+@media(max-width:1040px){.keepers{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:28px}}
+@media(max-width:680px){.keepers{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:400px){.keepers{column-gap:13px}.keepers p{font-size:.86rem}.keepers h2{letter-spacing:0}}

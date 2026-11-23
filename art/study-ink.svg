@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="700" height="400" class="study-ink" role="img" aria-labelledby="i9-title i9-desc">
+  <title id="i9-title">街坊印舖 · 舞獅廟埕</title>
+  <desc id="i9-desc">朱紅的前腳印和靛藍的後腳印錯開。獅頭跳向長凳，後腳才踩下第一拍；地上的印記讓人看見兩雙腳各走了多遠。</desc>
+  <defs>
+    <pattern id="i9-grain" width="29" height="33" patternUnits="userSpaceOnUse"><path d="m1 4 3-.8m10 13 2-1m9 9 2-.4" stroke="#453d40" stroke-opacity=".28" stroke-width="1"/><circle cx="7.5" cy="20.4" r=".6" fill="#f8edcc"/><circle cx="21.7" cy="7.3" r=".8" fill="#f8edcc"/></pattern>
+    <pattern id="i9-hatch" width="8" height="7" patternUnits="userSpaceOnUse"><path d="m-2 8 10-10M5 10l5-5" stroke="#2c4558" stroke-width="1.5" opacity=".82"/></pattern>
+    <pattern id="i9-dots" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="1.3" cy="1.3" r=".85" fill="#293e4b"/></pattern>
+    <pattern id="i9-dash" width="16" height="12" patternUnits="userSpaceOnUse"><path d="m2 3 5-1m3 7 4-1" stroke="#f8ebc6" stroke-width="1.3" opacity=".69"/></pattern>
+    <g id="i9-paw" fill="currentColor"><path d="M-9 4q-1-5 4-8 4-3 7-1 6 1 8 7 0 4-5 5l-4-1-5 1q-5 0-5-3z"/><ellipse cx="-9" cy="-5" rx="2.8" ry="3.6" transform="rotate(-25 -9 -5)"/><ellipse cx="-3" cy="-9" rx="2.7" ry="3.9"/><ellipse cx="4" cy="-9" rx="2.7" ry="3.8" transform="rotate(10 4 -9)"/><ellipse cx="10" cy="-5" rx="2.5" ry="3.5" transform="rotate(24 10 -5)"/></g>
+    <g id="i9-flower" fill="currentColor"><path d="M0-4c-8-13-14-3-6 2-14-2-11 8-2 7-8 8 3 14 7 4 6 11 15 2 6-3 14 0 12-10 2-8 8-8-2-12-7-2z"/><circle r="2.8" fill="#f1ddb1"/></g>
+    <g id="i9-lantern"><path d="M0-25v10" stroke="#314859" stroke-width="2"/><path d="m-7-14 13-1 2 3-16 2z" fill="#283f52"/><path d="M-7-11Q-21 0-12 13l6 5 12-1q15-8 10-20l-8-10z" fill="#d45c45"/><path d="M-4-10q-7 9-2 24M5-11q6 10 3 24" fill="none" stroke="#f8d78b" stroke-width="2.1"/><path d="m-6 17 13-1-2 4-10 1zm3 4 7-1-1 10-5 1z" fill="#2e4457"/></g>
+    <g id="i9-grip" stroke-linejoin="round" stroke-linecap="round">
+      <path d="m118 25 5 86-3 15" stroke="#2c4454" stroke-width="4.4" fill="none"/>
+      <path d="M65 120q6-4 12-4l5 4-1 5q-8 7-17 3zm48-7 7 1 5-5q6 0 5 5l-5 7q-6 5-12-1z" fill="currentColor" stroke="#344555" stroke-width="2"/>
+      <path d="m68 122 6-2m45-2 5-2" fill="none" stroke="#f3dba8" stroke-width="1.6"/>
+    </g>
+  </defs>
+  <style>
+    .study-ink.playing .i9-fore {animation:i9-fore 2.9s cubic-bezier(.32,.13,.24,.95) 1}
+    .study-ink.playing .i9-hind {animation:i9-hind 2.9s cubic-bezier(.42,.15,.22,.95) 1}
+    .study-ink.playing .i9-body {transform-origin:479px 194px;animation:i9-body 2.9s ease-in-out 1}
+    .study-ink .i9-new-print{opacity:0}.study-ink.playing .i9-a{animation:i9-a 2.9s linear 1}.study-ink.playing .i9-b{animation:i9-b 2.9s linear 1}.study-ink.playing .i9-c{animation:i9-c 2.9s linear 1}
+    @keyframes i9-fore{0%,11%,94%,100%{transform:translate(0,0)}25%{transform:translate(4px,5px)}44%{transform:translate(-72px,-46px)}56%{transform:translate(-75px,-30px)}75%{transform:translate(-12px,3px)}}
+    @keyframes i9-hind{0%,42%,94%,100%{transform:translate(0,0)}53%{transform:translate(3px,3px)}64%{transform:translate(-24px,-12px)}79%{transform:translate(-9px,2px)}}
+    @keyframes i9-body{0%,14%,94%,100%{transform:rotate(0) scaleX(1)}25%{transform:rotate(-1deg) scaleX(.98)}44%{transform:rotate(14deg) scaleX(1.47)}56%{transform:rotate(8deg) scaleX(1.50)}77%{transform:rotate(-2deg) scaleX(1.02)}}
+    @keyframes i9-a{0%,19%,99%,100%{opacity:0}23%,87%{opacity:1}}
+    @keyframes i9-b{0%,44%,99%,100%{opacity:0}49%,87%{opacity:1}}
+    @keyframes i9-c{0%,62%,99%,100%{opacity:0}68%,87%{opacity:1}}
+    @media(prefers-reduced-motion:reduce){.study-ink.playing .i9-fore,.study-ink.playing .i9-hind,.study-ink.playing .i9-body,.study-ink.playing .i9-new-print{animation:none}}
+  </style>
+  <path d="M0 0h700v400H0z" fill="#f1ddb1"/>
+  <path d="M0 0h700v400H0z" fill="url(#i9-grain)" opacity=".19"/>
+  <g id="i9-square">
+    <path d="m0 194 46-23 45 6 39-11 50 11 54-19 34 6 35-11 56 8 43-17 65 9 48-18 63 9 67-29 55 6v81H0z" fill="#d6b879"/>
+    <path d="m0 212 74-17 80 7 64-23 63 14 72-12 37 4 31-14 77 7 68-20 134-16v106H0z" fill="url(#i9-hatch)" opacity=".41"/>
+    <circle cx="155" cy="101" r="38" fill="#e7ac58"/><circle cx="152" cy="101" r="34" fill="url(#i9-dots)" opacity=".20"/>
+    <path d="M0 205q208 2 390-9l310-22v226H0z" fill="#edddb7"/>
+    <path d="M0 255q191-33 348-24l352-31v200H0z" fill="#e1c592"/>
+    <path d="M0 254q167-24 325-22l149-12" stroke="#f8ebc9" stroke-width="3" fill="none"/>
+    <path d="M0 346q147 8 262-15t241-19q133-2 197-23v111H0z" fill="#f5e7c6"/>
+    <g stroke="#947e67" opacity=".51" fill="none" stroke-width="1.5"><path d="m5 265 69-8m-38 22 55-8m156-23 31-4m250-18 41-6m33 60 57-10m-385 85 33-4m-293 24 54-3"/></g>
+    <path d="m0 380 170 1 173 5 9 5 10-7 168-12 170-3v31H0z" fill="#293f51"/>
+    <g stroke="#e6cf9f" opacity=".8" fill="none"><path d="m0 386 167-2 176 8 9 3 12-7 336-12m-700 15 172-2 168 8m30-5 331-12"/></g>
+  </g>
+  <g id="i9-printed-arcade">
+    <path d="M-7 110 33 93 92 96l35 19-6 97-129 3z" fill="#e6a957"/><path d="m-5 113 51-11 74 11-4 96-121 5z" fill="#d6b681"/>
+    <path d="m-9 118 29-13 7-13 56 4 13 12 42 6-8 8-74-8-56 14z" fill="#d35e46"/><path d="m-8 116 40-23 53 4 14 11 32 6-45-6-45-7-48 21z" fill="#2d4455"/>
+    <path d="M6 137q17-21 31-3l-1 70-31 4zm52-3q20-19 37 3v64l-40 3z" fill="#48606a"/>
+    <path d="M10 139q9-11 16-9m42 12q8-10 14-8" stroke="#f2dfae" stroke-width="3" fill="none"/>
+    <g fill="#394c55"><path d="m12 174 21-2v4l-21 2zm55 14 24-2v4l-24 3z"/></g>
+    <path d="M476 109q32-5 50-29 33 14 63 7 26 18 56 20l22-7-6 12-42 11-112 10-50-11z" fill="#d9694c"/>
+    <path d="M464 113q36-2 61-30 28 14 63 7 27 17 56 19l19-6-4 6-44 12-107 10z" fill="#334c5c"/>
+    <path d="m482 117 36-8 16-14 55 5 18 13-96 9z" fill="#6b807e"/><path d="m518 106 17-9m3 9 12-8m7 9 7-7m12 8 5-6" stroke="#e2cb97" stroke-width="1.6"/>
+    <path d="m483 132 130-12v65l-130 14z" fill="#e7c18c"/><path d="m488 135 8-1-2 60-8 1zm35-4 9-1v62l-11 1zm75-7 10-2v64l-10 1z" fill="#cc6249"/>
+    <path d="m545 146 36-4v45l-37 4z" fill="#48616b"/><path d="m555 146-1 42m10-44-1 42m9-44-1 42" stroke="#c7b594" stroke-width="2"/>
+    <path d="M73 79q249 61 527-9" stroke="#3f5762" stroke-width="1.8" fill="none"/>
+    <use href="#i9-lantern" transform="translate(134 97) scale(.63)"/><use href="#i9-lantern" transform="translate(206 106) scale(.55)"/><use href="#i9-lantern" transform="translate(491 98) scale(.6)"/>
+    <path d="M282 75q12-9 18 2 7-12 19-9-10 1-16 13l-6 2q-6-10-15-8zm70-18q8-5 14 2 2-9 12-9-7 4-11 13l-4 1q-4-9-11-7z" fill="#526878"/>
+  </g>
+  <g id="i9-prints-on-ground">
+    <g color="#b95242" opacity=".53"><use href="#i9-paw" transform="translate(341 325) rotate(-76) scale(.7)"/><use href="#i9-paw" transform="translate(370 309) rotate(-77) scale(.64)"/></g>
+    <g color="#2d4b5f" opacity=".5"><use href="#i9-paw" transform="translate(498 314) rotate(-78) scale(.68)"/><use href="#i9-paw" transform="translate(528 299) rotate(-78) scale(.63)"/></g>
+    <use class="i9-new-print i9-a" href="#i9-paw" color="#b94a41" transform="translate(306 310) rotate(-79) scale(.79)"/>
+    <use class="i9-new-print i9-b" href="#i9-paw" color="#b94a41" transform="translate(269 294) rotate(-74) scale(.78)"/>
+    <use class="i9-new-print i9-c" href="#i9-paw" color="#2d4b5f" transform="translate(464 299) rotate(-74) scale(.75)"/>
+  </g>
+  <g id="i9-bench">
+    <path d="m109 289 77 9 77-14-77-5z" fill="url(#i9-hatch)" opacity=".52"/>
+    <path d="m127 239 13-1-9 46-11 2zm85-2 10-2 16 36-10 5z" fill="#294354"/>
+    <path d="m111 244 13-1-8 50-12 1zm119-5 12-2 19 45-13 4z" fill="#31495b"/>
+    <path d="m120 266 121-15 3 8-127 16z" fill="#d7624a"/>
+    <path d="m96 233 125-16 38 11-2 10-127 17-36-12z" fill="#c8714a"/>
+    <path d="m92 229 128-14 40 11-3 11-128 16-38-13z" fill="#2b4252"/>
+    <path d="m96 229 122-12 36 9-126 16z" fill="#e5ab5d"/>
+    <path d="m113 229 60-6m-28 11 57-8m-12-2 13-2" stroke="#84634c" stroke-width="1.9" fill="none"/>
+    <path d="m110 287 6-28m137 20-8-20" stroke="#f0ce90" stroke-width="2"/>
+  </g>
+  <g id="i9-stamped-lion">
+    <path d="m287 291 43-13 52 5-23 11-53 4zm119-4 36-12 59 6-25 10-66 2z" fill="url(#i9-hatch)" opacity=".54"/>
+    <g class="i9-hind">
+      <use style="--study-work-props:none" href="art/animal-studies.svg#ink-hare" x="418" y="173" width="112" height="124"/>
+      <use href="#i9-grip" color="#d8ad80" transform="translate(418.889 173.000) scale(0.68889)"/>
+      <g transform="translate(0 -12)">
+        <path d="M453 191q22-22 43-14l8 6q23-8 13-25 21 7 17 26-4 17-21 20l3 8-11-3-4 8-13-6-7 7-16-11z" fill="#d65d46" stroke="#2e4253" stroke-width="4"/>
+        <path d="m476 184 11-3 9 5-10 5 7 3-13 7-13-6 12-7z" fill="#edb96a"/><path d="M507 191q13-4 16-15m-15 23q13-4 17-12" stroke="#f5dbac" stroke-width="3" fill="none"/>
+      </g>
+    </g>
+    <g transform="translate(0 -12)">
+    <g class="i9-body">
+      <path d="M326 192q22-13 44-10t41-6 42 4l36-8-9 37q-19 12-43 7-24-3-43 2-31 10-62 0z" fill="#d25844" stroke="#293f51" stroke-width="4"/>
+      <path d="M334 199q20-13 39-4t38-3 38 2l34-8-3 12q-17 12-36 8-22-6-40 1-26 11-71 4z" fill="#efb866"/>
+      <g color="#2d4657"><use href="#i9-flower" transform="translate(364 199) scale(.65)"/><use href="#i9-flower" transform="translate(407 197) scale(.70)"/><use href="#i9-flower" transform="translate(449 194) scale(.66)"/></g>
+      <path d="M337 214q29 8 62 0t44-3 34-8" fill="none" stroke="#f5dcae" stroke-width="2.5" stroke-dasharray="4 4"/>
+    </g>
+    </g>
+    <g class="i9-fore">
+      <use style="--study-work-props:none" href="art/animal-studies.svg#ink-otter" x="277" y="179" width="117" height="130"/>
+      <use href="#i9-grip" color="#bd805a" transform="translate(277.722 179.000) scale(0.72222)"/>
+      <g id="i9-mask" transform="translate(0 -12)">
+        <path d="M277 191q-8-10-2-20 3-9 11-11-6-14 6-18 9-3 15 4 5-12 13-11 8 1 8 11 12-8 22-1 11 5 8 15 19-2 20 12 1 9-7 13 11 8 4 18l-12 3q0 13-15 11-9 10-21 3l-9 6-12-6q-15 8-22-5-14 1-16-8-13-4-7-14z" fill="#d35040" stroke="#2b4051" stroke-width="4.5" stroke-linejoin="round"/>
+        <path d="M280 179q8-27 30-25 24-7 38 10l8 18-15 18-35 7-28-13z" fill="#e9ab59"/>
+        <path d="M294 187q19 4 31-.5l-4 11q-19 19-47 2l-2-8z" fill="#293f51"/>
+        <path d="m278 195 7 4 5-4 6 5 5-4 5 2 8-5q-5 12-19 12-11-1-17-10z" fill="#f5e5bb"/>
+        <path d="M279 206q14 9 31 1 1 9-7 13l-3-6-6 8-6-7-6 3z" fill="#e9b368" stroke="#31475a" stroke-width="2"/>
+        <path d="M299 150q-7-13 2-27 11-5 8 7l-1 18z" fill="#edb565" stroke="#2b4051" stroke-width="3"/>
+        <path d="M341 150q11-17 21-13 6 7-10 19z" fill="#e2a65f" stroke="#2b4051" stroke-width="3"/>
+        <circle cx="294" cy="173" r="12.6" fill="#f8ebca" stroke="#304658" stroke-width="2.5"/>
+        <ellipse cx="291" cy="175" rx="6" ry="7.5" fill="#2c4252"/><circle cx="288.5" cy="172" r="2.3" fill="#ffefc6"/>
+        <path d="M279 166q8-16 24-10l4 6-14-1-12 9z" fill="#314b5c"/>
+        <path d="M264 186q6-8 15-5l9 6q-3 8-14 8l-11-4z" fill="#c85341" stroke="#2d4150" stroke-width="2.8"/>
+        <path d="M315 162q8-12 16-3-1 14-13 15z" fill="#d75d47" stroke="#2b4051" stroke-width="2.2"/>
+        <g fill="none" stroke="#f6ddaa" stroke-width="3.7"><path d="m344 169-10 6 11 3-10 6 12 2m11-23 6 7-7 8m1 18-10 3m-16 2-11 3"/></g>
+        <path d="M277 185l5 1m26-30 6-4" stroke="#f9e6b8" stroke-width="2.7" stroke-linecap="round"/>
+      </g>
+    </g>
+  </g>
+  <g id="i9-drum">
+    <path d="m574 270 27 4 36-7-22-4z" fill="url(#i9-hatch)" opacity=".55"/>
+    <path d="m586 250-5 18h7l5-16m17-1 7 17 7-2-7-17" fill="#2f4858"/>
+    <path d="m574 221 51-3-4 30q-18 16-42 4z" fill="#cc5a47" stroke="#304654" stroke-width="3"/>
+    <ellipse cx="599" cy="219" rx="26" ry="7" transform="rotate(-4 599 219)" fill="#f4d793" stroke="#354954" stroke-width="3"/>
+    <path d="m580 226 6 20 8-20 7 20 8-20 6 15 7-19" fill="none" stroke="#e9bb73" stroke-width="2.3"/>
+    <path d="m603 216 16-16m-27 17 4-19" stroke="#344c58" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+  <path d="M0 0h700v400H0z" fill="url(#i9-grain)" opacity=".43" pointer-events="none"/>
+</svg>

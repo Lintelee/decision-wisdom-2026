@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#2a3140">
+<title>街角的決策智慧</title>
+<meta name="application-name" content="街角的決策智慧">
+<meta name="description" content="從一杯茶、一面手印牆到一盞天燈，與街坊一起動手讀懂電通台灣《決策智慧 2026》的二十二篇文章。">
+<meta property="og:title" content="街角的決策智慧">
+<meta property="og:site_name" content="街角的決策智慧">
+<meta property="og:description" content="翻開一條紙上的街，從十二段生活故事讀懂品牌決策。">
+<script src="folio/js/entry.js"></script>
+<link rel="icon" href="art/mark.svg">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="paper/breakfast.css">
+<link rel="stylesheet" href="folio/css/app.css">
+<link rel="stylesheet" href="reader.css">
+<link rel="stylesheet" href="folio/css/edition.css">
+<link rel="stylesheet" href="reader-assets/text-leaf.css">
+<link rel="stylesheet" href="folio/css/street-home.css">
+<link rel="stylesheet" href="folio/css/endnote.css">
+<link rel="stylesheet" href="folio/css/phone-spreads.css">
+<link rel="stylesheet" href="folio/css/endpapers.css">
+<link rel="modulepreload" href="folio/js/front-paper-art.js">
+<script defer src="folio/js/front-cover.js"></script>
+</head>
+<body>
+<dialog id="book-intro" aria-labelledby="intro-title" aria-describedby="intro-description">
+  <div class="intro-binding">
+    <div class="intro-inset">
+      <div class="intro-copy">
+        <p class="endpaper-kicker">電通台灣《決策智慧 2026》互動讀本</p>
+        <h1 id="intro-title" tabindex="-1" autofocus>街角的<span>決策智慧</span></h1>
+        <p class="intro-hook">客人喝了一口茶，就把杯子放下。<br>下一壺，你會怎麼泡？</p>
+        <p id="intro-description">在街圖選一幕，點點紙道具，看看街坊怎麼回應。十二個生活故事，帶你讀懂人、模型與 AI 如何影響日常決定。</p>
+      </div>
+      <div id="intro-art" aria-hidden="true"></div>
+      <div class="intro-invitation">
+        <button id="intro-enter" type="button" class="paper-invitation"><span>翻開街圖</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 5.8c3.6-.7 6.6.1 9.5 2.3 2.3-2.3 6.3-3.1 9.5-2.5v13.1c-3.6-.5-6.8.2-9.5 2-2.7-1.8-5.9-2.5-9.5-2.1V5.8ZM12 8v12.6"/><path d="M19.1 3c-2.3.2-4.7 1.1-6.1 2.5"/></svg></button>
+        <p class="phone-orientation"><svg viewBox="0 0 32 27" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14V5a2 2 0 0 1 2-2h7m5 1a10 10 0 0 1 9 7m1-5-.7 5.8-5-2.6"/><rect x="7" y="14" width="21" height="10" rx="2"/><path d="M10 18v2"/></svg><span>手機橫放，左右兩頁和街坊的動作都看得更完整。</span></p>
+      </div>
+    </div>
+  </div>
+</dialog>
+<main id="app" data-land="map" data-cover="yes" aria-label="街角的決策智慧">
+        <div id="lands" aria-hidden="true">
+        <div class="land land-prologue">
+          <div class="desk-engraving"></div>
+          <img src="art/issue/david.webp" alt="" />
+        </div>
+        <div class="land land-people">
+          <div class="desk-engraving"></div>
+          <img src="art/issue/heart.webp" alt="" />
+        </div>
+        <div class="land land-model">
+          <div class="desk-engraving"></div>
+          <img src="art/issue/sunflower.webp" alt="" />
+        </div>
+        <div class="land land-ai">
+          <div class="desk-engraving"></div>
+          <img src="art/issue/face.webp" alt="" />
+        </div>
+      </div>
+
+  <canvas id="world" tabindex="0" role="img" aria-label="桌上一本打開的立體書。抓住書頁外側往內拖可以翻頁，拖曳桌面可以轉動視角，點或拖立體書上的東西會有反應。"></canvas>
+  <div class="shade" aria-hidden="true"></div>
+
+  <header class="top">
+    <button class="brand" id="btnHome" title="回到互動書首頁">
+      <span class="mark" aria-hidden="true"><img src="art/mark.svg" alt=""></span>
+      <span><b>街角的決策智慧</b><small>決策智慧 2026 互動讀本</small></span>
+    </button>
+    <nav aria-label="工具">
+      <button id="btnObjects" aria-label="探索本頁物件" aria-expanded="false" aria-controls="objects" title="探索本頁物件"><span class="ico" data-i="objects"></span><span class="t">物件</span></button>
+      <button id="btnMap" aria-label="返回首頁選關地圖" title="返回首頁選關地圖"><span class="ico" data-i="map"></span><span class="t">選關地圖</span></button>
+      <button id="btnRead" aria-label="翻開原刊全文"><span class="ico" data-i="book"></span><span class="t">原刊全文</span></button>
+      <button id="btnView" aria-label="視角歸位" title="視角歸位"><span class="ico" data-i="eye"></span><span class="t">視角歸位</span></button>
+      <button id="btnSound" aria-label="聲音" aria-pressed="true" title="聲音"><span class="ico" data-i="sound"></span></button>
+    </nav>
+  </header>
+
+  <section class="chapter" id="chapter" aria-live="polite">
+    <div class="eyebrow"><span class="bar"></span><b id="eyebrow"></b></div>
+    <h1 id="heading"></h1>
+    <div id="byline" aria-label="本頁取材文章與作者"></div>
+  </section>
+
+  <div class="dock silent" id="dock">
+    <div class="caption">
+      <p id="capText" aria-live="polite" aria-atomic="true"></p>
+    </div>
+    <div class="actions" id="actions"></div>
+  </div>
+
+  <nav class="transport" aria-label="翻頁">
+    <div class="turnlabel"><span id="turnHint">拖書頁翻頁 · 拖桌面轉視角</span><b id="counter"></b></div>
+    <div class="rail">
+      <button id="btnPrev" aria-label="上一頁"><span class="ico" data-i="left"></span></button>
+      <div class="dots" id="dots"></div>
+      <input id="page-scrub" type="range" min="0" max="12" step="1" value="0" aria-label="拖動書籤選頁">
+      <button id="btnNext" aria-label="下一頁"><span class="ico" data-i="right"></span></button>
+    </div>
+  </nav>
+
+  <aside id="objects" aria-label="可探索的物件" hidden></aside>
+  <button id="endnote-tab" type="button" aria-controls="outcome" aria-expanded="false" hidden>重看本幕解說</button>
+  <aside id="outcome" aria-labelledby="endnote-title" aria-live="polite" hidden>
+    <header><span>本幕解說</span><button type="button" class="endnote-close" aria-label="收起本幕解說">×</button></header>
+    <h2 id="endnote-title" tabindex="-1"></h2>
+    <button type="button" class="endnote-read" hidden>
+      <span class="endnote-by"><span>觀點整理自</span> <strong class="endnote-authors"></strong></span>
+      <span class="endnote-reference"><span class="endnote-article"></span> <span class="endnote-page"></span></span>
+    </button>
+    <p class="endnote-event"></p><p class="endnote-meaning"></p>
+    <details><summary>原文摘句</summary><blockquote></blockquote><cite></cite><div class="endnote-sources"></div></details>
+  </aside>
+  <div id="bubble" class="bubble" hidden></div>
+  <div id="tip" class="tip" hidden></div>
+  <div id="toast" class="toast" hidden></div>
+  <div id="card" class="stopcard" hidden></div>
+  <div id="hint" class="hint" aria-hidden="true" hidden><i></i></div>
+
+  <section id="closing-page" hidden aria-labelledby="closing-title">
+    <div class="closing-copy">
+      <p class="endpaper-kicker">後記</p>
+      <h1 id="closing-title" tabindex="-1">街角還亮著一盞燈</h1>
+      <p>早上那壺茶，茶師照著客人的反應重新泡過。<br>現在，攤前也為你留了一杯。</p>
+    </div>
+    <div class="closing-invitation">
+      <p id="closing-thanks" role="status">謝謝你陪街坊走這一段。為《決策智慧 2026》的作者點一盞燈，道聲謝。</p>
+      <div class="closing-actions">
+        <button type="button" id="light-thanks" class="paper-invitation"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3m-4 0h8l3.5 4.5-2 7.5h-11l-2-7.5L8 5Zm0 0 1 12m7-12-1 12M9 20h6m-3-3v5"/></svg><span>為作者點燈</span></button>
+        <button type="button" id="closing-credits" aria-haspopup="dialog">致謝與原刊作者</button>
+        <a href="#home" id="closing-home">回街圖</a>
+      </div>
+    </div>
+  </section>
+
+<div id="cover">
+  <section id="street-home" aria-labelledby="cover-title">
+    <div class="map-heading">
+      <p>全書選關地圖</p><h1 id="cover-title" tabindex="-1">街角的決策智慧</h1>
+      <p class="map-instruction">點一個地標入戲，或拖動頁角翻書。</p>
+    </div>
+    <nav id="street-stops" aria-label="書上十二個可以進入的地標"></nav>
+    <aside class="map-caption">
+      <p id="map-preview"><span class="map-folio"></span><strong class="map-question"></strong></p>
+      <div class="map-options"><button id="btnOpen" type="button" disabled><span>正在攤開地圖…</span></button><button id="open-contents" type="button" aria-haspopup="dialog">全書目次</button><button id="homePrefs" type="button" aria-haspopup="dialog">閱讀設定</button></div>
+      <span class="sr" id="route-progress"></span>
+    </aside>
+    <p id="loading" class="sr" role="status">正在展開第一張紙景…</p>
+  </section>
+</div>
+<div id="reader" hidden aria-label="原刊書頁"></div>
+</main>
+
+<dialog id="map-contents" aria-labelledby="contents-title">
+  <header><h2 id="contents-title">全書目次</h2><form method="dialog"><button aria-label="收起目次">關閉</button></form></header>
+  <nav id="street-chapters" aria-label="依篇章選關"></nav>
+  <footer class="contents-ends"><button id="reopen-intro" type="button">重看序頁</button><a id="contents-ending" href="#ending">後記與致謝</a><a id="btnOpenRead" href="#read">直接翻開原刊全文</a></footer>
+</dialog>
+<dialog id="author-thanks" aria-labelledby="authors-title">
+  <header><div><p class="endpaper-kicker">街角的決策智慧</p><h2 id="authors-title">致謝與原刊作者</h2></div><form method="dialog"><button class="credit-close" aria-label="收起致謝，返回後記">關閉</button></form></header>
+  <p>感謝電通台灣《決策智慧 2026》的作者，把工作裡的觀察寫成了這二十二篇文章。點篇名，就能讀到故事的起點。</p>
+  <nav id="authors-index" aria-label="依篇章閱讀原刊作者與作品"></nav>
+</dialog>
+<dialog id="map-notes" aria-labelledby="prefs-heading"><h2 id="prefs-heading">閱讀設定</h2>
+  <label><input id="homeMotion" type="checkbox">播放紙景動作</label>
+  <label><input id="homeSound" type="checkbox">播放配樂與物件音效</label>
+  <label for="musicVolume">背景配樂音量 <input id="musicVolume" type="range" min="0" max="100" step="1" value="53"></label>
+  <label for="effectsVolume">物件音效音量 <input id="effectsVolume" type="range" min="0" max="100" step="1" value="69"></label>
+  <p>本書取材自電通台灣《決策智慧 2026》，十二幕故事連到二十二篇原文。</p>
+  <form method="dialog"><button>返回書頁</button></form></dialog>
+<p class="sr" id="announce" role="status" aria-live="polite"></p>
+<script src="reader-assets/text-leaf.js"></script>
+<script src="reader-assets/reading-hands.js"></script>
+<script src="reader.js"></script>
+<script type="module" src="folio/js/start.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="700" height="400" class="study-light" role="img" aria-labelledby="l9-title l9-desc">
+  <title id="l9-title">窗燈小戲班 · 舞獅廟埕</title>
+  <desc id="l9-desc">暖黃窗紙後照出獅頭與獅尾的影子。獅頭先跳向凳邊，獅尾還在地上，錯開的剪影將兩位街坊的步伐照得清清楚楚。</desc>
+  <defs>
+    <radialGradient id="l9-night" cx=".5" cy=".54" r=".73"><stop stop-color="#604650"/><stop offset=".77" stop-color="#312c44"/><stop offset="1" stop-color="#21263b"/></radialGradient>
+    <radialGradient id="l9-screen" cx=".5" cy=".5" r=".72"><stop stop-color="#ffedbd"/><stop offset=".52" stop-color="#f2cb94"/><stop offset="1" stop-color="#b67d70"/></radialGradient>
+    <linearGradient id="l9-timber" x2="1" y2=".9"><stop stop-color="#533c50"/><stop offset=".52" stop-color="#423647"/><stop offset="1" stop-color="#292e42"/></linearGradient>
+    <linearGradient id="l9-clothglass" x2=".75" y2="1"><stop stop-color="#f5c07d"/><stop offset=".46" stop-color="#e78b73"/><stop offset="1" stop-color="#ad6272"/></linearGradient>
+    <linearGradient id="l9-floor" x2="0" y2="1"><stop stop-color="#c79e81"/><stop offset="1" stop-color="#e7ca9a"/></linearGradient>
+    <pattern id="l9-grain" width="27" height="20" patternUnits="userSpaceOnUse"><path d="m3 4 5 1m8 8 5-1" fill="none" stroke="#6d5762" opacity=".16" stroke-width=".8"/><path d="m4 16 3-.6m15-11 3-.5" stroke="#ffefb9" stroke-width=".9" opacity=".29"/></pattern>
+    <pattern id="l9-mullion" width="29" height="34" patternUnits="userSpaceOnUse"><path d="m0 0 14.5 8.5L29 0m-29 34 14.5-8.5L29 34M14.5 8.5v17" fill="none" stroke="#bd9291" stroke-width="1.1"/></pattern>
+    <g id="l9-brass"><circle r="4.4" fill="#513c54"/><circle r="3" fill="#e9bd74"/><path d="m-1.1 -.8 2.2-.5" stroke="#fff1bd" stroke-width="1.4" stroke-linecap="round"/></g>
+    <g id="l9-star"><path d="M0-6q1 5 5 6Q1 1 0 6q-1-5-5-6 4-1 5-6z" fill="#f5d99a"/></g>
+    <g id="l9-lamp">
+      <path d="M0-19v16" fill="none" stroke="#e5c389" stroke-width="1.8"/>
+      <path d="m-13-4 26 0 3 4-32 0z" fill="#514052" stroke="#d3a76d"/>
+      <path d="m-13 0 26 0 9 9-2 22-10 8h-20l-10-8-2-22z" fill="#edb47d" stroke="#69495b" stroke-width="2.8"/>
+      <path d="m-9 3-5 9 1 15 6 8h14l6-8 1-15-6-9z" fill="#f9db9e"/>
+      <path d="M-7 1q-8 15 0 36m14-36q8 15 0 36M-18 12l36-1m-35 16 33-1" stroke="#b08770" fill="none" stroke-width="1.2"/>
+      <path d="m-9 37 18 0-1 5H-8zm7 6h4v8h-4z" fill="#63495b"/><path d="m-3 49 6 0 2 10-9 0z" fill="#cb9369"/>
+    </g>
+    <g id="l9-corner" fill="none" stroke="#ca9a71" stroke-width="2.1" stroke-linejoin="round"><path d="M0 30V0h32m-27 23V6h19m-10 0v8H5m8 1c12-11 18-6 14 1-3 6-16 4-15-3m-4 7c-7 7-1 15 5 10 4-3 3-9-1-10"/></g>
+    <g id="l9-bead"><path d="M0-3 4 0 0 3-4 0z" fill="#ecc58a"/></g>
+    <g id="l9-grip" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m115 25 10 86-4 14" stroke="#635263" stroke-width="4.6" fill="none"/><path d="m115 26 9 81" stroke="#d6ac71" stroke-width="1.5" fill="none"/>
+      <path d="m65 119 9-3 8 4-2 6-11 4-6-4zm48-6 8-1 4-4 5 2 0 5-5 7-11-1z" fill="currentColor" stroke="#554457" stroke-width="2"/>
+      <circle cx="115" cy="119" r="2" fill="#ebc27f"/><path d="m67 122 4-2m48-3 5-2" fill="none" stroke="#f2cf8d" stroke-width="1.2"/>
+    </g>
+  </defs>
+  <style>
+    .study-light.playing .l9-head-act{animation:l9-front 3.1s ease-in-out 1}
+    .study-light.playing .l9-tail-act{animation:l9-tail 3.1s ease-in-out 1}
+    .study-light.playing .l9-shadow-head{animation:l9-shadow-front 3.1s ease-in-out 1}
+    .study-light.playing .l9-shadow-tail{animation:l9-shadow-hind 3.1s ease-in-out 1}
+    .study-light.playing .l9-silk{transform-origin:462px 211px;animation:l9-silk 3.1s ease-in-out 1}
+    @keyframes l9-front{0%,15%,93%,100%{transform:translate(0,0)}29%{transform:translate(4px,6px)}47%{transform:translate(-67px,-43px)}59%{transform:translate(-70px,-34px)}77%{transform:translate(-9px,3px)}}
+    @keyframes l9-tail{0%,42%,94%,100%{transform:translate(0,0)}51%{transform:translate(1px,5px)}66%{transform:translate(-22px,-12px)}80%{transform:translate(-7px,2px)}}
+    @keyframes l9-shadow-front{0%,15%,93%,100%{transform:translate(0,0)}29%{transform:translate(5px,5px)}47%{transform:translate(-79px,-54px)}59%{transform:translate(-82px,-40px)}77%{transform:translate(-12px,3px)}}
+    @keyframes l9-shadow-hind{0%,42%,94%,100%{transform:translate(0,0)}52%{transform:translate(3px,4px)}66%{transform:translate(-27px,-14px)}80%{transform:translate(-8px,3px)}}
+    @keyframes l9-silk{0%,15%,93%,100%{transform:rotate(0) scaleX(1)}29%{transform:rotate(-2deg) scaleX(.97)}47%{transform:rotate(14deg) scaleX(1.4)}59%{transform:rotate(10deg) scaleX(1.46)}77%{transform:rotate(-2deg) scaleX(.99)}}
+    @media(prefers-reduced-motion:reduce){.study-light.playing .l9-head-act,.study-light.playing .l9-tail-act,.study-light.playing .l9-shadow-head,.study-light.playing .l9-shadow-tail,.study-light.playing .l9-silk{animation:none}}
+  </style>
+  <path d="M0 0h700v400H0z" fill="url(#l9-night)"/>
+  <g opacity=".64"><use href="#l9-star" transform="translate(23 79) scale(.52)"/><use href="#l9-star" transform="translate(63 26) scale(.52)"/><use href="#l9-star" transform="translate(667 64) scale(.66)"/><use href="#l9-star" transform="translate(675 276) scale(.44)"/></g>
+  <g id="l9-puppet-theatre">
+    <path d="m34 326 201 24 125 8 142-12 164-14-28 19-281 38-309-28z" fill="#222438" opacity=".76"/>
+    <path d="m38 320 33-56 554 0 37 55-2 14-289 33-23 6-27-6-282-32z" fill="#855c62" stroke="#262a40" stroke-width="3"/>
+    <path d="m42 318 28-51 553 0 32 49v10l-283 33-24 6-28-6-278-32z" fill="#d6b88e"/>
+    <path d="m46 321 274 32 29 7 23-6 276-34m-593 5 266 32 27 6 25-7 267-30" stroke="#96776d" fill="none" stroke-width="1.15"/>
+    <path d="m47 315 26-56 550 0 30 55-280 35-25 8-27-7z" fill="url(#l9-floor)" stroke="#e4ca98" stroke-width="2.5"/>
+    <path d="m352 262-4 89" stroke="#96756a" opacity=".52" stroke-width="1.6"/>
+    <path d="M80 280V99q43-51 121-52h290q76 0 129 52v181l-266 34z" fill="url(#l9-screen)" stroke="#382f44" stroke-width="6"/>
+    <path d="M87 104q46-50 116-50h287q72 1 122 49v150l-258 20-267-10z" fill="url(#l9-grain)"/>
+    <path d="M93 106q39-44 107-46h29L93 196zm512 0q-44-46-101-46h-34l135 126z" fill="url(#l9-mullion)" opacity=".45"/>
+    <path d="M92 213q40-19 69-12l62-28 54 16 61-33 56 18 38-13 50 18 38-13 64 19 22-9v56l-514 8z" fill="#a6a28b" opacity=".48"/>
+    <path d="M93 222q51-12 97-13l16-9 27 2 28-8 21 5 50-12 55 11 35-16 77 12 20-10 32 2 16-9 38-6v51l-512 16z" fill="#9b8f89" opacity=".38"/>
+    <path d="M89 233q84-18 186-11l106-11q113-4 226-19v92l-251 28-268-33z" fill="#e1bb8d"/>
+    <path d="M92 246q103-20 196-13m134-14 161-17M104 268l80-6m212-24 60-5m-21 28 100-9" fill="none" stroke="#a28375" opacity=".43" stroke-width="1.4"/>
+    <g id="l9-temple-shadow" opacity=".59">
+      <path d="M465 151q33-4 53-25 23 10 43 0 23 18 46 18l11-6-4 12-29 8-95 10-33-9z" fill="#8d777c"/><path d="m475 161 122-10-4 12-109 12z" fill="#b79384"/>
+      <path d="m484 172 7-1-1 33-7 1zm35-3 6-1v34l-7 1zm67-7 7-1v34l-8 1z" fill="#9b8081"/>
+      <path d="m539 175 32-2v26l-32 2z" fill="#b29a8e"/>
+    </g>
+    <g id="l9-paper-clouds" fill="#f7deb1" opacity=".94">
+      <path d="M183 106q5-8 13-6 3-10 12-9 8 0 11 7 13-4 17 8-9 4-21 3l-30 1z"/>
+      <path d="M392 102q7-8 14-5 4-8 10-7 6 0 9 7 9-2 14 7l-28 1-18-1z"/>
+    </g>
+  </g>
+  <g id="l9-split-shadows" fill="#805a69" opacity=".38">
+    <g class="l9-shadow-head"><path d="m343 176-9-3 6-9-5-5 10-6-3-9 12-1 3-11 6 8 6-14 6-1-1 12 10 2 9-8 3 10 8 4 5-2 2 11 7 8-6 7 2 8-9 3-5 8-9-1-3 9-12-4-7 5-8-6-14 2-3-6-7 1z"/><path d="m362 181 25-2 4 27-11 8-20-4-5-12zm4 29 8 3-8 14-10 1 1-5zm17-1 8-4 8 17-6 4z"/></g>
+    <g class="l9-shadow-tail"><path d="m443 167q14-10 22-6l4-15 5-3 5 15 11-14 5 3-6 17q16-3 22-12 4 9-2 18l-13 5-1 11-10 8-25-7-14 1z"/><path d="m461 186 26 1-3 20-8 8-17-6zm1 20 9 2-8 16-12 0 6-5zm16 2 7-2 8 15-7 4z"/></g>
+  </g>
+  <g id="l9-beam-and-lamps">
+    <path d="M55 285V84q45-40 103-48l53-13h280l58 14q52 9 94 48v199l-24 4V99q-48-41-113-45H200q-63 2-120 47v186z" fill="url(#l9-timber)" stroke="#9e756b" stroke-width="3"/>
+    <path d="M61 90q63-57 144-57h287q81 4 143 55m-557 16q58-51 120-53h310q65 3 114 45" fill="none" stroke="#d0a578" stroke-width="2.5"/>
+    <path d="M198 38h304l28 5-353 4z" fill="#80616b"/><path d="M242 39h216" stroke="#d8b389" stroke-width="1.3" stroke-dasharray="1 6"/>
+    <path d="M150 39q11-17 23-16l13 4 15-6h291l15 6 15-4q11-1 23 16" fill="none" stroke="#af856e" stroke-width="2.5"/>
+    <use href="#l9-corner" transform="translate(60 89)"/><use href="#l9-corner" transform="translate(638 87) scale(-1 1)"/>
+    <path d="m352 27 16 8-16 9-17-9z" fill="#e3b574" stroke="#a8816a"/><path d="m352 31 6 4-6 5-6-5z" fill="#557f80"/>
+    <g fill="none" stroke="#977375" stroke-width="1.5"><path d="M62 120v138m12-137v139m553-139v136m9-137v133"/></g>
+    <use href="#l9-lamp" transform="translate(117 116) scale(.88)"/><use href="#l9-lamp" transform="translate(584 106) scale(.94)"/>
+    <path d="M61 257h13l2 7-4 2 4 19-18-2 5-19-3-2zm567-2h9l3 8-4 2 5 17-18 3 5-20-3-2z" fill="#ba8c72"/>
+    <use href="#l9-brass" x="67" y="111"/><use href="#l9-brass" x="631" y="109"/>
+  </g>
+  <g id="l9-bench">
+    <path d="m119 285 156-8-35 13-90 6z" fill="#99766d" opacity=".48"/>
+    <path d="m142 244 9 1-10 42-8 2zm95-7 8-1 11 34-8 2z" fill="#594d5b"/>
+    <path d="m127 248 12-1-11 48-10 1zm114-7 11-2 15 40-10 4z" fill="#634a58" stroke="#d2ad83" stroke-width="1.8"/>
+    <path d="m132 266 119-15 3 6-124 16z" fill="#947064"/>
+    <path d="m110 240 121-17 34 8-1 9-126 18-28-9z" fill="#684954" stroke="#d9b383" stroke-width="2.4"/>
+    <path d="m112 239 120-14 30 6-126 18z" fill="#c69a76"/>
+    <use href="#l9-brass" transform="translate(133 252) scale(.6)"/><use href="#l9-brass" transform="translate(248 237) scale(.62)"/>
+  </g>
+  <g id="l9-actors">
+    <path d="m280 300 87-8-22 13-50 2zm118-6 95-9-12 12-64 4z" fill="#8c6867" opacity=".36"/>
+    <g class="l9-tail-act">
+      <g transform="translate(932 0) scale(-1 1)">
+        <use style="--study-work-props:none" href="art/animal-studies.svg#light-hare" x="409" y="179" width="112" height="124"/>
+        <use href="#l9-grip" color="#e3be95" transform="translate(409.889 179.000) scale(0.68889)"/>
+      </g>
+      <g transform="translate(0 -8)">
+        <path d="M437 202q18-18 36-17l19 4q14-9 9-21 15 4 15 18 0 14-17 21l-10-2-3 7-10-4-5 7-11-10-14 4z" fill="#595065" stroke="#443b50" stroke-width="3"/>
+        <path d="M450 199q12-10 24-10l7 4-8 9-10-4-7 6zm38-3q16-2 20-15 4 13-11 18z" fill="#71a397"/>
+        <path d="m481 205 4-5m-25-3 6-2m37-1 3-3" stroke="#efc383" stroke-width="2.4" stroke-linecap="round"/>
+        <use href="#l9-brass" x="486" y="197"/>
+      </g>
+    </g>
+    <g transform="translate(0 -8)">
+    <g class="l9-silk">
+      <path d="M330 197q17-13 38-8 22 5 37-1 17-5 34-2l26-6 14 11-11 24-17-3-14 8-18-6-14 8-15-4-16 6-13-5-15 5-14-5z" fill="#55465a" stroke="#4a3d52" stroke-width="3.4"/>
+      <path d="M337 199q15-12 30-7l2 21-16 6-10-4zm36-6 27 0 1 20-15 4-13-5zm31 0 25-4 5 20-15 2-13 6zm32-3 23-6 10 8-6 16-10-3-14 8z" fill="url(#l9-clothglass)"/>
+      <g fill="none" stroke="#f9dba1" stroke-width="1.8"><path d="m344 205 11-8 6 7-9 6zm35-5 10-5 6 9-11 5zm32-1 10-5 6 8-12 6zm32-2 12-7 5 7-12 7z"/></g>
+      <use href="#l9-brass" transform="translate(368 195) scale(.65)"/><use href="#l9-brass" transform="translate(403 197) scale(.65)"/><use href="#l9-brass" transform="translate(433 192) scale(.65)"/>
+    </g>
+    </g>
+    <g class="l9-head-act">
+      <g transform="translate(676 0) scale(-1 1)">
+        <use style="--study-work-props:none" href="art/animal-studies.svg#light-otter" x="282" y="186" width="112" height="125"/>
+        <use href="#l9-grip" color="#cb9277" transform="translate(282.444 186.000) scale(0.69444)"/>
+      </g>
+      <g id="l9-mask" transform="translate(0 -8)" stroke-linejoin="round">
+        <path d="M281 196q-8-8-1-16l5-4q-5-12 5-18l9-1 3-9 10 3 10-13 7 12q12-7 21 2 13-7 17 1l-5 8 4 6 12 2-4 9 10 4-7 10 4 7-13 5-2 8-15-1-7 8-14-5-8 6-11-5-14 3-6-5-11 2-3-5-8-5z" fill="#775365" stroke="#493b52" stroke-width="4"/>
+        <path d="m286 181 7-14 11-5 11 3 13-7 18 5 9 11-10 16-22 6-22 6-18-9z" fill="url(#l9-clothglass)"/>
+        <path d="m310 157 0-12 5-12 7 1-4 11 3 10z" fill="#e9c388" stroke="#533f55" stroke-width="2.8"/>
+        <path d="m347 159 11-14 8-1-3 8-9 10z" fill="#70a295" stroke="#4c4856" stroke-width="2.3"/>
+        <path d="M276 194q17 5 35 1l10-6-4 11q-18 14-39 3z" fill="#59475c"/>
+        <path d="m279 202 9 3 5-3 6 2 7-3 7-1-4 4-12 5-12-1z" fill="#edd497"/>
+        <path d="m282 208 5 5 5-3 3 6 5-5 5 2 5-7" fill="none" stroke="#e9be83" stroke-width="2.4"/>
+        <circle cx="300" cy="180" r="12" fill="#fee2a2" stroke="#51475a" stroke-width="2.8"/>
+        <ellipse cx="296" cy="181" rx="5.7" ry="7" fill="#4a4b57"/><circle cx="293.8" cy="178.2" r="2" fill="#fff1b8"/>
+        <path d="M285 174q5-17 21-12l4 4-9-1-8 3-6 7z" fill="#699b95" stroke="#514758" stroke-width="1.7"/>
+        <path d="M272 190q8-8 17-3l1 5q-7 7-15 4l-5-3z" fill="#9a606a" stroke="#4f4158" stroke-width="2.2"/>
+        <path d="m320 167 8-9 7 6-5 9-7 2zm18 11 8-6 4 6-7 6-6 1zm8 11 8-7 5 2-7 8z" fill="#eed193"/>
+        <path d="m352 169 6-5m-12 33 13-6m-28 10 7-3" stroke="#82b0a0" stroke-width="2.7" stroke-linecap="round"/>
+        <use href="#l9-brass" x="340" y="163"/><use href="#l9-brass" transform="translate(316 200) scale(.8)"/>
+      </g>
+    </g>
+  </g>
+  <g id="l9-footsill">
+    <path d="m75 306 261 27 12 4 11-4 259-34" fill="none" stroke="#b59171" stroke-width="1.5"/>
+    <path d="m47 315 281 30 21 6 23-7 277-31" fill="none" stroke="#f7deb0" stroke-width="2.5"/>
+    <path d="m69 321 251 28m56 0 252-30" stroke="#bc9576" fill="none" stroke-dasharray="3 6"/>
+    <use href="#l9-bead" x="114" y="325"/><use href="#l9-bead" x="143" y="329"/><use href="#l9-bead" x="565" y="326"/><use href="#l9-bead" x="593" y="322"/>
+  </g>
+  <path d="M0 0h700v400H0z" fill="url(#l9-grain)" opacity=".39" pointer-events="none"/>
+</svg>

@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="700" height="400" class="study-fold" role="img" aria-labelledby="f9-title f9-desc">
+  <title id="f9-title">巷口摺紙偶 · 舞獅廟埕</title>
+  <desc id="f9-desc">攤開的紙本上，兩位街坊撐起同一頭舞獅。前腳朝長凳躍去，後腳晚了一拍，兩人之間的紙褶拉開又折回。</desc>
+  <defs>
+    <linearGradient id="f9-desk" x2="1" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#465856"/><stop offset=".62" stop-color="#324948"/><stop offset="1" stop-color="#253d3e"/></linearGradient>
+    <linearGradient id="f9-ground" x2=".83" y2="1"><stop stop-color="#f9edc9"/><stop offset="1" stop-color="#ddc6a0"/></linearGradient>
+    <linearGradient id="f9-paper" x2="1" y2=".45"><stop stop-color="#ffeac3"/><stop offset=".55" stop-color="#ead4aa"/><stop offset="1" stop-color="#ba9b79"/></linearGradient>
+    <pattern id="f9-fibre" width="37" height="31" patternUnits="userSpaceOnUse"><path d="m3 9 3-1m18 13 3 .3m-12 6 2-.6" stroke="#fff4dc" stroke-opacity=".19" stroke-width=".7"/><circle cx="30" cy="5" r=".55" fill="#786856" opacity=".26"/></pattern>
+    <g id="f9-sapling"><path d="m0 0 2-59 3 1L5 0z" fill="#85684f"/><path d="m-14-19-5-17 11-17 11-6 11 9 6 15-8 14-8 5z" fill="#f0dbb0"/><path d="m-15-22-3-14 9-14 11-8-1 39z" fill="#748f79"/><path d="m2-58 11 10 6 13-10 12-8 4z" fill="#526e64"/><path d="m-9-50 1 18 10-26z" fill="#a0a885"/></g>
+    <g id="f9-lantern"><path d="M0 0v8" stroke="#554b44" stroke-width="1.6"/><path d="m-5 8 10 0 1 3-12 0z" fill="#856342"/><path d="m-7 11 14 0 6 7-1 11-6 7H-6l-6-7-1-11z" fill="#eea973" stroke="#f6d6a2" stroke-width="1.7"/><path d="m2 11 7 7-1 11-5 7H0l3-10 0-8z" fill="#c47757"/><path d="M-5 36h10l-1 3h-8zM-1 39h2v10h-2z" fill="#bf8f50"/></g>
+    <g id="f9-roof-tile"><path d="m0 0 6-3 6 4-6 6z" fill="#668983"/><path d="m0 0 6 3 6-2-5 5z" fill="#395c59"/></g>
+    <g id="f9-impact-line" fill="none" stroke="#a65d48" stroke-width="2.4" stroke-linecap="round"><path d="m0 0-6-9m11 6-1-8m-10 15-9-3"/></g>
+    <g id="f9-grip" stroke-linejoin="round" stroke-linecap="round">
+      <path d="m114 29 9 83-3 14" fill="none" stroke="#ffeac0" stroke-width="5.4"/><path d="m114 29 9 83-3 14" fill="none" stroke="#826c50" stroke-width="3"/>
+      <path d="m67 119 8-3 6 4-1 7-10 3-7-3zm48-7 5 1 4-5 5 2-1 8-6 5-8-3z" fill="currentColor" stroke="#ffe6b6" stroke-width="1.9"/>
+      <path d="m70 121 4-2m46-2 3-2" fill="none" stroke="#805c44" stroke-width="1.3"/>
+    </g>
+  </defs>
+  <style>
+    .study-fold.playing .f9-front{animation:f9-leap 2.8s ease-in-out 1}
+    .study-fold.playing .f9-rear{animation:f9-late 2.8s ease-in-out 1}
+    .study-fold.playing .f9-pleats{transform-origin:448px 207px;animation:f9-stretch 2.8s ease-in-out 1}
+    .study-fold .f9-puff{opacity:0}.study-fold.playing .f9-puff{animation:f9-dust 2.8s ease 1}
+    @keyframes f9-leap{0%,13%,91%,100%{transform:translate(0,0)}25%{transform:translate(3px,4px)}46%{transform:translate(-64px,-49px)}57%{transform:translate(-73px,-37px)}74%{transform:translate(-8px,3px)}}
+    @keyframes f9-late{0%,38%,92%,100%{transform:translate(0,0)}48%{transform:translate(-2px,4px)}62%{transform:translate(-23px,-14px)}78%{transform:translate(-11px,2px)}}
+    @keyframes f9-stretch{0%,13%,91%,100%{transform:rotate(0deg) scaleX(1)}25%{transform:rotate(-1deg) scaleX(.98)}46%{transform:rotate(17deg) scaleX(1.43)}57%{transform:rotate(11deg) scaleX(1.49)}74%{transform:rotate(-2deg) scaleX(.98)}}
+    @keyframes f9-dust{0%,53%,72%,100%{opacity:0}57%,62%{opacity:.95}}
+    @media(prefers-reduced-motion:reduce){.study-fold.playing .f9-front,.study-fold.playing .f9-rear,.study-fold.playing .f9-pleats,.study-fold.playing .f9-puff{animation:none}}
+  </style>
+  <g id="f9-table">
+    <path fill="url(#f9-desk)" d="M0 0h700v400H0z"/><path fill="url(#f9-fibre)" opacity=".32" d="M0 0h700v400H0z"/>
+    <path d="M40 340q142 33 282 38l41-5 263-28 39-15-220 2-387-1z" fill="#152e2f" opacity=".54"/>
+  </g>
+  <g id="f9-paper-kite" stroke-linejoin="round">
+    <path d="M511 65q-14 21-38 29t-42 27" fill="none" stroke="#a49e79" stroke-width="1.15" opacity=".7" />
+    <path d="m500 54 17-18 16 13-20 20z" fill="#c5a273" stroke="#e4c697" stroke-width="2"/>
+    <path d="m501 54 16-17-5 31z" fill="#c88762"/><path d="m517 37 15 12-15 2z" fill="#e4c38b"/>
+    <path d="m477 85-3-5 7 2 5 6-7-2zm-19 13-2-4 5 1 5 5-5-1z" fill="#b29b78"/>
+  </g>
+  <g id="f9-bound-book">
+    <path d="m30 326 92-116 214-15 221-10 107 119 0 15-306 47-29 7-34-6-267-29z" fill="#8d584e" stroke="#223c3c" stroke-width="3"/>
+    <path d="m33 319 90-110 215-17 220-9 103 118v13l-303 46-31 6-34-6-260-31z" fill="url(#f9-paper)"/>
+    <g fill="none" stroke="#a9896a" stroke-width="1.1"><path d="m36 323 260 32 32 6 29-6 299-45m-613 16 251 32 33 6 36-7 288-43"/></g>
+    <path d="m32 317 91-111q111-17 205-10l17 3 14-5q99-19 196-18l104 124-299 45-30 9-30-7z" fill="#f5e5bc" stroke="#f9e9c7" stroke-width="3"/>
+    <path d="m37 316 88-107q118-18 205-9l15 3-15 146-26-8z" fill="#e9d7b2"/>
+    <path d="m345 203 17-6q97-18 190-17l102 118-294 45-30 6z" fill="url(#f9-ground)"/>
+    <path d="m67 308 72-87 186-15 19 3-15 125zm278-98 20-10 178-11 85 105-275 37-15 4z" fill="#b3b194"/>
+    <path d="m69 305 73-83 176-13 25 2-14 121-21-3zm278-94 17-9 179-10 79 100-272 36-12 4z" fill="#e6d6ad"/>
+    <g stroke="#ab9479" stroke-width="1.3" fill="none" opacity=".68"><path d="m88 294 228 24m42-3 239-32m-493-7 210 17m41 0 226-26m-204 42-7 11m46-17 9 10m-249-40-14 8m84-2-11 12m223-58 13 11"/></g>
+    <path d="m345 202-15 145" stroke="#927b65" opacity=".5" stroke-width="2"/>
+  </g>
+  <g id="f9-folded-town">
+    <g fill="#a99475" opacity=".36"><path d="m95 245 144-29 42 9-124 32z"/><path d="m450 212 121-18 30 11-119 21z"/></g>
+    <path d="M100 226v-53l48-29 70 1 23 12 17 63-104 20z" fill="#bca87e" stroke="#fae5b9" stroke-width="3"/>
+    <path d="m97 170 44-28 76-1 23 11-13 9-81 3-42 17z" fill="#728e80"/>
+    <path d="m96 170 52-18 77-1 15 1-12 11-79 6-45 13z" fill="#4d6f65"/>
+    <path d="m113 180 34-13 1 49-34 9z" fill="#d8c590"/><path d="m153 167 68-5 2 44-73 12z" fill="#e7d6a9"/>
+    <g fill="#7b8e80"><path d="m120 185 13-4v13l-13 4zm40-10 18-3v15l-18 3zm27-4 18-2v15l-18 2z"/></g>
+    <g id="f9-temple" stroke-linejoin="round">
+      <path d="M322 199v-60l25-16 65 1 23 10-2 64-94 8z" fill="#ddc6a1" stroke="#fff0cc" stroke-width="3"/>
+      <path d="m300 139 23-7q19-12 28-28 30 10 65-1 16 16 37 21l13-6-6 12-35 10-91 12z" fill="#526f67" stroke="#f4d3a2" stroke-width="3"/>
+      <path d="m301 140 42-12 72-11 37 6-26 15-92 12z" fill="#87a08b"/>
+      <path d="m308 143 31 3 90-13 29-9-12 11-110 19-21-4z" fill="#aa6c51"/>
+      <path d="m339 153 91-14-2 10-87 13z" fill="#e9c495"/>
+      <path d="m345 158 9-1-1 47-8 1zm49-8 9-1v46l-9 2zm27-5 6-1v46l-7 2z" fill="#ba7257"/>
+      <path d="m360 163 24-5v35l-24 4z" fill="#526f65"/><path d="m369 161-1 36m8-37-1 36" stroke="#dac69e" stroke-width="2"/>
+      <g transform="translate(333 131) scale(.64)"><use href="#f9-roof-tile"/><use href="#f9-roof-tile" x="15" y="-2"/><use href="#f9-roof-tile" x="30" y="-4"/><use href="#f9-roof-tile" x="45" y="-6"/><use href="#f9-roof-tile" x="60" y="-8"/><use href="#f9-roof-tile" x="75" y="-10"/><use href="#f9-roof-tile" x="90" y="-12"/></g>
+      <path d="m352 109 4-8 8 9 17 1 8-13 8 10 16-4 4-5 3 6" stroke="#dcc092" stroke-width="3" fill="none"/>
+    </g>
+    <use href="#f9-sapling" transform="translate(546 199) scale(.84)"/><use href="#f9-sapling" transform="translate(578 207) scale(.7)"/><use href="#f9-sapling" transform="translate(80 246) scale(.66)"/>
+    <path d="m115 155-.4-51m477 101V92" stroke="#b9966a" stroke-width="3.5"/><path d="M114 105q257 53 479-12" fill="none" stroke="#d8bb90" stroke-width="1.7"/>
+    <use href="#f9-lantern" transform="translate(147 111) scale(.58)"/><use href="#f9-lantern" transform="translate(211 119) scale(.62)"/><use href="#f9-lantern" transform="translate(499 114) scale(.64)"/><use href="#f9-lantern" transform="translate(559 101) scale(.71)"/>
+  </g>
+  <g id="f9-drums">
+    <path d="m499 262 31 7 39-7-18-6z" fill="#a48e70" opacity=".36"/>
+    <path d="m515 252-4 11 4 2 6-10m23-2 5 10h4l-3-12" fill="#8c684e"/>
+    <path d="M507 219q20-9 46 0l-1 28q-16 13-43 2z" fill="#c5845c" stroke="#fae3b4" stroke-width="2.5"/>
+    <ellipse cx="530" cy="219" rx="23" ry="7" fill="#f2d6a4" stroke="#82694f" stroke-width="1.3"/>
+    <path d="m509 226 7 17 6-14 8 16 8-16 7 12 6-17" stroke="#f1d098" stroke-width="2" fill="none"/>
+    <path d="m539 216 22-21m-34 21 6-26" stroke="#806445" stroke-width="2.4" stroke-linecap="round"/>
+  </g>
+  <g id="f9-long-bench">
+    <path d="m114 281 98 10 54-11-75-10z" fill="#8f8367" opacity=".31"/>
+    <path d="m132 240 8 1-4 34-7 1zm96-8 8-1 9 32-8 2z" fill="#81674d"/>
+    <path d="m122 243 11 1-8 38-9 1zm113-5 9-2 12 37-10 2z" fill="#a67e53" stroke="#f7dab0" stroke-width="1.8"/>
+    <path d="m128 257 116-11 2 5-119 12z" fill="#b28c61"/>
+    <path d="m108 235 114-12 33 9-116 15-31-8z" fill="#976e4d" stroke="#f9e3b9" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="m110 234 113-12 31 9-117 14z" fill="#caa77b"/><path d="m134 237 70-8m-45 10 56-7" stroke="#926e50" opacity=".54" fill="none"/>
+  </g>
+  <g id="f9-lion-dance">
+    <path d="m271 282 41-10 56 10-35 12zm140-9 45-9 41 10-42 11z" fill="#947e63" opacity=".35"/>
+    <g class="f9-rear">
+      <use style="--study-work-props:none" href="art/animal-studies.svg#fold-hare" x="390" y="167" width="105" height="117"/>
+      <use href="#f9-grip" color="#c8a581" transform="translate(390.500 167.000) scale(0.65000)"/>
+      <g transform="translate(0 -11)">
+        <path d="m425 193q19-19 35-18l17 8 13-12 5 7-5 16 7 6-13 11-9-5-2 10-14-6-4 7-15-14z" fill="#d38a65" stroke="#ffe8bc" stroke-width="3.8" stroke-linejoin="round"/>
+        <path d="m456 179 14 8 9-3-7 13-15-8-19 7 6-10z" fill="#e8b66f"/><path d="m480 192 9-8-3 11-5 3z" fill="#7b7460"/>
+        <path d="m460 201 9-3 7 5" fill="none" stroke="#795f4c" stroke-width="1.7"/>
+      </g>
+    </g>
+    <g transform="translate(0 -11)">
+    <g class="f9-pleats">
+      <path d="m318 183 22 0 16-5 17 5 17-5 17 5 21-6 23 7-4 27-17 4-13-5-14 6-16-4-15 6-16-4-14 5-17-4z" fill="#d17f5e" stroke="#ffebbf" stroke-width="4" stroke-linejoin="round"/>
+      <path d="m334 184 7 29 14-1-1-33zm25-4 13 32 14 1 3-33zm35 0 9 29 14-1 8-28zm34-1 3 27 13 4 6-27z" fill="#efbd82"/>
+      <g stroke="#a96657" fill="none" stroke-width="1.25"><path d="m354 181 3 33m32-34-2 31m38-31-10 30"/></g>
+      <path d="m333 196 16 2 13-3 15 3 15-3 13 3 14-4 14 3 13-4" fill="none" stroke="#fbdf9c" stroke-width="3"/>
+    </g>
+    </g>
+    <g class="f9-front">
+      <use style="--study-work-props:none" href="art/animal-studies.svg#fold-otter" x="264" y="177" width="110" height="119"/>
+      <use href="#f9-grip" color="#b4815b" transform="translate(266.111 177.000) scale(0.66111)"/>
+      <g id="f9-lion-mask" transform="translate(0 -11)" stroke-linejoin="round">
+        <path d="m270 189 8-16-7-15 12-1 3-12 12 6 8-16 6 13 14-9 4 10 11-4 5 9 14-1 1 10 10 3-5 9 10 8-10 8-1 11-12 4-6 9-16-3-8 7-14-7-15 3-5-7-13 4-9-6 2-7-8-7z" fill="#c96f55" stroke="#ffe9bc" stroke-width="4"/>
+        <path d="m277 175 9-14 10-6 9 4 6-6 20 0 15 10 5 15-13 17-26 6-25-6z" fill="#e59d65"/>
+        <path d="m281 184 24-3 15 4-8 14-15 6-19-4-6-8z" fill="#486b64" stroke="#f8dc9e" stroke-width="2.2"/>
+        <path d="m274 197 16 3 17-4 1 6-11 4-18-3z" fill="#f4d59c"/>
+        <path d="m304 204-5 11-7-3-3 5-4-8-5 3-3-7" fill="#eab98a" stroke="#ffe1ac" stroke-width="2.2"/>
+        <path d="m302 149 1-13 5-10 5 3-1 14 4 7z" fill="#d7ae69" stroke="#ffe8b6" stroke-width="2"/>
+        <path d="m335 151 13-9 9 5-9 12-9 1z" fill="#e8c084" stroke="#fff0c2" stroke-width="2.8"/>
+        <path d="m313 161 9-5 9 6-4 9-9 4-9-7z" fill="#f8d479" stroke="#9c7153" stroke-width="1.4"/>
+        <ellipse cx="289" cy="173" rx="11" ry="12" fill="#fff0cd"/><circle cx="286.7" cy="174" r="6.4" fill="#425352"/><circle cx="284.7" cy="171.8" r="2.2" fill="#ffefd0"/>
+        <path d="m276 169 1-8 8-6 15 2 4 4-11 1-10 3z" fill="#527467" stroke="#fbdfaf" stroke-width="1.6"/>
+        <path d="m266 185 10-7 9 5-3 7-10 2-6-3z" fill="#b26b53" stroke="#ffe4ac" stroke-width="2"/>
+        <path d="m320 177 7-6 9 4-2 9-10 1z" fill="#689181"/><path d="m332 188 11-9m-9 15 13-10" stroke="#f4c882" stroke-width="2" fill="none"/>
+      </g>
+    </g>
+    <use class="f9-puff" href="#f9-impact-line" x="251" y="225"/>
+  </g>
+  <path d="M0 0h700v400H0z" fill="url(#f9-fibre)" opacity=".38" pointer-events="none"/>
+</svg>
