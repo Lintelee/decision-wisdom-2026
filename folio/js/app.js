@@ -369,12 +369,13 @@ function readPage(article, page) {
     keyPage: opened && cur > 0 ? defs[cur].quote?.page : null,
     returnHash: origin, returnLabel: returnLabel(), onReturn: returnToStory,
     onLeaf: (event,dir) => sound.play(event==='cover-land'?'cover-set':'paper',null,dir*.23),
-    onLayout: layout => {
+    onLayout: (layout, immediate) => {
       stage.issue.layoutChanged(layout);
       // When the type is enlarged it scrolls with both the leaves and the physical binding.
       const port = layout.port;
       const clip = layout.zoomed ? `inset(${port.top}px ${Math.max(0, innerWidth - port.right)}px ${Math.max(0, innerHeight - port.bottom)}px ${port.left}px)` : '';
       $('#world').style.setProperty('--reading-clip', clip);
+      if (immediate && appEl.dataset.reading === 'open') stage.paintRestingPose();
     },
   });
 }

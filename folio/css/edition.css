@@ -129,7 +129,7 @@
 @media(max-width:720px) {#cover .cover-volume{width:min(68vw,27vh);margin-block:3px}}
 @media(max-height:520px) and (orientation:landscape) {#cover .cover-volume{width:min(38vw,44vh)}}
 
-.dr-registration {display:block;position:relative;width:max-content;flex:none}
+.dr-registration {display:block;position:relative;width:var(--reader-spread-width,max-content);flex:none}
 .dr-book-surface {transform-origin:0 0;will-change:transform}
 #reader .dr-reader .dr-book-surface[data-format] {cursor:grab}
 #reader .dr-reader .dr-book-surface[data-format=text] {cursor:auto}

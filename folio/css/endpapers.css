@@ -39,6 +39,12 @@
 #intro-art svg { display: block; width: 100%; height: auto; overflow: visible; }
 .paper-invitation { display: inline-flex; align-items: center; justify-content: center; gap: .85em; min-height: 46px; padding: 9px 19px; border: 1px solid #fff1cd; border-radius: 2px 7px 2px 2px; background: linear-gradient(112deg,#f9e9bf,#e9cd93); box-shadow: 0 3px 0 #987e4f,0 5px 9px #162a2466; color: #273b30; font: 750 1rem/1.45 var(--sans); }
 #intro-enter svg { width: 1.25em; height: 1.25em; }
+#intro-motion { display:inline-grid; place-items:center; vertical-align:middle; width:42px; height:42px; margin-inline-start:6px; padding:0; border:1px solid #b6b78b80; border-radius:50%; background:#203e3466; color:#ebdaae; cursor:pointer; }
+#intro-motion[hidden], #intro-motion[data-action=pause] .play, #intro-motion[data-action=play] .pause { display:none; }
+#intro-motion svg { width:16px; height:16px; }
+#intro-motion:hover { background:#385246; border-color:#dfca9c; }
+#intro-enter { vertical-align:middle; }
+@media (pointer:coarse) { #intro-motion { width:44px; height:44px; } }
 .paper-invitation:active { transform: translateY(1px); }
 .paper-invitation[aria-busy=true] { cursor: progress; }
 #book-intro :focus-visible, #closing-page :is(a,button):focus-visible { outline: 3px solid #ffdc88; outline-offset: 5px; }

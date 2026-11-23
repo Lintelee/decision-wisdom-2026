@@ -1,4 +1,4 @@
-// Front endpaper. The glass palm, awning and page stock are separate cut pieces.
+// The movable pieces share the book's 720 × 442 drawing coordinates.
 export const frontPaperArt = `<svg xmlns="http://www.w3.org/2000/svg" class="front-paper-print" viewBox="0 0 720 442" preserveAspectRatio="xMidYMid meet" width="720" height="442" aria-hidden="true" focusable="false" style="display:block;width:100%;height:100%">
   <defs>
     <linearGradient id="fp-left-paper" x1="5%" y1="85%" x2="96%" y2="32%"><stop stop-color="#e2c99a"/><stop offset=".64" stop-color="#f7e7bd"/><stop offset="1" stop-color="#baa176"/></linearGradient>
@@ -10,7 +10,11 @@ export const frontPaperArt = `<svg xmlns="http://www.w3.org/2000/svg" class="fro
     <path id="fp-right-leaf" d="M341 235Q434 189 563 182l117 113 10 12Q484 333 350 387Z"/>
     <path id="fp-arch" d="M0 35V15Q0 3 8 2q9 0 9 13v20Z"/>
     <path id="fp-dock-window" d="M0 0h13v17H0zM2 2v6h4V2Zm6 0v6h3V2ZM2 10v5h4v-5Zm6 0v5h3v-5Z" fill-rule="evenodd"/>
-    <path id="fp-cup" d="M-8.4 0Q0-3.3 8.5-.7L7 6.3 4.8 8.3l-6.2 1-4.1-1.1Z"/>
+    <g id="fp-swallow">
+      <path d="m-3 .5-10-2.2 4.2 4-3 2.3L-.8 4Z" fill="#b5bb9e"/>
+      <g class="fp-wings"><path d="M1 2-4-7l-9-5 7.2 13 5.5 2Z" fill="#d3c79c"/><path d="m-1 2 5-12 8-6-4 12-5 7Z" fill="#f8e6ba"/><path d="m-1 2 6-9-1.5 7-2 3Z" fill="#aab4a0"/></g>
+      <path d="m-7 1 9-.7L5-2l4 .6 1 2.5-5.8 4.5L-1 5Z" fill="#f4e0b0"/><path d="m9-1 5 .9-4 1.4Z" fill="#ad7650"/><circle cx="7.2" cy="-.3" r=".66" fill="#344e46"/>
+    </g>
     <path id="fp-plane-shadow" d="m85 283 63-12 63 .9 40-12 99 6 176-25 54 13-48 12 30 2-62 16-98 7-40 27-61 8-36-7-109 12-18-1 27-9 10-6-78 5-40-3 42-17Z"/>
   </defs>
   <style>
@@ -18,18 +22,18 @@ export const frontPaperArt = `<svg xmlns="http://www.w3.org/2000/svg" class="fro
     .front-paper-print .fp-kettle-steam{animation:fp-kettle-steam 3.5s ease-in-out infinite;transform-box:fill-box;transform-origin:center bottom}
     .front-paper-print .fp-teacup-steam{animation:fp-kettle-steam 3.9s ease-in-out -.95s infinite;transform-box:fill-box;transform-origin:center bottom}
     .front-paper-print .fp-eye-glint{animation:fp-eye-glint 6.8s ease-in-out -.7s infinite;transform-box:fill-box;transform-origin:50% 72%}
-    @keyframes fp-lantern-drift{0%,100%{transform:translate(0,2px) rotate(1.1deg)}50%{transform:translate(3px,-3px) rotate(-1.8deg)}}
-    @keyframes fp-kettle-steam{0%,100%{transform:translate(0,1.5px) scale(.96,.90);opacity:.52}50%{transform:translate(1px,-2.5px) scale(1.04,1.06);opacity:.93}}
+    @keyframes fp-lantern-drift{0%,100%{transform:translate(0,3px) rotate(3deg)}50%{transform:translate(6px,-5px) rotate(-4deg)}}
+    @keyframes fp-kettle-steam{0%,100%{transform:translate(-1px,2px) scale(.92,.82);opacity:.40}50%{transform:translate(2px,-4px) scale(1.07,1.1);opacity:.94}}
     @keyframes fp-eye-glint{0%,45%,49%,100%{transform:scaleY(1)}47%{transform:scaleY(.2)}}
-    @media(prefers-reduced-motion:reduce){.front-paper-print *{animation:none!important}}
-    html.still .front-paper-print *,html[data-motion="off"] .front-paper-print *,html[data-motion="reduce"] .front-paper-print *,html[data-reduced-motion="true"] .front-paper-print *{animation:none!important}
+    #book-intro:not([data-cover-playing]) .front-paper-print *{animation-play-state:paused}
   </style>
   <!-- The sky is the green cloth of the surrounding binding. -->
   <g id="fp-distant-light">
     <circle cx="429" cy="86" r="45" fill="url(#fp-sun)"/><circle cx="429" cy="86" r="45" fill="url(#fp-fibres)"/>
     <path d="M380 102a53 53 0 0 1 16-56m48-11a53 53 0 0 1 24 17" fill="none" stroke="#e7c786" stroke-width="1.05" opacity=".58"/>
     <g fill="#d8cca2"><path d="m94 145 7-3 6 1 6-7 8 1 6 5 8 1 4 4-28 1Z"/><path d="m548 80 8-3 7 1 4-6 9-3 5 3 3 6 9 1 5 3-24 2-23-2Z" opacity=".87"/></g>
-    <g fill="none" stroke="#c7c5a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M237 107q5-4 11-.5 2-5 8-5"/><path d="M260 97q3.5-2 6 0 1.5-3 5-3.2"/></g>
+    <g id="fp-far-bird" transform="translate(253 92) scale(.55)"><use href="#fp-swallow"/></g>
+    <g id="fp-near-bird" transform="translate(278 85)"><use href="#fp-swallow"/></g>
     <g transform="translate(531 59)"><g class="fp-lantern-drift"><path d="m-13-11 8-5 14 1 6 9-2 15-6 5-10-1-7-11Z" fill="#c16a4f"/><path d="m-5-16 13 1 2 10-3 17-7 .5-7-14Z" fill="#e89960"/><path d="m-6-8 3-5 8 1-1 17-3 8-4-2Z" fill="#efba76"/><path d="m.8 12 7-.1-2.6 4-4-.4Z" fill="#705443"/></g></g>
   </g>
   <!-- Sewn spine, stacked leaves, ribbon and two curved page faces. -->
@@ -66,6 +70,7 @@ export const frontPaperArt = `<svg xmlns="http://www.w3.org/2000/svg" class="fro
     <g transform="translate(247 159)"><path d="m0 53 1-33 10-1 1-7 7-3 5-8 26-1 5 7 8 1 2 5 8 1v30Z" fill="#a3ad98"/><path d="m3 19 10-1 3-7 7-2 3-6h23l4 7 8 1 2 5-11-1-4-7-19-.2-4 6-8 2-2 6-12 1Z" fill="#ded1a8"/><g fill="#5d7773"><use href="#fp-dock-window" transform="translate(12 27) scale(.78 .90)"/><use href="#fp-dock-window" transform="translate(36 23) scale(.78 .9)"/><use href="#fp-dock-window" transform="translate(56 21) scale(.64 .8)"/></g></g>
     <path d="m96 245 202-38 27 4-206 45Z" fill="#d5bd94"/><path d="m100 246 194-36" fill="none" stroke="#f3daaf" stroke-width="1.7"/>
   </g>
+  <g id="fp-counter-fold">
   <g id="fp-tea-stall">
     <!-- Feet hold the walls perpendicular to the page. A dark inside plane sets off the tea steam. -->
     <path d="m328 286 85 12 145-34 23-16-32-5-101 7Z" fill="#9a906f" opacity=".47"/>
@@ -89,14 +94,14 @@ export const frontPaperArt = `<svg xmlns="http://www.w3.org/2000/svg" class="fro
       <path d="m313 162 32-4v10l-7 7-7-4-7 1-7 5-5-4Zm45-5 25-3.5v9l-7 7-8-4-10 1Zm39-6 26-3 .5 9-5 6-9-4-7 2-6 5Zm40-5 23-3 1 9-7 6-7-2-10 .5Zm33-4 20-3 1 9-6 6-7-3-8 2Zm27-4 13-2v9l-6 7-7-5Z" fill="#aa5a44"/>
       <path d="m314 162 196-27" fill="none" stroke="#f5dfb2" stroke-width="2.2"/><path d="m515 137 24-31 18 13-42 28Z" fill="#ae805e"/><path d="m318 158 37-43 142-23 42 14-31 31Z" fill="url(#fp-fibres)"/>
     </g>
-    <!-- The otter leans out; tiny cup and outstretched paw share the same sightline. -->
+    <!-- The body stays behind the counter. Its jointed serving arm reaches over the edge. -->
     <g id="fp-otter" transform="translate(423 198)">
+      <g id="fp-maker-body">
       <path d="m-17 8 13-8 14 2 12 10 7 18-9 11-39 3-8-19Z" fill="#c29b68"/>
       <path d="m-8 9 7-8 10 2 1 16-6 3-10-5-11 18-12-4 7-18Z" fill="#e9d6ad"/>
       <path d="m0 16 6 2 8-17 6 4-5 18 6 16-42 1 8-20 6 3Z" fill="#456f65"/>
       <path d="m-12 23 24 1 6 13-35 2Z" fill="url(#fp-woven)"/>
-      <path d="m-16 11-7 1-6 7-11 2-1 7 14 1 15-9Z" fill="#c39d6d"/><path d="m-44 18 8 .5 1 8-9 4-9-2-5-4 2-3 5 .2 2-2Z" fill="#986f4e"/>
-      <g transform="translate(-47 16) scale(.79)"><use href="#fp-cup" fill="#efdbad"/><path d="m-7 2 14-1-.5 2-12.5 1Z" fill="#70948a"/></g>
+      <g id="fp-maker-head">
       <path d="m-18-30-5-4-5 1-4 5 .3 6 6 5 8-3m27-18 6-3 6 2 4 5-1 6-8 4-6-4Z" fill="#8a634d"/>
       <path d="m12-32 6-2 4 4-1 5-5 2-6-4Z" fill="#c19578"/>
       <path d="m-22-25 8-9 12-4 12 1 11 8 3 13-1 8-5 8-10 6-10-.4-8-3-8-5-10-1-7-6 1-8Z" fill="#a77e59"/>
@@ -104,6 +109,7 @@ export const frontPaperArt = `<svg xmlns="http://www.w3.org/2000/svg" class="fro
       <path d="m-27-17 4-2 6 1 2 2-4 5-7-.5-3-3Z" fill="#3e4035"/>
       <g class="fp-eye-glint"><ellipse cx="-11" cy="-23" rx="3.3" ry="3.6" fill="#433f32"/><circle cx="-12" cy="-24.3" r="1" fill="#faeac3"/></g>
       <path d="m-17-9 4 2 4-1m-13-11 4.5-.9m-15.5 9.6 5 .2m-3.8 3.4 4.7-1" fill="none" stroke="#705944" stroke-width="1.3" stroke-linecap="round"/>
+      </g></g>
     </g>
     <!-- Counter, side-handled tea pot, cups and the maker's three tins. -->
     <path d="m324 224 182-25 48 13-45 21-183 27Z" fill="#cfad78"/>
@@ -126,9 +132,15 @@ export const frontPaperArt = `<svg xmlns="http://www.w3.org/2000/svg" class="fro
     <g class="fp-kettle-steam" fill="none" stroke="#fbefd0" stroke-linecap="round"><path d="M452 179q-6-6-.1-13 4-5 1-10" stroke-width="2.6"/><path d="M457 173q3-4 1-8" stroke-width="1.3"/></g>
     <g transform="translate(504 199) rotate(-8)"><path d="M-7 1v-17l13-.3V1Z" fill="#a08056"/><path d="M-8-16v-3l15 .2v3Z" fill="#d3ab70"/><path d="M-7-11h13v6H-7Z" fill="#72503f"/></g>
     <g transform="translate(523 195) rotate(-7)"><path d="M-6.5 1v-13l12-.3V1Z" fill="#c59b63"/><path d="M-7-12v-3l14 .2v3Z" fill="#e5b977"/><path d="M-6.5-8h12v4.3h-12Z" fill="#c5814e"/></g>
-    <g transform="translate(368 219)"><use href="#fp-cup" fill="#fae9c0"/><path d="m-7 2 14-1-.6 2.3-12.6 1Z" fill="#6d8d7c"/><path d="m-6.4-.2 12-1-4 .9-6.5.7Z" fill="#9d6c44"/></g>
-    <g transform="translate(389 216) scale(.84)"><use href="#fp-cup" fill="#ecd6a8"/><path d="m-7 2 14-1-.6 2.3-12.6 1Z" fill="#7e9782"/></g>
+    <g transform="translate(406 212) rotate(-7)"><path d="M-9 1q8 3 18 0l-2 3q-7 2-14 0Zm1-3q7 2 16 0l-1 2q-8 3-14 0Z" fill="#f5e1b9"/><path d="M-7 1q7 2 14 0" fill="none" stroke="#7c9581" stroke-width="1"/></g>
+    <ellipse id="fp-saucer" cx="347" cy="231" rx="14" ry="3.9" transform="rotate(-7 347 231)" fill="#eee0b7" stroke="#849281" stroke-width="1"/>
+    <ellipse id="fp-cup-shadow" cx="347" cy="230" rx="9" ry="2.3" fill="#8d7857" opacity=".48"/>
     <path d="m326 296 23-4 8 4-19 5Zm166-33 18-4 6 2-19 5Z" fill="#9e8d69"/>
+  </g>
+  <g id="fp-maker-arm">
+    <g class="upper" transform="translate(405 211) rotate(133)"><path d="M-4-5 1-8 9-7 29-5 33-1 29 5 6 7-5 4Z" fill="#d9bc93"/><path d="m15-5 13 1 3 3-3 5-12 1Z" fill="#e8d3a8"/><path d="m20-4 1 8" stroke="#b99c75" fill="none"/></g>
+    <g class="lower" transform="translate(384 230) rotate(-150)"><path d="M-3-4 1-6l19 1 12 2 1 6-12 2-14-1-8-4Z" fill="#ab835e"/><path d="m1 2 11 2 17-2-1 3-16 2-11-2Z" fill="#966f50"/></g>
+    <g class="paw" transform="translate(363 223)"><path d="m5-5-6-.5-4 2-5 .5-1 3 3 2 7 .4 6-2Z" fill="#9b7453"/><path d="m-7 .7 4 .6" stroke="#775844" stroke-linecap="round"/></g>
   </g>
   <!-- 阿梅姨 reaches towards the tasting counter, with her own market basket. -->
   <g id="fp-auntie" transform="translate(265 285)">
@@ -138,17 +150,14 @@ export const frontPaperArt = `<svg xmlns="http://www.w3.org/2000/svg" class="fro
     <path d="m-16 5 16-1 .5 30-7 8-16 .3-3-4 7-7Z" fill="#685849"/>
     <path d="m6 4 14-1-2 25 9 3 1 4-20 4-5-2Z" fill="#81705a"/>
     <path d="m-21 36 9-3 11 .6-1 6-6 4-18 2-2-2Zm27-4 13-3 8 .8 3 3-1 3-19 5-5-2Z" fill="#4d4d40"/>
+    <g id="fp-guest-body">
     <path d="m-21-45 18-7 18 2 8 8 8 18 2 24-7 13-26 6-28-2 3-13-5-25Z" fill="#d9c7a2"/>
     <path d="m-15-48 6-3 17 14 10-14 7 5-9 16L25 8l-10 7-30 7-17-4 9-38-4-17 5-4 6 17 15-4Z" fill="#935e62"/>
     <path d="m-17-17 30-7L24 8l-10 7-29 6-14-4Z" fill="url(#fp-woven)"/>
     <path d="m-27-27 12 9-6 4-13-5-7 8-5-2 5-9-3-4 5-2Z" fill="#b47b79"/>
     <path d="m-16-2 15-2 1 10-6 6-8-1Z" fill="#ac7971"/><path d="m-15 .2 12-1.6" fill="none" stroke="#e0b38e" stroke-width="1" stroke-dasharray="2 2"/>
-    <path d="m16-47 10 .8 7 11 11-7 6 4-3 8-16 10-9-3-7-12Z" fill="#c4af8b"/>
-    <path d="m30-39 6 8 5-4-2-5 6-4 3-2 6 .2 6-3 3 1-2 4-10 8-10 5-6-2Z" fill="#a78c6e"/>
-    <path d="m16-43 5-4 5 1 7 6 1 3-8 9-4-3Z" fill="#eee0b9"/><path d="m26-31 6-8" fill="none" stroke="#bea383" stroke-width="1.3"/>
-    <g transform="translate(52 -48)"><ellipse cy="6" rx="10" ry="2.5" fill="#917b59"/><use href="#fp-cup" fill="#f6e2b4"/><path d="m-7 1.4 14-1-.6 2.5-12.5 .8Z" fill="#4e7970"/><path d="m-5.7-.5 6.7-1 4.2.2-4.7.9-4.9.4Z" fill="#a06d43"/></g>
-    <g class="fp-teacup-steam" fill="none" stroke="#f6dfb2" stroke-linecap="round"><path d="M52-52q-4-5-.7-9 3-3.8 1-7.7" stroke-width="2"/></g>
     <!-- Her round ears, white blaze, eye-mask and long nose distinguish her from the otter. -->
+    <g id="fp-guest-head">
     <path d="m-23-83-7-6-9 2-6 8 1 7 6 6 7 .4 7-7m26-20 7-6 8 1 5 5-.2 7-7 8-7-2Z" fill="#9b8066"/>
     <path d="m7-91 6-3 5 5-1.5 5-5.5 3-5-3Z" fill="#715d51"/>
     <path d="m-32-74 3-10 8-8 13-4 14 2 12 6 8 8 8 8 12 6 4.5.8.5 4.5-6 4-14 3-9 6-11 7-11-.5-14-5-12-13-8-4 3-3-6-3Z" fill="#ab8d6f"/>
@@ -160,18 +169,33 @@ export const frontPaperArt = `<svg xmlns="http://www.w3.org/2000/svg" class="fro
     <g class="fp-eye-glint"><path d="M0-69q6-5 12 .5l-2 4.5-5 1.2-4-2Z" fill="#e8cc9d"/><ellipse cx="7.3" cy="-67.8" rx="2.9" ry="3.1" fill="#403c33"/><circle cx="8.1" cy="-69.2" r=".85" fill="#fcecca"/></g>
     <path d="m19-50 8-2 5-3m-2 1 5 .3m-2-3 7-.2" stroke="#77654f" stroke-width="1.1" fill="none" stroke-linecap="round"/>
     <g fill="none" stroke="#b79155" stroke-width="2"><ellipse cx="-1" cy="-92" rx="7" ry="5.5" transform="rotate(14 -1 -92)"/><ellipse cx="13" cy="-86" rx="4.9" ry="3.9" transform="rotate(24 13 -86)"/><path d="m-7-93-11 4m22.5-2 3.8 1.3"/></g>
+    </g>
     <path d="m-27-37-10 6-1 15 4 7 5 .5 4-4-2-9 6-7Z" fill="#e7d7b1"/><path d="m-36-16 6-1 5 5-2 7-6 1-4-4Z" fill="#92775e"/>
     <g transform="translate(-34 0) rotate(-6)"><path d="m-9-1q1-15 11-16Q9-15 11-2" fill="none" stroke="#8d6648" stroke-width="2.8"/><path d="m-13-3 28-2-3 17-9 4-14-3Z" fill="#bc8e58"/><path d="m-10 1 22-2m-20 6 18-1m-16 5 14-.2m-12-11 1.5 14M1-3l1.2 16M8-3l-.7 15" stroke="#e8bd80" stroke-width="1" fill="none"/><path d="m-14-5 29-1 .7 4-29 2Z" fill="#d6aa70"/></g>
+    </g>
+  </g>
+  <g id="fp-guest-arm">
+    <g class="upper" transform="translate(285 244) rotate(59)"><path d="M-3-5 3-8 11-7 25-5 29-1 26 6 5 7-4 3Z" fill="#e3cfaa"/><path d="m15-6 9 .5 4 3-2 7-8 1Z" fill="#f1dfb9"/><path d="m17-5 1 9" stroke="#ba9f7b" fill="none"/></g>
+    <g class="lower" transform="translate(298 266) rotate(-65)"><path d="M-3-4 1-6l24 1 8 2 1 5-9 3-18 1-8-4Z" fill="#b29a77"/><path d="m1 2 12 1 15-2 1 3-16 3-11-2Z" fill="#9a8064"/></g>
+    <g class="paw" transform="translate(308 252)"><path d="m-5-4 5-2 5 1 4-2 2 1-1.5 3 3 .7-1.5 3.5-7 3-7-.6-4-3Z" fill="#9d8167"/><path d="m6 1 4-1.5" fill="none" stroke="#715e50" stroke-linecap="round"/></g>
+  </g>
+  <!-- A single blue-striped cup passes between the two paws and returns to this saucer. -->
+  <g id="fp-tasting-cup" transform="translate(347 221)">
+    <g class="fp-teacup-steam" fill="none" stroke="#f9e6bb" stroke-linecap="round"><path d="M-1-5q-4-6 .5-12 3.5-5 0-10" stroke-width="2"/><path d="M4-9q3-3 2.5-6" stroke-width="1"/></g>
+    <path d="M-11-1 10.7-1 9 5.8 6 9l-4 2-6 .2-4.5-2.5Z" fill="#f6e4b9" stroke="#937e60" stroke-width=".85"/>
+    <path d="M-9.8 2q8 2.9 19.8-.2l-.8 3.1q-9.5 3.2-17.8.5Z" fill="#4e7d70"/>
+    <ellipse cy="-.8" rx="10.8" ry="2.8" fill="#fce8bd"/><ellipse cy="-.6" rx="8.1" ry="1.65" fill="#a46d43"/><path d="m-6 .2 4.3-.7" stroke="#ead1a0" stroke-linecap="round" stroke-width="1"/>
+  </g>
   </g>
   <!-- Two folded trees and a fan of grasses form the bookends. -->
-  <g id="fp-tree-right" transform="translate(571 245)">
+  <g id="fp-tree-fold"><g id="fp-tree-right" transform="translate(571 245)">
     <path d="m-8 7 22 .4 34-9-6-2-36 2Z" fill="#9d9875" opacity=".68"/>
     <path d="m-1-63 6-2 2 38 6-12 3-1-7 22 4 21-4 2-7-5-1-23-12-16 3 1 9 10Z" fill="#8f714f"/><path d="m0-62 3-1 3 52-2 10-2-19Z" fill="#c09b6b"/>
     <path d="m-27-69 9-15 6-4 2-9 13-10 13 2 5 9 11 4 5 13 8 9-3 14-10 8-13 2-7 8-14 2-13-8-9-2-8-10Z" fill="#6c8b79"/>
     <path d="m-28-67 9-16 8-2-2 19 12 15-9 10-9-6-8-2Z" fill="#779582"/><path d="m-12-67 3-26 12-12 9 .4-3 24 11 14-13 17-8-.2Z" fill="#a5a780"/><path d="m11-81 3-24 9 12 12 5 5 16-12 2-8 4Z" fill="#839c85"/><path d="m19-69 21-4 5 6-4 13-12 8-9-1-8 8-12 1 7-13Z" fill="#577d6b"/>
     <path d="m-21-52 11 4m10-35 7-9m12 28 3-4" stroke="#c1b78c" stroke-width="1.3" stroke-linecap="round" opacity=".7"/>
     <path d="m-29-68 12-17 7-12 15-8 20 10 12 9 6 19-16 22-25 9-23-11Z" fill="url(#fp-fibres)"/>
-  </g>
+  </g></g>
   <g id="fp-little-plants">
     <path d="m88 300 11-3 40-1 5 2-27 5-29-1Z" fill="#b1a27a"/>
     <path d="m96 301-9-14 10 4 5 7-3-24 8 15 2 10 7-22 1 15 9-8-5 14Z" fill="#688472"/><path d="m111 300 5-11 8-8-3 10 12-5-9 10Z" fill="#8a9b79"/>

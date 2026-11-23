@@ -227,8 +227,8 @@ window.DecisionArticles = [{"n":1,"ch":"intro","title":"AI for Growth","sub":"çœ
         after: page > 0 && page < 194 ? paths(page - (page % 2) + 2) : [null, null]
       };
     }
-    function reportLayout() {
-      if (root.isConnected && state.onLayout) state.onLayout(layoutFor());
+    function reportLayout(immediate = false) {
+      if (root.isConnected && state.onLayout) state.onLayout(layoutFor(), immediate === true);
     }
     // Invert the projection on the paper plane so a rotated corner stays under the pointer.
     function frameForPointer() {
@@ -253,7 +253,7 @@ window.DecisionArticles = [{"n":1,"ch":"intro","title":"AI for Growth","sub":"çœ
         return { u: x / r.width, v: y / r.height, inside: x >= 0 && y >= 0 && x <= r.width && y <= r.height };
       };
     }
-    function sizePage() {
+    function sizePage(report = true) {
       const pad = small.matches ? 20 : 48;
       const slots = state.spread && !small.matches ? 2 : 1;
       const fit = Math.min(
@@ -261,9 +261,10 @@ window.DecisionArticles = [{"n":1,"ch":"intro","title":"AI for Growth","sub":"çœ
         Math.max(90, scroll.clientHeight - pad - 8) * 0.75
       );
       resizeWidth = Math.round(fit * state.zoom * 100) / 100;
+      sheet.style.setProperty('--reader-spread-width', resizeWidth * visiblePages().length + 'px');
       sheet.style.setProperty('--reader-page-width', resizeWidth + 'px');
       sheet.style.setProperty('--reader-zoom', state.zoom);
-      reportLayout();
+      if (report) reportLayout();
     }
     function rememberText() {
       for (const leaf of liveLeaves()) {
@@ -411,13 +412,14 @@ window.DecisionArticles = [{"n":1,"ch":"intro","title":"AI for Growth","sub":"çœ
       const u = (x - old.left) / old.width,
         v = (y - old.top) / old.height;
       state.zoom = next;
-      sizePage();
+      // Publish the new paper size and pointer-anchored scroll position together.
+      sizePage(false);
       for (const [viewport, fraction] of textOffsets) viewport.scrollTop = fraction * viewport.scrollHeight;
       const box = anchor.getBoundingClientRect();
       scroll.scrollLeft += box.left + u * box.width - x;
       scroll.scrollTop += box.top + v * box.height - y;
       syncTools();
-      reportLayout();
+      reportLayout(true);
     }
     function zoomStep(dir) {
       return dir > 0

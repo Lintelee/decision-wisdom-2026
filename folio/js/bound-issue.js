@@ -152,13 +152,15 @@ export function bindIssue({
     stacks[side].visible = width > 0.001;
     stacks[side].scale.x = Math.max(0.001, width);
   }
-  function spread(desc) {
+  function spread(desc, printOnPaper = false) {
     // In a single-page layout an exposed facing scan would sit beside the
     // selectable text, even though that page is outside the reader’s spread.
     const left = (desc.spread || !desc.right) && desc.paths[0];
     const right = (desc.spread || desc.right) && desc.paths[1];
-    face('L', left);
-    face('R', right);
+    // At rest the accessible reader owns the ink. A second scan on the desk
+    // shows its old position between a wheel event and the next canvas paint.
+    face('L', printOnPaper ? left : null, Boolean(left));
+    face('R', printOnPaper ? right : null, Boolean(right));
     stackWidth('L', left ? 1 : 0);
     stackWidth('R', right ? 1 : 0);
     showSpine(desc.outer);
@@ -399,7 +401,7 @@ export function bindIssue({
     async unfold(duration, fromStory = false) {
       await Promise.all(layout.paths.filter(Boolean).map((url) => entry(url).ready));
       if (layout.outer && !fromStory) {
-        spread(layout);
+        spread(layout, true);
         await tween(1, duration, () => {});
       } else {
         face('R', layout.paths[1]);
@@ -414,6 +416,7 @@ export function bindIssue({
     async refold(duration, toStory = false) {
       endTurn(false);
       resting = false;
+      spread(layout, true);
       if (layout.outer && !toStory) await tween(0, duration, () => {});
       else {
         pages.L.material = original.L;

@@ -56,5 +56,10 @@
     show(document.getElementById('open-contents'));
   });
   if (window.folioEntry.first) show(null);
-  import('./front-paper-art.js').then(({frontPaperArt}) => { art.innerHTML = frontPaperArt; }).catch(() => {});
+  import('./front-paper-art.js').then(({frontPaperArt}) => {
+    art.innerHTML = frontPaperArt;
+    return import('./front-paper-motion.js');
+  }).then(({bindFrontAnimation}) => {
+    bindFrontAnimation(dialog, art.firstElementChild, document.getElementById('intro-motion'));
+  }).catch(() => {});
 })();
