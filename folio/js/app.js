@@ -2,7 +2,7 @@
 import { createStage } from './stage.js';
 import { buildScene } from './kit.js';
 import { ARTICLES } from './articles.js';
-import { sourceTitle } from './editorial.js';
+import { sourceTitle, sourceAuthors } from './editorial.js';
 import { LANDS, ORDER } from './data.js';
 import { routeFor, storyHash } from './routes.js';
 import { makeSound } from './sound.js';
@@ -112,8 +112,8 @@ function frameSpread(i) {
   updateViewButton();
 }
 portrait.addEventListener('change', () => frameSpread(cur));
-// The line under a scene heading names the source articles by title; their authors are credited on the
-// explanation card and the credits page.
+// The line under a scene heading names the source articles by title. Their authors appear when a title is
+// pointed at or focused, and are credited on the explanation card and the credits page.
 function renderCredits(d) {
   const byline = $('#byline');
   byline.replaceChildren();
@@ -127,7 +127,9 @@ function renderCredits(d) {
     title.className = 'source-title';
     title.textContent = '〈' + sourceTitle(article) + '〉';
     row.append(title);
-    row.setAttribute('aria-label', title.textContent + '，讀原文');
+    // The authors are not printed in the line; pointing at a title shows them, in Chinese and English.
+    row.dataset.authors = sourceAuthors(article);
+    row.setAttribute('aria-label', [title.textContent, sourceAuthors(article), '讀原文'].filter(Boolean).join('，'));
     row.onclick = () => openReader(article.n, d.quote?.n === article.n ? d.quote.page : article.pages[0], false, row);
     byline.append(row);
   }

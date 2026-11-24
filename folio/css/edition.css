@@ -238,3 +238,13 @@
   /* The section line grows from 11.2px to 12px but keeps its 16.8px line box, so the book page below is not squeezed. */
   #reader .dr-section { font-size: .75rem; line-height: 1.4; }
 }
+
+/* Pointing at a source title (or focusing it) shows who wrote the article, in Chinese and English.
+   The names sit to the right of the title, so they never cover the next source in the list. */
+#byline .credit-link { position: relative; }
+#byline .credit-link[data-authors]:is(:hover, :focus-visible)::after {
+  content: attr(data-authors); position: absolute; left: calc(100% + 10px); top: 50%; transform: translateY(-50%); z-index: 3;
+  padding: 4px 10px; border: 1px solid #f0dfb955; border-radius: 3px;
+  background: #1f1d27f2; color: #fff0d5; box-shadow: 0 6px 16px #0e0c1466;
+  font: 600 .8rem/1.5 var(--sans); letter-spacing: .01em; white-space: nowrap; pointer-events: none;
+}

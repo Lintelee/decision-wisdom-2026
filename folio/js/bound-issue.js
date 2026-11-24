@@ -139,6 +139,30 @@ export function bindIssue({
   const jacketSpine = new T.Mesh(spineGeo, spineMaterial);
   jacketSpine.visible = false;
   book.add(jacketSpine);
+  // The pop-up book has gold and navy boards. While the issue is being read they take the issue's own
+  // cover stock (the grey paper of its jacket), so the bound book does not look as if its cover were orange.
+  // Each scene lights the book in its own colour (pink at dawn, blue at night); the stock is shown mostly as
+  // its own colour, like the printed pages, with a little of the scene's light left for the edges.
+  const jacketStock = new T.Color('#d8d5d0'), jacketShade = new T.Color('#aaa69f'), unlit = 0.82;
+  const boards = [];
+  {
+    const gold = new T.Color('#e8b84e'), navy = [new T.Color('#2f3a4a'), new T.Color('#273140')];
+    book.traverse((mesh) => {
+      const material = mesh.isMesh && mesh.material;
+      if (!material?.color || !material.emissive) return;
+      const to = material.color.equals(gold) ? jacketStock : navy.some((c) => material.color.equals(c)) ? jacketShade : null;
+      if (to) boards.push({ material, from: material.color.clone(), lit: to.clone().multiplyScalar(1 - unlit), glow: to.clone().multiplyScalar(unlit) });
+    });
+  }
+  let dressed = 0;
+  function dress(k) {
+    if (k === dressed) return;
+    dressed = k;
+    for (const board of boards) {
+      board.material.color.copy(board.from).lerp(board.lit, k);
+      board.material.emissive.setScalar(0).lerp(board.glow, k);
+    }
+  }
   function showSpine(outer) {
     jacketSpine.visible = Boolean(outer);
     if (!outer) return;
@@ -221,6 +245,7 @@ export function bindIssue({
     if (!active || !layout) return;
     printCamera = camera;
     book.scale.x = mix(1, printWidth / paperWidth, amount);
+    dress(amount);
     const v = viewFor(layout);
     if (motion) {
       const next = viewFor(motion.to),
@@ -426,6 +451,7 @@ export function bindIssue({
         await tween(0, duration, p => { bendLeaf(p); if (toStory) poseStory(p); });
       }
       originalInk();
+      dress(0);
       active = false;
       layout = null;
     }
