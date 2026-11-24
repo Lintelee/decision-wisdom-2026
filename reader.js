@@ -155,6 +155,9 @@ window.DecisionArticles = [{"n":1,"ch":"intro","title":"AI for Growth","sub":"çœ
       state.onLayout = params.onLayout; state.binding = params.binding;
       state.articleTitle = params.articleTitle;
       state.keyPage = params.keyPage;
+      state.keyQuote = params.keyQuote;
+      // A scene's explanation card opens the readable text edition; everything else keeps the format in use.
+      if (params.mode === 'text' || params.mode === 'print') state.mode = params.mode;
       if (typeof params.motion === 'boolean') state.motion = params.motion;
       else {
         state.motion = null;
@@ -286,14 +289,20 @@ window.DecisionArticles = [{"n":1,"ch":"intro","title":"AI for Growth","sub":"çœ
         title,
         label: pageName(page),
         imagePath: imgPath(page),
-        contents
+        contents,
+        keyQuote: page === state.keyPage ? state.keyQuote : null
       });
       const fraction = textPositions.get(page);
-      if (fraction > 0)
+      // A page the reader has already scrolled returns to that place; otherwise the cited sentence is brought into view.
+      const cited = fraction > 0 ? null : leaf.querySelector('mark.dr-text-key');
+      if (fraction > 0 || cited)
         requestAnimationFrame(() => {
           if (!leaf.isConnected) return;
           const v = leaf.querySelector('.dr-text-viewport');
-          v.scrollTop = fraction * Math.max(0, v.scrollHeight - v.clientHeight);
+          if (!cited) { v.scrollTop = fraction * Math.max(0, v.scrollHeight - v.clientHeight); return; }
+          const frame = v.getBoundingClientRect(), line = cited.getBoundingClientRect();
+          const scale = v.offsetHeight ? frame.height / v.offsetHeight : 1;
+          v.scrollTop = Math.max(0, v.scrollTop + (line.top - frame.top) / (scale || 1) - v.clientHeight * .3);
         });
     }
     function pageLeaf(page) {

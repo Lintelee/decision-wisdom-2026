@@ -35,6 +35,8 @@
   touch-action: pan-y pinch-zoom;
 }
 .dr-text-leaf .dr-text-viewport:focus-visible { outline-offset: -.75cqw; }
+/* The sentence a scene cites, underlined with the section's own marker. Nothing is painted behind the strokes, so the type matches its paragraph. */
+.dr-text-leaf mark.dr-text-key { background: none; color: inherit; text-decoration: underline var(--leaf-accent); text-decoration-thickness: .4em; text-underline-offset: .2em; text-decoration-skip-ink: none; }
 /* At a magnified scale the paragraph scrolls vertically inside its paper and
    the whole sheet can travel sideways under the same finger. */
 #reader .dr-reader.dr-zoomed:not(.dr-orbit-tool) .dr-scroll[data-format=text],

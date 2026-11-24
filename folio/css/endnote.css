@@ -1,28 +1,30 @@
 #outcome[hidden],#endnote-tab[hidden],#app:is([data-turning],[data-reading],[data-performing],[data-cover=yes]) :is(#outcome,#endnote-tab){display:none}
 #endnote-tab{position:absolute;z-index:8;right:clamp(16px,3.6vw,67px);bottom:clamp(84px,14vh,150px);min-height:40px;border:1px solid #917b5c;border-left:5px solid #69775d;border-radius:2px 4px 4px 2px;padding:6px 14px;color:#304537;background:#f3e9cf;box-shadow:0 3px 8px #211e1b55;cursor:pointer;font:700 .92rem/1.4 var(--sans)}
 #endnote-tab:focus-visible{outline:3px solid #f1c779;outline-offset:3px}
-#outcome{position:absolute;z-index:8;right:clamp(16px,3.6vw,67px);bottom:clamp(84px,14vh,150px);width:clamp(275px,29vw,375px);max-height:65dvh;overflow:auto;overscroll-behavior:contain;padding:13px clamp(15px,1.5vw,22px) 15px;border:1px solid #998367;border-left:5px solid #917143;border-radius:2px 5px 3px 2px;background:linear-gradient(110deg,#f3ead2,#fff7e5 52%,#e9ddc3);box-shadow:0 10px 28px #1b1e1b45;color:#352f29;font:500 .93rem/1.6 var(--sans);animation:unfold-endnote .35s ease-out both}
+#outcome{position:absolute;z-index:8;right:clamp(16px,3.6vw,67px);bottom:clamp(84px,14vh,150px);width:clamp(275px,29vw,375px);max-height:65dvh;overflow:auto;overscroll-behavior:contain;padding:13px clamp(15px,1.5vw,22px) 15px;border:1px solid #998367;border-left:5px solid #917143;border-radius:2px 5px 3px 2px;background:linear-gradient(110deg,#f3ead2,#fff7e5 52%,#e9ddc3);box-shadow:0 10px 28px #1b1e1b45;color:#352f29;font:500 .95rem/1.62 var(--sans);animation:unfold-endnote .35s ease-out both}
 @keyframes unfold-endnote{from{opacity:.55;transform:translateX(20px) rotate(.7deg)}to{opacity:1;transform:none}}
-#outcome header{display:flex;align-items:center;justify-content:space-between;gap:8px;color:#685941;font:700 .75rem/1.3 var(--sans);letter-spacing:.13em}
+#outcome header{display:flex;align-items:center;justify-content:space-between;gap:8px;color:#685941;font:600 .78rem/1.3 var(--sans);letter-spacing:.13em}
 #outcome .endnote-close{background:none;border:0;color:#453d32;font:normal 1.4rem/1 sans-serif;cursor:pointer;min-width:32px;min-height:30px}
-#outcome h2{color:#2c4135;font:800 clamp(1.14rem,1.65vw,1.5rem)/1.35 var(--serif);margin:3px 0 8px;text-wrap:balance}
-#outcome p{margin:0 0 7px}#outcome .endnote-event{color:#63584a;font-size:.88em}#outcome .endnote-meaning{font-weight:600}
-#outcome .endnote-read{display:block;width:100%;margin:0 0 10px;padding:2px 0 3px 9px;border:0;border-left:2px solid #ad8959;border-radius:0;text-align:left;background:transparent;color:#344a3c;cursor:pointer;font:500 .81rem/1.45 var(--sans)}
-#outcome .endnote-read[hidden]{display:none}
-#outcome .endnote-by,#outcome .endnote-reference{display:block}
-#outcome .endnote-by>span{color:#685b47;font-size:.74rem;margin-right:.15em}
-#outcome .endnote-authors{font-weight:700}
-#outcome .endnote-reference{margin-top:2px}
-#outcome .endnote-article{font-family:var(--serif)}
-#outcome .endnote-page{display:inline-block;margin-top:2px;padding:1px 6px;white-space:nowrap;border-radius:2px;background:#34523f;color:#fff7e5;font-size:.74rem;font-weight:650}
+#outcome h2{color:#2c4135;font:800 clamp(1.2rem,1.55vw,1.35rem)/1.35 var(--serif);margin:3px 0 10px;text-wrap:balance}
+#outcome .endnote-source{margin:0 0 10px;padding-left:10px;border-left:2px solid #ad8959}
+#outcome figcaption{color:#685941;font:600 .78rem/1.5 var(--sans)}
+#outcome .endnote-authors{word-break:keep-all}
+#outcome .endnote-article{display:block}
+#outcome .endnote-quote{margin:4px 0 0;color:#2c4135;font:650 .95rem/1.62 var(--serif);text-indent:-.45em;text-wrap:pretty}
+#outcome .endnote-meaning{margin:0 0 12px}
+#outcome .endnote-read{display:inline-flex;align-items:center;min-height:34px;padding:5px 13px;border:0;border-radius:2px 5px 2px 2px;background:#34523f;color:#fff7e5;cursor:pointer;font:700 .78rem/1.4 var(--sans);letter-spacing:.03em}
+#outcome .endnote-read:hover{background:#2a4433}
+#outcome :is(.endnote-source,.endnote-quote,.endnote-read)[hidden]{display:none}
 #outcome .endnote-page::after{content:' →'}
-#outcome .endnote-read:hover .endnote-article{text-decoration:underline;text-underline-offset:2px}
 #outcome button:focus-visible{outline:2px solid #996639;outline-offset:1px}
 @media(max-width:860px){#outcome{right:14px;bottom:clamp(150px,25vh,235px);max-height:41dvh;width:min(340px,calc(100vw - 28px))}}
-@media(max-width:600px){#outcome{padding:8px 13px 10px;font-size:.84rem}#outcome h2{font-size:1.13rem}}
-@media(max-width:600px) and (orientation:portrait){#outcome{top:var(--endnote-top,20dvh);bottom:auto;max-height:min(35dvh,calc(100dvh - var(--endnote-top,20dvh) - 160px))}}
+@media(max-width:600px){#outcome{padding:8px 14px 12px;font-size:.88rem}#outcome h2{font-size:1.13rem;margin:0 0 7px}#outcome .endnote-quote{font-size:.88rem}#outcome .endnote-source{margin-bottom:8px}#outcome .endnote-meaning{margin-bottom:10px}#outcome .endnote-close{min-height:24px;margin-right:-7px}}
+/* Upright phone: opened from its tab, the card rises from the bottom edge and stops under the book. */
+@media(max-width:600px) and (orientation:portrait){#outcome{top:auto;left:10px;right:10px;bottom:max(8px,env(safe-area-inset-bottom));width:auto;max-height:calc(50dvh - 25vw + 8px);z-index:30;border-left-width:1px;border-top:4px solid #917143;border-radius:5px 5px 3px 3px;box-shadow:0 -6px 24px #1b1e1b70;animation:raise-endnote .3s ease-out both}#outcome header{position:absolute;top:4px;right:7px}#outcome header span{display:none}#outcome h2{padding-right:30px}#outcome .endnote-foot{position:sticky;bottom:-12px;margin:0 -14px -12px;padding:6px 14px 12px;background:linear-gradient(110deg,#f3ead2,#fff7e5 52%,#e9ddc3)}}
+@keyframes raise-endnote{from{opacity:.6;transform:translateY(22px)}to{opacity:1;transform:none}}
 @media(max-height:510px) and (orientation:landscape){#outcome{top:54px;bottom:auto;max-height:calc(100dvh - 117px);width:min(36vw,330px);padding:6px 13px 10px;font-size:.81rem}#outcome h2{font-size:1.05rem}}
 @media(prefers-reduced-motion:reduce){#outcome{animation:none}}
 html.still #outcome{animation:none}
 @media(max-width:860px){#endnote-tab{right:14px;bottom:clamp(155px,26vh,235px)}}
 @media(max-height:510px) and (orientation:landscape){#endnote-tab{top:57px;bottom:auto}}
+@media(max-width:600px) and (orientation:portrait){#endnote-tab{right:auto;left:14px}}

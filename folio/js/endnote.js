@@ -18,23 +18,15 @@ const entries = new Map([
 export function makeEndnote({ panel, tab, article, read }) {
   const find = (name) => panel.querySelector(name);
   let scene = null, available = false;
-  const chapter = document.getElementById('chapter');
-  function positionOnPhone() {
-    if (!panel.hidden && matchMedia('(max-width:600px) and (orientation:portrait)').matches) {
-      const desired = chapter.getBoundingClientRect().bottom + 10;
-      const top = Math.min(desired, Math.max(64, innerHeight - 330));
-      panel.style.setProperty('--endnote-top', Math.ceil(top) + 'px');
-    }
-  }
-  new ResizeObserver(positionOnPhone).observe(chapter);
-  window.addEventListener('resize', positionOnPhone);
+  // An upright phone has no room for the scene, its last line and this card together.
+  const upright = matchMedia('(max-width:600px) and (orientation:portrait)');
   function show(focus = false) {
     if (!available) return;
     panel.hidden = false;
     panel.scrollTop = 0;
     tab.hidden = true;
+    tab.textContent = '重看本幕解說';
     tab.setAttribute('aria-expanded', 'true');
-    positionOnPhone();
     if (focus) find('h2').focus({ preventScroll:true });
   }
   function close(focus = false) {
@@ -46,6 +38,7 @@ export function makeEndnote({ panel, tab, article, read }) {
   function enter(spread, previouslyFinished) {
     scene = spread;
     available = previouslyFinished && entries.has(spread.index);
+    tab.textContent = '重看本幕解說';
     close();
     if (available) fill(spread);
   }
@@ -53,12 +46,14 @@ export function makeEndnote({ panel, tab, article, read }) {
     const entry = entries.get(spread.index), def = spread.def, quote = def.quote;
     panel.scrollTop = 0;
     find('h2').textContent = entry.title;
-    find('.endnote-event').textContent = entry.event;
     find('.endnote-meaning').textContent = entry.meaning;
     const cited = quote && article(quote.n);
     const main = cited || (def.sources || []).map(source => article(source.n)).find(Boolean);
-    const primary = find('.endnote-read');
-    primary.hidden = !main;
+    const source = find('.endnote-source'), sentence = find('.endnote-quote'), primary = find('.endnote-read');
+    source.hidden = primary.hidden = !main;
+    // The printed sentence the scene grew from, so the claim can be checked before the page is opened.
+    sentence.textContent = cited ? '「' + quote.t + '」' : '';
+    sentence.hidden = !cited;
     if (main) {
       const page = cited ? quote.page : main.pages[0];
       find('.endnote-authors').textContent = sourceAuthors(main);
@@ -71,7 +66,9 @@ export function makeEndnote({ panel, tab, article, read }) {
     if (spread !== scene || !entries.has(spread.index)) return;
     if (!available) fill(spread);
     available = true;
-    show(focus);
+    // On an upright phone the card waits behind its tab; the scene and its closing line stay in view.
+    if (upright.matches) { tab.textContent = '看本幕解說'; close(); }
+    else show(focus);
   }
   tab.onclick = () => show(true);
   find('.endnote-close').onclick = () => close(true);

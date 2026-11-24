@@ -362,11 +362,12 @@ function returnToStory() {
   if (history.state?.boundIssue && history.state.origin === origin) history.back();
   else location.hash = origin;
 }
-function readPage(article, page) {
+function readPage(article, page, mode) {
   document.title = '原刊全文｜街角的決策智慧';
   window.DecisionReader.render(readerEl, {
     embedded: true, article, page, binding:stage.issue, articleTitle: a=>sourceTitle(art(a.n)||a), motion: !stage.still.matches,
     keyPage: opened && cur > 0 ? defs[cur].quote?.page : null,
+    keyQuote: opened && cur > 0 ? defs[cur].quote?.t : null, mode,
     returnHash: origin, returnLabel: returnLabel(), onReturn: returnToStory,
     onLeaf: (event,dir) => sound.play(event==='cover-land'?'cover-set':'paper',null,dir*.23),
     onLayout: (layout, immediate) => {
@@ -391,7 +392,8 @@ async function openReader(n = 0, page = art(n)?.pages[0] || 0, fromRoute = false
   $('#dock').inert = true; $('#dock').classList.add('watching');
   appEl.dataset.reading = 'opening'; readerEl.hidden = false; readerEl.inert = true;
   $('#btnRead .t').textContent = returnLabel(); $('#btnRead').setAttribute('aria-label', returnLabel()); $('#btnRead').title = returnLabel();
-  stage.issue.begin(); readPage(n, page); sound.play('whoosh');
+  // From a scene's explanation card the page opens as readable text, with the cited sentence marked.
+  stage.issue.begin(); readPage(n, page, trigger?.closest?.('#outcome') ? 'text' : undefined); sound.play('whoosh');
   if (!opened) stage.setLift(stage.spreads[cur], 0);
   await stage.issue.unfold(stage.still.matches || (!opened && page === 0) ? 0 : .9, opened);
   appEl.dataset.reading = 'open'; readerEl.inert = false; busy = false;

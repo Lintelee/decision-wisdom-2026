@@ -165,7 +165,47 @@
     paper.append(nav);
   }
 
-  function compose(leaf, html, { page, title, label, imagePath, contents } = {}) {
+  // The scene's cited sentence is found through punctuation, spacing and inline tags,
+  // then wrapped one stretch of text at a time so a mark never crosses a tag.
+  const letters = text => text.normalize('NFKC').replace(/[^\p{L}\p{N}]/gu, '');
+  const named = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ' };
+  const decoded = entity => {
+    const code = entity.slice(1, -1);
+    if (code[0] !== '#') return named[code.toLowerCase()] ?? '';
+    const point = /^#x/i.test(code) ? parseInt(code.slice(2), 16) : parseInt(code.slice(1), 10);
+    return point > 0 && point <= 0x10ffff ? String.fromCodePoint(point) : '';
+  };
+  function markQuote(html, quote) {
+    const wanted = letters(quote || '');
+    if (!html || !wanted) return html;
+    const places = [];
+    let printed = '';
+    for (const run of html.matchAll(/<[^>]*>|[^<]+/g)) {
+      if (run[0][0] === '<') continue;
+      for (const piece of run[0].matchAll(/&(?:[a-z]+|#\d+|#x[0-9a-f]+);|[\s\S]/giu)) {
+        const from = run.index + piece.index, to = from + piece[0].length;
+        const plain = letters(piece[0].length > 1 && piece[0][0] === '&' ? decoded(piece[0]) : piece[0]);
+        for (let i = 0; i < plain.length; i++) places.push({ from, to });
+        printed += plain;
+      }
+    }
+    const first = printed.indexOf(wanted);
+    if (first < 0) return html;
+    let from = places[first].from, to = places[first + wanted.length - 1].to;
+    if (/[「『“‘]/.test(html[from - 1] || '')) from--;
+    for (let i = 0; i < 3 && /[。！？!?」』”’]/.test(html[to] || ''); i++) to++;
+    let marked = '', at = 0;
+    for (const run of html.matchAll(/<[^>]*>|[^<]+/g)) {
+      const start = run.index, end = start + run[0].length;
+      if (run[0][0] === '<' || end <= from || start >= to) continue;
+      const a = Math.max(start, from), b = Math.min(end, to);
+      marked += html.slice(at, a) + '<mark class="dr-text-key">' + html.slice(a, b) + '</mark>';
+      at = b;
+    }
+    return marked + html.slice(at);
+  }
+
+  function compose(leaf, html, { page, title, label, imagePath, contents, keyQuote } = {}) {
     const land = section(page);
     const article = window.DecisionArticles?.find(a => a.pages[0] === page);
     leaf.classList.add('dr-text-leaf');
@@ -180,7 +220,7 @@
     const paper = element('article', 'dr-prose dr-text-copy');
 
     if (html?.trim()) {
-      paper.innerHTML = html;
+      paper.innerHTML = keyQuote ? markQuote(html, keyQuote) : html;
       if (standfirsts[page] && paper.querySelector('h2')) opener(paper, article, page);
       else { viewport.append(pageMark(page, land)); arrangeFigures(paper); groupHeadings(paper); }
     } else if (contents instanceof Node || contents?.length) {
@@ -206,5 +246,5 @@
     return leaf;
   }
 
-  window.DecisionTextLeaf = { compose };
+  window.DecisionTextLeaf = { compose, markQuote };
 })();
