@@ -23,7 +23,7 @@ const mix = { gull:.34, sparrow:.49, 'wing-flit':.72, 'clock-chime':.72, 'tin-ta
 export function makeSound() {
   let ctx = null, master = null, foley = null, bed = null, current = null, track = null, offset = 0;
   let enabled = true, unlocked = false, generation = 0, sceneEpoch = 0, resuming = null;
-  let musicLevel = .53, effectsLevel = .69, voicePan = 0, boundToPage = false;
+  let musicLevel = .53, effectsLevel = .69, voicePan = 0, boundToPage = false, retries = 0;
   const buffers = new Map(), lastHit = new Map(), hitCount = new Map(), voices = new Set();
 
   function hold(gain) {
@@ -76,7 +76,8 @@ export function makeSound() {
     if (!audible()) { stopTrack(); return; }
     if (track) { gainTo(track.volume.gain, musicGain(), .32); return; }
     const buffer = await load('music/paper-waltz');
-    if (!buffer || ticket !== generation || !audible()) return;
+    if (!buffer) { if (ticket === generation && retries++ < 6) setTimeout(sync, 4000); return; }
+    if (ticket !== generation || !audible()) return;
     const source = ctx.createBufferSource(), volume = ctx.createGain();
     source.buffer = buffer; source.loop = true; volume.gain.value = 0;
     source.connect(volume); volume.connect(bed);
@@ -88,6 +89,10 @@ export function makeSound() {
   }
   function unlock() {
     if (!enabled) return;
+    // Touch pointerdown, pen, Esc and Shift/Ctrl/Alt/Meta do not count as user activation.
+    // A context made on one of those stays suspended, so wait for an input that does count.
+    const activation = globalThis.navigator?.userActivation;
+    if (!ctx && activation && !activation.isActive && !activation.hasBeenActive) return;
     try {
       if (!ctx) {
         ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -101,8 +106,11 @@ export function makeSound() {
       }
       const first = !unlocked;
       unlocked = true;
-      if (ctx.state !== 'running' && !resuming) {
-        resuming = ctx.resume().then(() => { sync(); warmScene(); }).catch(() => {}).finally(() => { resuming = null; });
+      if (ctx.state !== 'running') {
+        // Ask again on every gesture: an earlier resume() may never settle.
+        const attempt = ctx.resume().then(() => { sync(); warmScene(); }).catch(() => {});
+        resuming = attempt;
+        attempt.finally(() => { if (resuming === attempt) resuming = null; });
       } else if (first) { sync(); warmScene(); }
     } catch { /* No audio output device. The paper mechanisms also read silently. */ }
   }
@@ -198,7 +206,7 @@ export function makeSound() {
       voicePan=0;
     }
   }
-  document.addEventListener('pointerdown', unlock, { capture: true, passive: true });
+  for (const type of ['pointerdown', 'pointerup', 'click']) document.addEventListener(type, unlock, { capture: true, passive: true });
   document.addEventListener('keydown', unlock, { capture: true });
   document.addEventListener('visibilitychange', () => { if(document.hidden)leaveRoom(true); sync(); if(!document.hidden)warmScene(); });
   return {
