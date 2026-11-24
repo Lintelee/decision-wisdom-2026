@@ -2,7 +2,7 @@
 import { createStage } from './stage.js';
 import { buildScene } from './kit.js';
 import { ARTICLES } from './articles.js';
-import { authorName, sourceTitle, sourceAuthors } from './editorial.js';
+import { sourceTitle } from './editorial.js';
 import { LANDS, ORDER } from './data.js';
 import { routeFor, storyHash } from './routes.js';
 import { makeSound } from './sound.js';
@@ -112,6 +112,8 @@ function frameSpread(i) {
   updateViewButton();
 }
 portrait.addEventListener('change', () => frameSpread(cur));
+// The line under a scene heading names the source articles by title; their authors are credited on the
+// explanation card and the credits page.
 function renderCredits(d) {
   const byline = $('#byline');
   byline.replaceChildren();
@@ -125,17 +127,21 @@ function renderCredits(d) {
     title.className = 'source-title';
     title.textContent = '〈' + sourceTitle(article) + '〉';
     row.append(title);
-    const first = article.authors[0];
-    if (first) {
-      const author = document.createElement('span');
-      author.className = 'source-authors';
-      author.textContent = authorName(first) + (article.authors.length > 1 ? ' 等' : '');
-      row.append(' ', author);
-    }
-    row.setAttribute('aria-label', [title.textContent, sourceAuthors(article), '讀原文'].filter(Boolean).join('，'));
+    row.setAttribute('aria-label', title.textContent + '，讀原文');
     row.onclick = () => openReader(article.n, d.quote?.n === article.n ? d.quote.page : article.pages[0], false, row);
     byline.append(row);
   }
+}
+// A heading is set clause by clause. It breaks right after the first comma, so a long question reads as a
+// short opening line and then the rest.
+function headingParts(title) {
+  const phrases = title.match(/[^，]+，?/gu).map(part => {
+    const phrase = document.createElement('span');
+    phrase.textContent = part;
+    return phrase;
+  });
+  if (phrases.length > 1) phrases.splice(1, 0, document.createElement('br'));
+  return phrases;
 }
 function renderChapter(i) {
   endInspection();
@@ -145,11 +151,7 @@ function renderChapter(i) {
   closing.show(Boolean(d.backmatter));
   $('#eyebrow').textContent = i === 0 ? `${land.en} · ${land.name}` : d.backmatter ? '後記' : `${land.en} · ${land.name} · 第 ${i}／${ORDER.length - 1} 頁`;
   renderCredits(d);
-  $('#heading').replaceChildren(...d.title.match(/[^，]+，?/gu).map(part => {
-    const phrase = document.createElement('span');
-    phrase.textContent = part;
-    return phrase;
-  }));
+  $('#heading').replaceChildren(...headingParts(d.title));
   $('#heading').classList.toggle('long', [...d.title].length > 9);
   showBookmark(i);
   $('#btnPrev').disabled = i === 0; $('#btnNext').disabled = i === defs.length - 1;
