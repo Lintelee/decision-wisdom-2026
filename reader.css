@@ -82,12 +82,6 @@
 .dr-leaf:is(.dr-front-cover,.dr-back-cover) > img { object-fit: cover; }
 .dr-front-cover > img { object-position: right; }
 .dr-back-cover > img { object-position: left; }
-/* The closed issue reads as a bound book: a pressed hinge runs down each cover beside its spine edge. */
-.dr-leaf:is(.dr-front-cover,.dr-back-cover)::after {
-  content: ''; position: absolute; z-index: 2; top: 0; bottom: 0; left: 0; width: 5%; pointer-events: none;
-  background: linear-gradient(90deg, #3a342c3d 0%, #3a342c14 20%, #3a342c00 38%, #3a342c30 55%, #ffffff42 62%, #3a342c00 80%);
-}
-.dr-leaf.dr-back-cover::after { left: auto; right: 0; transform: scaleX(-1); }
 .dr-paired > .dr-leaf:first-child { border-radius: 4px 1px 0 3px; }
 .dr-paired > .dr-leaf:nth-child(2) { border-radius: 1px 5px 4px 0; }
 .dr-book-surface[data-format=print] { cursor: zoom-in; touch-action: pan-y pinch-zoom; }
