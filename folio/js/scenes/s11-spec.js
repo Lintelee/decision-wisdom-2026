@@ -52,6 +52,8 @@ export default {
   diary: DIARY,
   takeaway: '人人都用 AI 量產，做出來一模一樣、分不出誰是誰。先定下自己絕不妥協的規矩，同樣的產量才件件像你。',
   quote: { t: '而平均，正是品牌差異化最大的敵人。', n: 20, page: 177 },
+  // One sentence from each of the scene's other source articles, for the list on the explanation card.
+  more: [{ n: 21, page: 184, t: '一項 AI 素材不會只憑一句簡單提示詞就能精準生成。' }, { n: 4, page: 31, t: '當 AI 可以快速生成大量內容，品牌最需要的不是更多素材，而是更清楚的判斷標準。' }],
   look: { bg: '#2c3948', table: '#536670', key: '#e9dbc8', fill: '#b7c9d8', sky: '#d6d5c9' },   // just after dark
   ground(G) {
     if (printedYard(G, 'dye')) return;
@@ -217,7 +219,7 @@ export default {
       const tail = keep(cat, -.19, .22, 0); beam(tail, [0, 0, 0], [-.07, .18, 0], .02, '#f1ece2', 4); cat.userData.tail = tail;
     });
     S.pad(cat,.27,[0,.22,0]);
-    S.discovery(cat, { id: 'cat', label: '藍腳印的小白貓', aim:[.045,.21,.03], duration: 1.7, sound: 'cloth',
+    S.discovery(cat, { id: 'cat', label: '藍腳印的小白貓', aim:[.045,.21,.03], duration: 1.7, sound: ['handprint', 'meow'],
       draw(u, visit, reduced) {
         const forward = visit % 2 === 1;
         const v = reduced ? 1 : u*u*(3-2*u);

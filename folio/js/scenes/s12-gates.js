@@ -128,7 +128,7 @@ export default {
       });
     });
     S.pad(stars, .42);
-    S.discovery(nightSky, { id:'moon', label:'月牙旁的星圖', duration:1.47, sound:'cup', aim:[0,2.4,0],
+    S.discovery(nightSky, { id:'moon', label:'月牙旁的星圖', duration:1.47, sound:'ice-clink', aim:[0,2.4,0],
       draw(u,visit,reduced) {
         const t=reduced?1:u*u*(3-2*u), connected=visit%2?t:1-t;
         for (const {pin,rest,x,y} of constellation) {
@@ -436,7 +436,7 @@ export default {
       tail = keep(cat, -.12, .1, 0); beam(tail, [0, 0, 0], [-.12, .1, 0], .018, '#c97a3a', 5); beam(tail, [-.12, .1, 0], [-.1, .19, 0], .016, '#c97a3a', 5);
     });
     S.curio(cat, { id: 'cat', label: '鑽小紙燈的橘貓', quiet:true, tap: async () => {
-      if (catBusy) return; catBusy = true; S.sound('soft');
+      if (catBusy) return; catBusy = true; S.sound('meow', cat);
       await S.to(cat.position, { x: CAT_IN }, .5, 'inOut'); S.wiggle(small, .12); S.sound('tap');
       await S.wait(1.4); await S.to(cat.position, { x: CAT_OUT }, .45, 'out'); catBusy = false;
     } });
@@ -492,7 +492,7 @@ export default {
       draw(u,visit,reduced){const v=reduced?1:u*u*(3-2*u);ear.rotation.y=-2.44*(visit%2?v:1-v);},
       reset(){ear.rotation.y=0;}
     });
-    S.discovery(plank,{id:'plank',label:'招牌下的銅鈴',duration:1.12,sound:'cycle-bell',
+    S.discovery(plank,{id:'plank',label:'招牌下的銅鈴',duration:1.12,sound:'tube-chime',
       draw(u,visit,reduced){chime.rotation.z=(visit%2?1:-1)*(reduced?.13:Math.sin(u*Math.PI*3.4)*.76*(1-u));},
       reset(){chime.rotation.z=0;}
     });

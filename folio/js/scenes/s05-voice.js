@@ -124,6 +124,8 @@ export default {
   diary: DIARY,
   takeaway: 'AI 推薦誰，看的是用過的人具體怎麼說你，不是你自己怎麼說。別人替你說的話，會變成 AI 對下一個人說的話。',
   quote: { t: '一個沒被討論、或被討論錯了的品牌，在消費者問 AI 的那一刻，等於隱形。', n: 9, page: 67 },
+  // One sentence from each of the scene's other source articles, for the list on the explanation card.
+  more: [{ n: 19, page: 174, t: '被 AI 看見，是技術的優化；被消費者記住，才是品牌的真本事。' }, { n: 13, page: 124, t: '品牌要進入的不是單一媒體版位，而是消費者的討論場域。' }],
   look: { bg: '#2a6150', table: '#8fb096', key: '#fff6dc', fill: '#cdeae6', sky: '#fffbe9' },   // noon
   ground(G) {
     G.wash('#ddd6aa');
@@ -366,7 +368,7 @@ export default {
       scentFan.position.y=.47+(reduced ? .028 : .17)*foldTravel(u,.40,1);
       blossom.rotation.z=(visit%2?1:-1)*extend*.54;
     }});
-    S.discovery(cat,{id:'cat',label:'鼻子上夾著衣夾的貓',duration:.94,sound:'clip',draw(u,visit,reduced){
+    S.discovery(cat,{id:'cat',label:'鼻子上夾著衣夾的貓',duration:.94,sound:['clip','meow'],draw(u,visit,reduced){
       const bare=visit%2?u:1-u, pinch=foldTravel(bare,.04,.40);
       peg.position.set(.19-.08*pinch,.28-.115*pinch,.143+.055*pinch);
       peg.rotation.z=-.85*pinch;

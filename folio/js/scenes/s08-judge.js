@@ -200,6 +200,8 @@ export default {
   diary: DIARY,
   takeaway: 'AI 幾秒就給出一大堆方案。難的不是答案不夠，是解法太多；選哪一個、為結果負責的，是人。',
   quote: { t: 'AI 可以生成答案、提供選項、加速執行；但為決策負責、為價值定錨的，始終是人。', n: 14, page: 135 },
+  // One sentence from each of the scene's other source articles, for the list on the explanation card.
+  more: [{ n: 5, page: 39, t: '工具能加速答案的產生，但策略人的價值，是判斷哪一個答案值得品牌投入。' }],
   look: { bg: '#53303a', table: '#bb8f8a', key: '#ffdcb4', fill: '#f0cfd6', sky: '#ffe9d6' },   // late afternoon
   ground(G) {
     G.wash('#e5c9b3');
@@ -292,7 +294,7 @@ export default {
       }
       S.pad(stools,.25,[0,.50,0]);
     },{s:1.15});
-    S.discovery(stools,{id:'stools',label:'疊在一起的紅板凳',duration:.88,sound:'clip',draw(u,visit,reduced){
+    S.discovery(stools,{id:'stools',label:'疊在一起的紅板凳',duration:.88,sound:'wood-knock',draw(u,visit,reduced){
       const open=visit%2?u:1-u, slide=foldTravel(open,.18,.86);
       topStool.position.set(-.65*slide,.52*(1-slide)+Math.sin(Math.PI*open)*(reduced ? .055 : .27),.31*slide);
       topStool.rotation.y=-.35*slide;
@@ -472,13 +474,13 @@ export default {
       ring(ripple,0,0,0,.090,.009,'#e7dcb9',16).rotation.x=Math.PI/2; ripple.visible=false;
       S.pad(dog,.19,[-.03,.22,0]);
     }, { s: 1.1 });
-    S.discovery(dog,{id:'dog',label:'桌腳喝水的小狗',duration:1.16,draw(u,visit,reduced){
+    S.discovery(dog,{id:'dog',label:'桌腳喝水的小狗',duration:1.16,sound:'bark',draw(u,visit,reduced){
       const sip=Math.min(foldTravel(u,.08,.37),1-foldTravel(u,.68,.94));
       dogHead.position.set(-.20-.11*sip,.30-.151*sip,.04+.046*sip); dogHead.rotation.z=.33*sip;
       tail.rotation.z=Math.sin(u*Math.PI*4)*sip*(reduced ? .07 : .45);
       const wave=foldTravel(u,.36,.82); ripple.visible=wave>0&&wave<1;
       ripple.scale.set(Math.max(.01,wave),1,Math.max(.01,wave));
-      if(u>=.35&&u<1&&dogBowl.userData.sip!==visit){dogBowl.userData.sip=visit;S.sound('rain-drop',dogBowl);}
+      if(u>=.35&&u<1&&dogBowl.userData.sip!==visit){dogBowl.userData.sip=visit;S.sound('drip',dogBowl);}
     },reset:()=>{delete dogBowl.userData.sip;}});
 
     // ---- the guests: the host, the otter and the note-taking owl sit at the back of the table

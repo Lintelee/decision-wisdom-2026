@@ -238,3 +238,15 @@
   /* The section line grows from 11.2px to 12px but keeps its 16.8px line box, so the book page below is not squeezed. */
   #reader .dr-section { font-size: .75rem; line-height: 1.4; }
 }
+
+/* The closed issue shows its spine. The printed spine from the issue's own jacket (reader-assets/pages/spine.webp, 45 of
+   the jacket's 1667 px) lies beside the cover. The issue is a paperback with a square back, so the spine is a flat
+   face: one even tone a little darker than the cover and a straight fold. No curve, no pressed line, no shadow. */
+#reader .dr-embedded .dr-book-surface:has(> :is(.dr-front-cover, .dr-back-cover))::before {
+  content: ''; display: block; position: absolute; z-index: 2; inset-block: 0; right: 100%; left: auto;
+  width: calc(var(--reader-page-width) * 45 / 818); border: 0; border-radius: 0; pointer-events: none;
+  background: url(../../reader-assets/pages/spine.webp) center / 100% 100% no-repeat; filter: brightness(.9);
+}
+#reader .dr-embedded .dr-book-surface:has(> .dr-back-cover)::before { right: auto; left: 100%; }
+/* On a phone the cover already spans the screen; a spine beside it would be cut off by the screen's edge. */
+@media (max-width: 600px) { #reader .dr-embedded .dr-book-surface:has(> :is(.dr-front-cover, .dr-back-cover))::before { display: none; } }

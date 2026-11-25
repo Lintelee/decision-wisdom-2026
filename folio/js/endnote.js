@@ -15,6 +15,9 @@ const entries = new Map([
   [12, {"title":"把放手的時機留給當事人","event":"白面鼯鼠畫了一顆紅心。穿山甲師傅把貼歪的心願扶正，握住兩條燈繩。白面鼯鼠看過、點頭，師傅才鬆爪。","meaning":"依後果與可逆性分配自主權。準備工作可以交給 AI，影響重大、難以收回的行動，要留下清楚的人為確認點。"}],
 ]);
 
+// A sentence that has quotation marks of its own takes the inner pair inside ours.
+const quoted = (text) => '「' + text.replace(/「/g, '『').replace(/」/g, '』') + '」';
+
 export function makeEndnote({ panel, tab, article, read }) {
   const find = (name) => panel.querySelector(name);
   let scene = null, available = false;
@@ -52,7 +55,7 @@ export function makeEndnote({ panel, tab, article, read }) {
     const source = find('.endnote-source'), sentence = find('.endnote-quote'), primary = find('.endnote-read');
     source.hidden = primary.hidden = !main;
     // The printed sentence the scene grew from, so the claim can be checked before the page is opened.
-    sentence.textContent = cited ? '「' + quote.t + '」' : '';
+    sentence.textContent = cited ? quoted(quote.t) : '';
     sentence.hidden = !cited;
     if (main) {
       const page = cited ? quote.page : main.pages[0];
@@ -61,6 +64,23 @@ export function makeEndnote({ panel, tab, article, read }) {
       find('.endnote-page').textContent = '讀原文 p.' + page;
       primary.onclick = () => read(main.n, page, false, primary);
     } else primary.onclick = null;
+    // The scene's other source articles wait behind one line under the button: a sentence from each, and its page.
+    const more = find('.endnote-more'), others = (def.more || []).map(item => ({ ...item, source: article(item.n) })).filter(item => item.source);
+    more.hidden = !others.length;
+    more.open = false;
+    find('.endnote-more-count').textContent = `這一幕還取材自另外 ${others.length} 篇`;
+    find('.endnote-more-list').replaceChildren(...others.map(item => {
+      const row = document.createElement('li'), sentence = document.createElement('blockquote'), link = document.createElement('button'), page = document.createElement('span');
+      sentence.textContent = quoted(item.t);
+      page.textContent = 'p.' + item.page;
+      link.type = 'button';
+      link.append('〈' + sourceTitle(item.source) + '〉', page);
+      link.onclick = () => read(item.n, item.page, false, link);
+      row.append(sentence, link);
+      return row;
+    }));
+    // Opened, the list is brought up into the card's view.
+    more.ontoggle = () => { if (more.open) panel.scrollTop = Math.max(0, more.offsetTop - 10); };
   }
   function finish(spread, focus = false) {
     if (spread !== scene || !entries.has(spread.index)) return;

@@ -30,6 +30,8 @@ export default {
   diary: DIARY,
   takeaway: 'AI 讓什麼都像真的，大家反而不信。讓人親眼看見真實，才會相信。',
   quote: { t: '我們沒有試圖說服大家，我們只是讓大家看見真實。而真實，最終說服了所有人。', n: 6, page: 47 },
+  // One sentence from each of the scene's other source articles, for the list on the explanation card.
+  more: [{ n: 3, page: 25, t: '創意的力量，從不來自「正確」，而來自「真實」。' }],
   look: { bg: '#2b5a4c', table: '#86a590', key: '#fff0d0', fill: '#c6e6ea', sky: '#fff8e6' },   // morning
   ground(G) {
     G.wash('#a9c993');
@@ -158,7 +160,7 @@ export default {
     S.plant(2.9, -3.25, (g) => { rays = paperSun(g,2.70,.45); });
     let shadowCloud;
     S.plant(-5.0, -3.2, (g) => paperCloud(g,1.08,2.40)); S.plant(4.7, -3.1, (g) => {shadowCloud=keep(g);paperCloud(shadowCloud,1.28,3.14);});
-    S.discovery(rays,{id:'sun',label:'飄過日頭的田徑場白雲',duration:1.13,
+    S.discovery(rays,{id:'sun',label:'飄過日頭的田徑場白雲',duration:1.13,sound:'field',
       draw(u,visit){const t=T.MathUtils.smoothstep(u,0,1),shade=visit%2?t:1-t;shadowCloud.position.set(-1.83*shade,-.16*shade,0);}});
     let flip, plank, scoreStand, officialFlag;
     const scores=[];

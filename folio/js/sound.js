@@ -1,22 +1,23 @@
 // One score follows the reader across the binding. Only physical sounds follow the object.
+import { drawFoley, drawnFoley } from './drawn-foley.js';
 const sceneFoley = [
   ['wing-flit','gull','bamboo'],
-  ['cup','pour','paper','gull','wing-flit','ticket-punch','clip'],
-  ['shutter','paper','clip','film-reel','wing-flit','gull'],
+  ['cup','pour','paper','gull','wing-flit','ticket-punch','clip','cord','bamboo'],
+  ['shutter','paper','clip','film-reel','wing-flit','gull','lid','cloth','meow'],
   ['field','drum','cloth','sparrow','wood-knock','paper'],
   ['rain-drop','rain-chain','tin-tap','wheel','cloth','paper','clip'],
-  ['oil','cloth','paper','clip','wing-flit','wood-creak'],
-  ['brush','handprint','paper','cloth','wing-flit','rear-step','wood-creak','sparrow'],
-  ['pour','lid','cup','clock-chime','tea-leaves','wood-creak','paper'],
-  ['fizz','bamboo','tin-tap','dinner-gong','coin','wheel','lid','paper','cup','clip','rain-drop','wood-creak'],
-  ['drum','front-step','rear-step','cloth','wood-knock','temple-gong','sparrow'],
-  ['melon','scale-spring','coin','wood-knock','paper','cloth','wheel','ice-clink'],
-  ['dye','cloth','clip','wood-knock','wing-flit','sparrow'],
-  ['cord','paste-brush','paper','wing-flit','cloth','clip','wood-knock'],
+  ['oil','cloth','paper','clip','wing-flit','wood-creak','meow'],
+  ['brush','handprint','paper','cloth','wing-flit','rear-step','wood-creak','sparrow','meow','bark','twitter','drip'],
+  ['pour','lid','cup','clock-chime','tea-leaves','wood-creak','paper','meow'],
+  ['fizz','bamboo','tin-tap','dinner-gong','coin','wheel','lid','paper','cup','clip','rain-drop','wood-creak','wood-knock','bark','drip'],
+  ['drum','front-step','rear-step','cloth','wood-knock','temple-gong','sparrow','wing-flit','twitter','firecrackers'],
+  ['melon','scale-spring','coin','wood-knock','paper','cloth','wheel','ice-clink','bark'],
+  ['dye','cloth','clip','wood-knock','wing-flit','sparrow','handprint','meow','wheel'],
+  ['cord','paste-brush','paper','wing-flit','cloth','clip','wood-knock','ice-clink','meow','tube-chime'],
   ['cord','cup'],
 ];
 const effects = new Set(sceneFoley.flat());
-const handPlayed = new Set(['wood-knock','brush','bamboo','tea-leaves','wing-flit','drum','handprint','front-step','rear-step','ticket-punch']);
+const handPlayed = new Set(['wood-knock','brush','bamboo','tea-leaves','wing-flit','drum','handprint','front-step','rear-step','ticket-punch','meow','bark','twitter','drip']);
 const strokes = [1, .975, 1.025, .99];
 const mix = { gull:.34, sparrow:.49, 'wing-flit':.72, 'clock-chime':.72, 'tin-tap':.75, 'rain-chain':.82, 'temple-gong':.80, 'dinner-gong':.85, 'ice-clink':.81 };
 
@@ -42,12 +43,15 @@ export function makeSound() {
   }
   function load(path) {
     if (!buffers.has(path)) {
-      const pending = fetch(new URL('../audio/' + path + '.mp3', import.meta.url))
-        .then(response => {
-          if (!response.ok) throw Error('audio unavailable');
-          return response.arrayBuffer();
-        })
-        .then(bytes => ctx.decodeAudioData(bytes))
+      // A foley sound with no recording is drawn instead of fetched.
+      const name = path.startsWith('foley/') ? path.slice(6) : '';
+      const pending = (name in drawnFoley ? drawFoley(name, ctx.sampleRate)
+        : fetch(new URL('../audio/' + path + '.mp3', import.meta.url))
+          .then(response => {
+            if (!response.ok) throw Error('audio unavailable');
+            return response.arrayBuffer();
+          })
+          .then(bytes => ctx.decodeAudioData(bytes)))
         .catch(() => { buffers.delete(path); return null; });
       buffers.set(path, pending);
     }

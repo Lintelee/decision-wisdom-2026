@@ -1,5 +1,6 @@
 import { T } from './paper.js';
 import { createIssueLeaf } from './issue-leaf.js';
+import { trimToPage } from './paperback.js';
 
 const mix = (a, b, t) => a + (b - a) * t;
 const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
@@ -154,6 +155,16 @@ export function bindIssue({
       if (to) boards.push({ material, from: material.color.clone(), lit: to.clone().multiplyScalar(1 - unlit), glow: to.clone().multiplyScalar(unlit) });
     });
   }
+  // The pop-up book is a hardback, the issue a paperback. While the issue is read the boards and the block are
+  // cut flush with the printed page, and the back board and the ribbon are put away: nothing shows around the cover.
+  const page = { width: paperWidth, depth: paperDepth }, trims = [];
+  let ribbon = null, backBoard = null;
+  const trim = (mesh) => trims.push({ mesh, part: { x: mesh.position.x, width: mesh.geometry.parameters.width, depth: mesh.geometry.parameters.depth } });
+  for (const side of ['L', 'R']) for (const mesh of stacks[side].children) {
+    if (mesh.geometry?.parameters?.width) trim(mesh);
+    else if (mesh.isMesh) ribbon = mesh;
+  }
+  for (const mesh of book.children) if (mesh.isMesh && mesh.position.x === 0 && mesh.material.color?.getHexString() === '273140') { backBoard = mesh; trim(mesh); }
   let dressed = 0;
   function dress(k) {
     if (k === dressed) return;
@@ -162,6 +173,14 @@ export function bindIssue({
       board.material.color.copy(board.from).lerp(board.lit, k);
       board.material.emissive.setScalar(0).lerp(board.glow, k);
     }
+    for (const { mesh, part } of trims) {
+      const to = trimToPage(part, page, k);
+      mesh.position.x = to.x;
+      mesh.scale.x = to.scaleX;
+      mesh.scale.z = to.scaleZ;
+    }
+    if (ribbon) { ribbon.visible = k < 1; ribbon.scale.setScalar(Math.max(0.001, 1 - k)); }
+    if (backBoard) backBoard.visible = k < 1;
   }
   function showSpine(outer) {
     jacketSpine.visible = Boolean(outer);
@@ -170,7 +189,8 @@ export function bindIssue({
       spineMaterial.map = entry('reader-assets/pages/spine.webp').map;
       spineMaterial.needsUpdate = true;
     }
-    jacketSpine.position.x = outer === 'front' ? -0.115 : 0.115;
+    // On the fold itself, a hair outside the block so the two faces do not fight.
+    jacketSpine.position.x = outer === 'front' ? -0.004 : 0.004;
   }
   function stackWidth(side, width) {
     stacks[side].visible = width > 0.001;

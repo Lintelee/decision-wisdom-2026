@@ -217,8 +217,9 @@ export function buildScene(def, index, stage, app) {
       return S.curio(node, { ...options, quiet: true, tap() {
         if (playingDiscoveries.has(detail)) return;
         elapsed = 0; visit++;
+        // One sound, or a few in a row: the thing that moves first, then the voice that answers it.
         const cue = typeof sound === 'function' ? sound(visit) : sound;
-        if (cue) S.sound(cue, node);
+        [].concat(cue || []).forEach((name, i) => { if (i) S.wait(.2 * i).then(() => S.sound(name, node)); else S.sound(name, node); });
         pose(0);
         playingDiscoveries.add(detail);
       } });

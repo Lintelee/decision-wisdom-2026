@@ -145,7 +145,7 @@ export default {
       for (const dx of [0, .22]) { const b = keep(swallows, dx, 0, 0); poly(b, [[-.1, 0], [.06, .02], [.1, .06], [.04, .1], [-.06, .06], [-.16, .1], [-.12, .03]], .03, C.ink, 0, 0, 0); disc(b, .06, .06, .035, .01, C.white, .005, 6); poly(b, [[.09, .05], [.14, .05], [.09, .03]], .02, C.honey, 0, 0, .005); }
     }, {s:1.22});
     const birds = S.curio(swallows, { id: 'swallows', label: '燕尾脊上的雙燕', quiet: true, tap: async () => {
-      if (swallowBusy) return; swallowBusy = true; S.sound('wing-flit', swallows);
+      if (swallowBusy) return; swallowBusy = true; S.sound('wing-flit', swallows); S.sound('twitter', swallows);
       await S.to(swallows.position, { x: .9, y: 2.6 }, .5, 'out'); await S.to(swallows.position, { x: -.6, y: 2.3 }, .7, 'inOut'); await S.to(swallows.position, { x: 1.85, y: 1.48 }, .8, 'inOut'); swallowBusy = false;
     } });
 
@@ -220,7 +220,7 @@ export default {
       for (let i = 0; i < 10; i++) { const k = keep(crackers, 0, -.12 - i * .09, 0); for (const sx of [-1, 1]) { const c = cyl(k, sx * .045, 0, 0, .022, .022, .1, C.red, 8); c.rotation.z = sx * .9; } pops.push(k); }
     });
     S.pad(crackers, .23, [0, -.53, 0]);
-    S.discovery(crackers, { id: 'crackers', label: '廟埕的紅紙響串', duration: 1.05, sound: 'paper',
+    S.discovery(crackers, { id: 'crackers', label: '廟埕的紅紙響串', duration: 1.05, sound: 'firecrackers',
       draw(u, visit, reduced) {
         fuseGlow.visible = u > 0 && u < 1 && !reduced;
         fuseGlow.position.y = -1.02 + .94 * u;

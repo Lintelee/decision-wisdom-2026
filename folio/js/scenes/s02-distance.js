@@ -134,20 +134,20 @@ export default {
       S.to(glow.scale,{x:extent,y:extent,z:extent},.42,'out');await S.to(glow.material,{opacity:0},.52,'in');glow.visible=false;exposing=false;
     };
     S.curio(flash, { id: 'flash', label: '按下相機快門', quiet: true, tap: pop });
-    S.discovery(frame,{id:'frame',label:'嬰兒照相框裡的搖鈴留影',duration:.77,sound:'paper',
+    S.discovery(frame,{id:'frame',label:'嬰兒照相框裡的搖鈴留影',duration:.77,sound:'film-reel',
       draw(u,visit,still){
         const t=T.MathUtils.smootherstep(u,0,1),open=visit%2?t:1-t;
         keepsake.visible=open>.012;keepsake.rotation.x=-(1-open)*2.95;
         tilt.rotation.z=still?0:.045*Math.sin(Math.PI*u);
       }});
-    S.discovery(cap,{id:'cap',label:'繫在鏡筒上的防塵蓋',duration:1.18,sound:'clip',
+    S.discovery(cap,{id:'cap',label:'繫在鏡筒上的防塵蓋',duration:1.18,sound:'lid',
       draw(u){
         const closed=T.MathUtils.smoothstep(u,0,.33)*(1-T.MathUtils.smoothstep(u,.62,1));
         cap.position.set(.42-.54*closed,.03+.30*closed,.18+.111*closed);
         cap.rotation.y=Math.sin(Math.PI*closed)*.57;
         hangCord(closed);
       }});
-    const peep=S.discovery(cat,{id:'cat',label:'藏在布簾後的相館貓',duration:1.31,sound:'cloth',
+    const peep=S.discovery(cat,{id:'cat',label:'藏在布簾後的相館貓',duration:1.31,sound:['cloth','meow'],
       draw(u,visit,still){
         const side=visit%2?1:-1,t=T.MathUtils.smoothstep(u,.05,.52);
         catIn.position.set(side*(-.20+.40*t),.05*Math.sin(Math.PI*t),.015+.11*t);
@@ -168,7 +168,7 @@ export default {
     S.plant(3.9, -3.25, (g) => { rays = paperSun(g,2.63,.46); });
     let shade;
     S.plant(-5.0, -3.15, (g) => paperCloud(g,1.18,2.32)); S.plant(1.1, -3.3, (g) => {shade=keep(g);paperCloud(shade,1.28,2.50);});
-    S.discovery(rays,{id:'sun',label:'時晴時陰的港口日光',duration:1.25,
+    S.discovery(rays,{id:'sun',label:'時晴時陰的港口日光',duration:1.25,sound:'gull',
       draw(u,visit){const t=T.MathUtils.smootherstep(u,0,1),cover=visit%2?t:1-t;shade.position.set(2.68*cover,.13*cover,.33*cover);}});
     let boat;
     S.plant(1.37, -1.82, (g) => {

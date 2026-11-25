@@ -44,6 +44,8 @@ export default {
   diary: DIARY,
   takeaway: '顧客停在結帳前，不是找不到按鈕，是怕後悔。把他擔心的事說清楚，他才往前。',
   quote: { t: '顧客不是不知道下一步在哪裡，而是不確定下一步會不會讓自己後悔。', n: 17, page: 153 },
+  // One sentence from each of the scene's other source articles, for the list on the explanation card.
+  more: [{ n: 18, page: 164, t: '未來最成功的品牌，會是最能讓顧客放心授權的品牌：顧客不授權，功能再多的 Agent 也動不了。' }, { n: 15, page: 138, t: '若只優化頁面順序，卻沒看見決策節點，就很難把猶豫轉化為行動。' }],
   look: { bg: '#2d414a', table: '#576e74', key: '#f7e1c1', fill: '#c1d5ce', sky: '#e5ddc6' },   // sunset
   ground(G) {
     if (printedYard(G, 'fruit')) return;
@@ -298,7 +300,7 @@ export default {
       dogHead.rotation.z = -.45;
     });
     S.pad(dog, .32, [.06,.26,0]);
-    S.discovery(dog, { id: 'dog', label: '找瓜籽的小狗', duration: 1.52, sound: 'cloth',
+    S.discovery(dog, { id: 'dog', label: '找瓜籽的小狗', duration: 1.52, sound: 'bark',
       draw(u, visit, reduced) {
         const wet = Math.max(.38, 1-(visit-1)*.22);
         const lap = reduced ? 0 : Math.sin(Math.PI * Math.min(1,u/.80)*3)**2 * (u<.80?1:0);

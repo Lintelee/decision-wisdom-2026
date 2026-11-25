@@ -6,6 +6,7 @@ import { sourceTitle } from './editorial.js';
 import { LANDS, ORDER } from './data.js';
 import { routeFor, storyHash } from './routes.js';
 import { makeSound } from './sound.js';
+import { citedAt } from './cited.js';
 import { buildStreetHome } from './street-home.js';
 import { makeEndnote } from './endnote.js';
 import { bindBackmatter } from './backmatter.js';
@@ -366,10 +367,12 @@ function returnToStory() {
 }
 function readPage(article, page, mode) {
   document.title = '原刊全文｜街角的決策智慧';
+  // The sentence the scene cites on the page being opened is the one the text edition marks.
+  const key = opened && cur > 0 ? citedAt(defs[cur], page) : null;
   window.DecisionReader.render(readerEl, {
     embedded: true, article, page, binding:stage.issue, articleTitle: a=>sourceTitle(art(a.n)||a), motion: !stage.still.matches,
-    keyPage: opened && cur > 0 ? defs[cur].quote?.page : null,
-    keyQuote: opened && cur > 0 ? defs[cur].quote?.t : null, mode,
+    keyPage: key ? key.page : null,
+    keyQuote: key ? key.t : null, mode,
     returnHash: origin, returnLabel: returnLabel(), onReturn: returnToStory,
     onLeaf: (event,dir) => sound.play(event==='cover-land'?'cover-set':'paper',null,dir*.23),
     onLayout: (layout, immediate) => {

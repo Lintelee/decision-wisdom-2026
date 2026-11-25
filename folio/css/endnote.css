@@ -28,3 +28,18 @@ html.still #outcome{animation:none}
 @media(max-width:860px){#endnote-tab{right:14px;bottom:clamp(155px,26vh,235px)}}
 @media(max-height:510px) and (orientation:landscape){#endnote-tab{top:57px;bottom:auto}}
 @media(max-width:600px) and (orientation:portrait){#endnote-tab{right:auto;left:14px}}
+/* The scene's other source articles, folded behind one line under the button. Same two faces and three sizes as the card. */
+#outcome .endnote-more{margin:12px 0 0;padding-top:9px;border-top:1px solid #b9a37e}
+#outcome .endnote-more[hidden]{display:none}
+#outcome .endnote-more summary{cursor:pointer;color:#685941;font:600 .78rem/1.5 var(--sans);list-style:none;display:flex;align-items:center;gap:6px;min-height:28px}
+#outcome .endnote-more summary::-webkit-details-marker{display:none}
+#outcome .endnote-more summary::before{content:'＋';font-weight:700;color:#34523f}
+#outcome .endnote-more[open] summary::before{content:'－'}
+#outcome .endnote-more summary:focus-visible{outline:2px solid #996639;outline-offset:1px}
+#outcome .endnote-more ul{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:11px}
+#outcome .endnote-more li{padding-left:10px;border-left:2px solid #ad8959}
+#outcome .endnote-more blockquote{margin:0;color:#2c4135;font:650 .95rem/1.62 var(--serif);text-indent:-.45em;text-wrap:pretty}
+#outcome .endnote-more li button{margin-top:2px;padding:2px 0;border:0;background:none;color:#34523f;cursor:pointer;text-align:left;font:600 .78rem/1.5 var(--sans);text-decoration:underline;text-underline-offset:3px}
+#outcome .endnote-more li button span{white-space:nowrap}
+#outcome .endnote-more li button span::after{content:' →'}
+@media(max-width:600px){#outcome .endnote-more blockquote{font-size:.88rem}}

@@ -208,6 +208,8 @@ export default {
   diary: DIARY,
   takeaway: '把媒體做成邀請：人自己參與過的時刻，才會被記住、被分享、被帶到下一代。',
   quote: { t: '品牌可以購買曝光，卻無法購買記憶；真正影響消費決策的，不是品牌被看見多少次，而是是否出現在那些值得被記住的重要時刻。', n: 8, page: 65 },
+  // One sentence from each of the scene's other source articles, for the list on the explanation card.
+  more: [{ n: 10, page: 79, t: '那些被親身經歷過的時刻會留下來，慢慢變成關係，再變成資產。' }, { n: 11, page: 90, t: '好的懷舊，不是讓上一代再看一次，而是讓下一代也在今天第一次走進來。' }],
   look: { bg: '#2f5f46', table: '#93ab85', key: '#fff1cc', fill: '#cfe6da', sky: '#fff6dc' },   // afternoon
   ground(G) {
     G.wash('#e3d8b7');
@@ -314,7 +316,7 @@ export default {
       wing = keep(bird, -.02, .08, .03); poly(wing, [[-.1, 0], [.05, 0], [-.13, .09]], .02, '#5f86a8', 0, 0, 0);
     });
     S.pad(bird,.19,[.008,.075,.02]);
-    S.discovery(bird,{id:'bird',label:'壁畫旁的小燕子',aim:[.008,.075,.02],duration:1.25,sound:'wing-flit',draw(u,visit,reduced){
+    S.discovery(bird,{id:'bird',label:'壁畫旁的小燕子',aim:[.008,.075,.02],duration:1.25,sound:['wing-flit','twitter'],draw(u,visit,reduced){
       const travel=visit%2?u:1-u, arc=Math.sin(Math.PI*u);
       bird.position.set(.02+1.01*travel,1.98+.51*travel+(reduced ? .025 : .43)*arc,-.20-.19*travel);
       bird.scale.x=visit%2?1.22:-1.22;
@@ -358,7 +360,7 @@ export default {
         const wet=i===idx?foldTravel(u,.4,.72):1;
         blot.scale.set(Math.max(.001,wet),1,Math.max(.001,wet*.78));
       });
-      if(u>.41&&u<1&&dot.userData.hit!==visit){dot.userData.hit=visit;S.sound('handprint',dot);}
+      if(u>.41&&u<1&&dot.userData.hit!==visit){dot.userData.hit=visit;S.sound('drip',dot);}
     },reset:()=>blots.forEach(b=>{delete b.userData.hit;})});
 
     // ---- the cat that has stepped in paint
@@ -373,7 +375,7 @@ export default {
       for (let i = 0; i < 4; i++) { const k = keep(g, .12 + i * .17, .006, (i % 2) * .09 - .02); pawprint(k, C.coral, .8); k.rotation.x = -Math.PI / 2; k.rotation.z = -Math.PI / 2; k.visible = false; paws.push(k); }
     });
     S.curio(cat, { id: 'cat', label: '貓', tap: async () => {
-      if (catBusy) return; catBusy = true; S.sound('rear-step');
+      if (catBusy) return; catBusy = true; S.sound('rear-step'); S.sound('meow', cat);
       if (catAt === 0) { cat.scale.x = 1; S.to(cat.position, { x: .72 }, 1.0, 'inOut'); for (const k of paws) { await S.wait(.22); S.show(k, .2); } catAt = 1; }
       else { cat.scale.x = -1; await S.to(cat.position, { x: 0 }, 1.0, 'inOut'); cat.scale.x = 1; catAt = 0; }
       await S.wait(.2); catBusy = false;
@@ -394,7 +396,7 @@ export default {
       cyl(dog,-.30,.154,0,.14,.14,.011,C.aqua,12);
       S.pad(dog,.22,[0,.23,0]);
     });
-    S.discovery(dog,{id:'dog',label:'藍漆盤旁的小狗',duration:1.20,sound:'brush',draw(u,visit,reduced){
+    S.discovery(dog,{id:'dog',label:'藍漆盤旁的小狗',duration:1.20,sound:['brush','bark'],draw(u,visit,reduced){
       const dip=Math.min(foldTravel(u,.03,.31),1-foldTravel(u,.41,.65));
       tip.visible=visit>1||u>=.29;
       tail.rotation.z=2.16*dip+Math.sin(foldTravel(u,.62,1)*Math.PI*3)*pulse(u,.59,1)*(reduced ? .10 : .57);

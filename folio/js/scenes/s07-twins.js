@@ -358,7 +358,7 @@ export default {
       S.sound('tea-leaves'); kettleT=1.2; S.show(puff,.25); S.wait(.85).then(() => S.hide(puff,.28));
     } });
     S.curio(mcat, { id: 'minicat', label: '小貓', aim:[.01,.104,.031], tap: async () => {
-      if (catBusy) return; catBusy = true; S.sound('tick');
+      if (catBusy) return; catBusy = true; S.sound('meow', mcat);
       const away = fish.position.x < .8, y0 = ROW[0].y;
       S.to(fish.position, { x: away ? 1.0 : .7, y: y0 + .06 }, .25, 'out').then(() => S.to(fish.position, { y: y0 + .015 }, .2, 'bounce'));
       await S.wait(.25); mcat.scale.x = away ? 1 : -1; await S.to(mcat.position, { x: away ? .85 : .55 }, .55, 'inOut'); catBusy = false;

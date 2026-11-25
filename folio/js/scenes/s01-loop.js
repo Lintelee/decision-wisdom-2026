@@ -104,7 +104,7 @@ export default {
       for (const sx of [-1, 1]) { ball(crab, sx * .15, .15, .02, .045, C.red, 0); for (let i = 0; i < 3; i++) beam(crab, [sx * .09, .05, -.03 + i * .04], [sx * .19, 0, -.05 + i * .06], .011, C.deep, 4); disc(crab, sx * .035, .14, .07, .014, C.ink, .01, 6); }
     });
     S.pad(crab,.19,[0,.09,0]);
-    S.discovery(crab,{id:'crab',label:'繫船繩下的招潮蟹',duration:.91,
+    S.discovery(crab,{id:'crab',label:'繫船繩下的招潮蟹',duration:.91,sound:'cord',
       draw(u,visit,still){
         const right=visit%2===1, t=S.T.MathUtils.smootherstep(u,0,1);
         crab.position.x=right?-.30+.85*t:.55-.85*t;
@@ -218,7 +218,7 @@ export default {
       radish = keep(basket, 0, .3, .08); cone(radish, 0, .02, 0, .06, .2, C.white, 7).rotation.z = Math.PI; for (const sx of [-1, 0, 1]) poly(radish, [[-.02, 0], [.02, 0], [sx * .05, .13]], .012, C.leaf, 0, .1, 0);
     }, {y:.19});
     const gp = S.curio(gran.root, { id: 'gran', label: '等船的阿梅姨', quiet:true, tap: () => { gran.wave(.83); } }); gran.propId = gp.id;
-    S.discovery(basket,{id:'basket',label:'露出蘿蔔葉的菜籃',duration:1.1,sound:'cloth',
+    S.discovery(basket,{id:'basket',label:'露出蘿蔔葉的菜籃',duration:1.1,sound:'bamboo',
       draw(u,visit){
         const lift=Math.sin(Math.PI*u)**2;
         radish.position.y=.3+.36*lift;radish.rotation.z=(visit%2?-.34:.34)*lift;
